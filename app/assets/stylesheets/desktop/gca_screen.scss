@@ -1,0 +1,127 @@
+#habla_beta_container_do_not_rely_on_div_classes_or_names {
+  display: none;
+}
+
+#search_form {
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  z-index: 100;
+  fieldset {
+    @include box_shadow(0px 4px 8px rgba(0, 0, 0, 0.33));
+    background-color: $trans_black;
+    min-height: 42px;
+    margin: 0 auto;
+    padding: 0;
+    width: 944px;
+    .states_list {
+      display: none;
+    }
+    .title {
+      color: #fff;
+      float: left;
+      font: {
+        family: $header_font;
+        size: 2.05em;
+      };
+      padding: 6px 8px;
+    }
+    .desc {
+      color: #fff;
+      float: left;
+      font: {
+        size: 1.2em;
+      };
+      padding: 14px 14px 10px;
+      width: 400px;
+      span {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+    .row {
+      float: right;
+      margin-right: 14px;
+      padding-top: 11px;
+      .input, .submit {
+        float: left;
+        label, .selector {
+          float: left;
+          span {
+            padding-left: 9px;
+          }
+        }
+        label {
+          color: #fff;
+          font: {
+            size: 1.1em;
+            weight: bold;
+          }
+          margin-right: 14px;
+          position: relative;
+          top: 5px;
+        }
+      }
+      .submit {
+        margin-left: 14px;
+        button {
+          @include button;
+          
+        }
+      }
+      .state {
+        width: 145px;
+        .selector {
+          width: 80px;
+        }
+      }
+      .city {
+        width: 220px;
+        .selector {
+          width: 170px; 
+        }
+      }
+    }
+  }
+}
+
+#inner_page {
+  @include clearfix;
+  margin-top: 32px;
+  width: 100%;
+  .main_content {
+    float: left;
+    width: 641px;
+  }
+  .sub_content {
+    float: right;
+    width: 272px;
+  }
+}
+
+#site_info #footer_nav ul li.top_level {
+  width: 170px;
+}
+
+/* used on services_help page */
+.feature h3 { margin-bottom: 12px; }
+.steps {
+  margin-bottom: 24px;
+  counter-reset: li;
+  > li {
+    margin-bottom: 12px;
+    padding-left: 4.5em;
+    line-height: 1.35;
+    text-indent: -4.5em;
+    &:before {
+      content: 'Step ' counter(li);
+      counter-increment: li;
+      float: left;
+      display: block;
+      width: 4.5em;
+      font-weight: bold;
+    }
+  }
+}
+

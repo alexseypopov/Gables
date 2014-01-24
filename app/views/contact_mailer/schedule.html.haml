@@ -1,0 +1,17 @@
+%h2 A new request information form has been submitted. Details follow:
+%p <strong>Community:</strong> #{@property.name} in #{@property.city}, #{@property.state}
+%p <strong>Name:</strong> #{@info.first_name} #{@info.last_name}
+%p <strong>Phone:</strong> #{@info.phone}
+%p <strong>Alt Phone:</strong> #{@info.alt_phone}
+%p <strong>Email:</strong> #{@info.email}
+%p <strong>Email Opt In:</strong> #{@info.opt_in}
+%p <strong>Beds:</strong> #{@info.beds}
+%p <strong>Rent Range:</strong> #{@info.rent_range}
+%p <strong>Comments:</strong> #{@info.comments}
+%p <strong>Expected Move In Day:</strong> #{@info.move_date}
+%p <strong>Preferred Day and Time of Visit:</strong><br /> #{@info.visit_date1} at #{@info.visit_time1}
+- unless @history.nil?
+  %p= "#{@info.first_name} viewed the following properties in the last 24 hours:"
+  %ul
+    - @history.each do |floorplan|
+      %li= link_to "#{floorplan.name} at #{floorplan.property.name}", floorplan_url(floorplan)

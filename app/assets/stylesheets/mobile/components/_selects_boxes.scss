@@ -1,0 +1,33 @@
+@import "mobile/base/colors.css.scss";
+select{
+  background-color: $field-background;
+}
+.styled-select select {
+  background: transparent;
+  width: 100%;
+  padding: 5px 5px 5px 10px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 40px;
+  -webkit-appearance: none;
+  color: $gray;
+}
+.styled-select {
+  width:100%;
+  height: 40px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  position:relative;
+  margin: 5px 0 10px 0;
+  background-color:$white;
+}
+.styled-select i{
+  position:absolute;
+  font-size: 1.25em;
+  right:10px;
+  top:10px;
+  z-index: 5;
+  padding-left:7px;
+  border-left: 1px solid $gray;
+}

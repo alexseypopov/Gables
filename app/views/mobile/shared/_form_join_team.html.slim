@@ -1,0 +1,15 @@
+a.button href="https://app.work4labs.com/list/gables/34635269968?career_site_mobile_redirection" Job Search
+/= form_tag '/careers/p/search_results', method: 'get', id: 'job_search' do
+/  fieldset
+/    legend Join the Team
+/    input type="text" placeHolder="Enter Keywords (optional)"
+/    .styled-select
+/      i.icon-chevron-down
+/      = select_tag 'department', options_for_select(Associate.departments, params[:deparment]), {:prompt => 'Select Department'}
+/    .styled-select
+/      i.icon-chevron-down
+/      = select_tag 'team_state', options_for_select([['All','']] + Associate.states, params[:state]), {:prompt => 'Select State'}
+/    .actions
+/      input type='submit' value="Search"
+/      .submit
+/        = link_to 'browse positions', '/careers/p/search'

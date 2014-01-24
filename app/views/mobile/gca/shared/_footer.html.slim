@@ -1,0 +1,86 @@
+#footer
+  .accordion
+    dl
+      dt
+        a = 'Our Services'
+        i.icon-chevron-down
+      dd
+        = link_to 'Apartment Gallery', url_for(:controller => 'gca/home', :action => 'gallery', :subdomain => 'gca')
+      - Gca::ServicesPage.in_nav.each do |page|
+        dd
+          = link_to page.name, gca_page_path(page.section, page.path)
+      dt
+        = link_to 'Our Company', '/toplevel/p/our_company'
+
+.footer-links
+
+  a style="position:relative;"
+    span Translate
+    i.icon-translate
+    #google_translate_element
+
+  script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  javascript:
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,es,en,fr,it,ja,ko,nl,pt,ru,th,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-8527803-1'}, 'google_translate_element');
+    }
+
+  css:
+    .goog-te-gadget {
+      font-family: "century gothic", arial, sans-serif;
+      color: #000;
+      border: none;
+      height:100%;
+    }
+
+    .goog-te-menu-value span {
+      color: transparent;
+      font-size: 14px;
+    }
+
+    .goog-te-gadget-simple {
+      background-color: transparent;
+      width: 100%;
+      border: none;
+      height: 100%;
+    }
+
+    .goog-te-gadget-simple a.goog-te-menu-value
+    .goog-te-gadget img {
+      display: none;
+    }
+
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+
+    .goog-te-banner-frame {
+      top: auto;
+      bottom: 0px;
+    }
+
+    .goog-te-menu-value {
+      display: none !important;
+    }
+
+    #google_translate_element{
+      position:absolute;
+      left:0;
+      width:100%;
+      height: 30px;
+    }
+
+
+  #site-search
+    /= render partial: '/mobile/gca/shared/site_search', locals: {:context => 'site'}
+    i.icon-search
+
+.social-icons.footer
+  a.icon-social-tumblr.dark href="http://blog.gables.com/"
+  a.icon-social-twitter.dark href="http://twitter.com/gables"
+  a.icon-social-facebook.dark href="http://www.facebook.com/gablesresidential"
+  a.icon-social-pinterest.dark href="http://www.pinterest.com/gablesliving"
+  div style="display:inline"
+  a.icon-equal-housing.secondary href="http://gables.com/equal_employment#fair_housing"
+  a.icon-accessibility.secondary href="http://gables.com/equal_employment#fair_housing"
+.legal &copy; #{t :copyright}

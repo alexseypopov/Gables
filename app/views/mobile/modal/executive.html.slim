@@ -1,0 +1,23 @@
+
+.executives.detail
+  - if @executive.image && @executive.image.url != '/images/no_image.gif'
+    .thumb= image_tag @executive.image.url, :alt => ''
+  .business-card
+    h2.detail= @executive.name
+    .title= raw(@executive.title)
+    hr.detail
+    - unless @executive.office_address.blank?
+      .contact_data
+        h2 Office
+        p= raw(@executive.office_address)
+    - unless @executive.phone.blank? && @executive.email.blank?
+      .contact_data
+        h2 Contact
+        p
+          - unless @executive.phone.blank?
+            = "#{@executive.phone} - "
+          - unless @executive.email.blank?
+            = link_to @executive.email, "mailto:#{@executive.email}"
+        hr
+  .bio
+    p= @executive.bio

@@ -1,0 +1,106 @@
+script type="text/x-handlebars" data-template-name="floorplan"
+ .center
+  section.floorplan-image
+    |{{#each floorplan.images}}
+      <img {{bindAttr src="image.url"}} />
+    |{{/each}}
+  section.floorplan-details
+    .filter.group
+      p.title Filter Floorplans
+      form action="#"
+        fieldset
+          div.field.inline
+            label for="select-name" Beds
+            | {{ view App.Select contentBinding="App.bedOptions" optionLabelPath="content.name"
+                      prompt="All" selectionBinding="App.floorplansController.selectedBeds"}}
+          div.field.inline
+            label for="select-name" Baths
+            | {{ view App.Select contentBinding="App.bathOptions" optionLabelPath="content.id"
+                      prompt="All" selectionBinding="App.floorplansController.selectedBaths"}}
+    .meta.multicol.group
+      h1() {{floorplan.name}}
+      .bed-bath() {{floorplan.bedrooms_count}} Beds / {{floorplan.bathrooms_count}} Baths
+      .sqft() {{floorplan.area_min}} Sqft.
+      .rent ${{floorplan.rent_min}} - ${{floorplan.rent_max}}
+    .features
+      h3 Features
+      ul.multicol
+        |{{#each floorplan.amenities}}
+          <li>{{description}}</li>
+        |{{/each}}
+      | <a class="btn view" {{action "loadUnits"}}>
+      span View ({{floorplan.units.length}}) Available Units
+      | </a>
+
+script type="text/x-handlebars" data-template-name="print-floorplan"
+  | {{#with floorplan}}
+  section.header
+    .logo
+      img src='/images/tablet/logo-gables-bw.svg'
+    h1 
+      | {{name}}
+      .bed-bath() {{bedrooms_count}} Beds / {{bathrooms_count}} Baths
+  section.floorplan-image
+    div <img {{bindAttr src="images.0.image.url"}} />
+    .sqft-rent 
+      | {{area_min}} sq ft. 
+        {{#if ../pricing}} ${{floorplan.rent_min}} - {{floorplan.rent_max}}{{/if}}
+    .reserve
+      h3 Reserve your new apartment
+      | {{#if App.currentUser}}
+        <strong>{{App.currentUser.name}}</strong>, Leasing Associate<br />
+        {{App.currentUser.email}}<br />
+        {{/if}}
+      | {{App.property_phone}}
+  section.floorplan-details
+    .features
+      h3 Features
+      ul
+        |{{#each amenities}}
+          <li>{{description}}</li>
+        |{{/each}}
+    .notes
+      h3 Notes
+      | <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p> 
+  section.footer
+    strong= @property.name
+    span &bull; 
+    = @property.address
+    span &nbsp;&bull; 
+    = @property.phone
+  | {{/with}}
+
+script type="text/x-handlebars" data-template-name="floorplan-modal"
+ .modal.floorplans
+  h3
+    | {{#if preference}} {{preference}} Unit Type Preference
+      {{else}} Floorplan
+      {{/if}} <a class="btn" {{action "close"}}>Close</a>
+  .floorplans
+    | {{#each floorplans}}
+    .floorplan.group
+      section.floorplan-image
+        |{{#each images}}
+          <img {{bindAttr src="image.url"}} />
+        |{{/each}}
+      section.floorplan-details
+        .meta.multicol.group
+          h1() {{name}}
+          .bed-bath() {{bedrooms_count}} Beds / {{bathrooms_count}} Baths
+          .sqft() {{area_min}} Sqft.
+          .rent ${{rent_min}} - ${{rent_max}}
+        .features
+          ul.multicol
+            |{{#each amenities}}
+              <li>{{description}}</li>
+            |{{/each}}
+          | <input {{bindAttr value="gables_id"}} type="hidden"/>
+          | {{#if ../preference}}
+            <a class="btn" {{action "mark"}}>Mark as {{preference}} Preference</a>
+            {{/if}}
+      .floorplan-footer
+        | {{#if App.currentGuest}} {{view Ember.Checkbox title="Preferred" valueBinding="preferred" class="preferred"}} {{/if}}
+        | <a class='btn grn' {{action "print"}}>Print</a>
+          <a class='btn grn' {{action "email"}}>Email PDF</a>
+    | {{/each}}
+      

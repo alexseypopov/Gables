@@ -1,0 +1,42 @@
+@import 'mobile/base/colors';
+
+.border {
+  .feature {
+    .thumb img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .feature.small {
+    width: 100%;
+    display: inline-table;
+    & >div {
+      display: table-cell;
+      vertical-align: top;
+    }
+    .thumb {
+      width: 28px !important;
+    }
+    .thumb img {
+      width: 28px !important;
+    }
+  }
+}
+
+aside {
+  margin: 0 10px 20px 10px;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  blockquote {
+    margin: 10px 0 10px 0;
+  }
+}
+
+.sub_content{
+  .blog {
+    display: none;
+  }
+}
+

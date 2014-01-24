@@ -1,0 +1,23 @@
+script type="text/x-handlebars" data-template-name="guest-menu"
+  | {{#if App.currentGuest}}{{#with App.currentGuest}}
+  small Current Guest
+  a.name() {{name}}
+  .menu.pop.hidden
+    nav
+      h4 Actions
+      ul.actions-list
+        | <li {{bindAttr class="add_prospect_complete:complete"}}><a {{action "addProspect"}}>Edit Prospect</a></li>
+          <li {{bindAttr class="select_apartments_complete:complete"}}><a {{action "apartmentPreferences"}}>Select Apartments</a></li>
+          <li class="small"><a {{action "apartmentPreferences"}}>Preferred Floorplans ({{preferred_floorplans.length}})</a></li>
+          <li {{bindAttr class="gather_licenses_complete:complete"}}><a {{action "gatherLicenses"}}>Gather Licenses</a></li>
+          <li {{bindAttr class="gables_difference_complete:complete"}}><a {{action "gablesDifference"}}>Gables Difference</a></li>
+          <li {{bindAttr class="return_licenses_complete:complete"}}><a {{action "returnLicenses"}}>Return Licenses</a></li>
+      h4 Follow Up
+      ul
+        | <li {{bindAttr class="take_homes_complete:complete"}}><a {{action "takeHomes"}}>Take Homes</a></li>
+          <li {{bindAttr class="notes_complete:complete"}}><a {{action "notes"}}>Notes</a></li>
+          <li {{bindAttr class="thank_you_note_complete:complete"}} ><a {{action "thankYouNote"}}>Thank You Note</a></li>
+          <li {{bindAttr class="invite_to_apply_complete:complete"}}><a {{action "inviteToApply"}}>Invite to Apply</a></li>
+      | <button class="btn" {{action "saveAsPending"}}>Save as Pending</button>
+      | <button class="btn" {{action "submitToInsite"}}>Submit to InSite</button>
+  | {{/with}}{{/if}}

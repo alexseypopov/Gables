@@ -1,0 +1,89 @@
+/*  Styles for Unit listings 
+    Apartment Preferences, Available Units, Invite to Apply
+---------------------------------------------------------------- */
+
+.refresh {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
+.preferred.ember-checkbox{
+  display: none;
+  .floorplans.modal &, .apartment-preferences &{
+    display: block;
+  }
+}
+
+.units .content {
+  top: 190px;
+}
+
+.apartment-preferences .content{
+  top: 149px;
+}
+
+.units-filter {
+  text-align: center;
+  fieldset {
+    float: none;
+    display: inline-block;
+  }
+}
+
+/* list of units by floorplan */
+.units {
+  #content &{height: auto;}
+  h2 {
+    float: left;
+    margin-bottom: 4px;
+    font-size: 37px;
+  }
+  .meta span {
+    display: block;
+    font-size: 25px;
+    font-weight: normal;
+    color: #666;
+  }
+  .view {
+    float: right;
+    margin: 42px 0 0 0;
+  }
+  .preferred {
+    display: block;
+    float: right;
+    margin: 46px 0 0 25px;
+    label {
+      font-size: 17px;
+      color: #333;
+      line-height: 22px;
+    }
+  }
+  & li {
+    clear: both;
+    margin: 0 0 53px 0 !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+  td {
+    padding: 12px 15px;
+    &:nth-child(1) { /* column widths - may need to tweak and set min-widths */
+      width: 10%;
+      min-width: 100px;
+    }
+    &:nth-child(2) { width: 10%; }
+    &:nth-child(3) { width: 10%; }
+    &:nth-child(4) { width: 30%; }
+    &:nth-child(5) { width:  5%; }
+    &:nth-child(6) { width: 15%; }
+    &:nth-child(7) { width: 20%; }
+    .features {
+      li {
+        margin: 0 0 0 18px !important;
+        line-height: 18px;
+      }
+    }
+  }
+}
+

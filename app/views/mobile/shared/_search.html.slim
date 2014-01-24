@@ -1,0 +1,62 @@
+- cache('mobile_apartment_search_form') do
+  = form_tag(find_where_path, :method => 'get', :id => 'apartment_search', :target => context == 'iframe' ? '_top' : nil) do
+    #search
+      .row
+        .cell style="padding:10px 5px 5px 5px;width:58px;"
+          a href="/"
+            img#logo width="50px" src="/assets/mobile/gables-logo.png"
+        .cell style="padding: 5px 5px 5px 0;width:100%"
+          fieldset.simple.focus
+          	= hidden_field_tag :mobile, '1'
+            = hidden_field_tag :floorplans, 'any'
+            = hidden_field_tag :group, ''
+            p.title Find an Apartment
+            label.search-field-label
+              i#search-icon
+              i#search-clear-button
+              = text_field_tag :query, params[:query], 
+                  placeholder: 'Enter City, Zip, Landmark, or Community Name', 
+                  autocorrect: "off", autocomplete: 'off', disabled: 'disabled'
+            #live_search.home
+              ul
+                - @live_search_options.each do |option|
+                  li= option
+        .cell style="vertical-align:top;padding:5px 9px 5px 5px;"
+          i#mobile-site-nav.icon-nav
+          a#cancel-button.cancel cancel
+
+      .find-by
+        = render :partial => 'mobile/shared/advanced_search', :locals => {:context => 'site'}
+        .find-by-container
+          .by-state
+            h2 Find by State
+            ul
+              - @states.each do |state|
+                li data-state="#{state}"
+                  a[href=find_where_path(query: Carmen::state_name(state), subdomain: false)]
+                    = Carmen::state_name(state)
+                  a.drilldown.right-arrow data-state="#{state}" &rarr;
+
+          .by-city
+            h2.header
+              = 'Find by City'
+              span.back-button Back
+            ul
+              - @states.each do |state|
+                - cities_for(state).each do |city|
+                  li data-state=state data-city=city
+                    a href=find_where_path(query: city, subdomain: false)
+                      = city
+                    a.drilldown.right-arrow data-state=state data-city=city &rarr;
+
+
+          .by-property
+            h2.header
+              = 'Find by Region'
+              span.back-button Back
+            ul
+              - @states.each do |state|
+                - cities_for(state).each do |city|
+                  - @property_links.select{|p|p.city == city && p.state == state}.sort{|a,b| a.name <=> b.name}.each do |property|
+                    li data-state="#{state}" data-city="#{city}" data-property="#{property.name}"
+                      = link_to property.name, property_path(property, :subdomain => false)

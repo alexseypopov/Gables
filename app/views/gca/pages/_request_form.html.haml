@@ -1,0 +1,19 @@
+#request_section.jump
+  = form_tag(url_for(:controller => 'gca/home', :action => 'contact', :subdomain => 'gca'), :id => 'request_info_form', :class => 'jump', :honeypot => true) do
+    %h2 Request more information
+    %fieldset
+      .row
+        .input.text
+          = label_tag :contact_first_name, 'Name'
+          = text_field_tag 'contact[first_name]', '', :id => 'contact_first_name', :placeholder => 'first'
+        .input.text.lname
+          = label_tag :contact_last_name, 'Last'
+          = text_field_tag 'contact[last_name]', '', :id => 'contact_last_name', :placeholder => 'last'
+      .input.text.email
+        = label_tag :contact_email, 'Email'
+        = text_field_tag 'contact[email]', '', :id => 'contact_email', :placeholder => 'yourname@domain.com'
+      .input.text.phone
+        = label_tag :contact_phone, 'Phone'
+        = text_field_tag 'contact[phone]', '', :id => 'contact_phone', :placeholder => '(###) ###-####'
+      .submit
+        %button{:type => 'submit'} continue

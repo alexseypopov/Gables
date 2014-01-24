@@ -1,0 +1,329 @@
+// Mix-ins
+@mixin clearfix {
+  display: inline-block;
+  &:after {
+    display: block;
+    clear: both;
+    content: ".";
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+  * html & {
+    height: 1%;
+  }
+}
+
+@mixin parent_el {
+  margin: 0 auto;
+  width: 945px;
+}
+
+@mixin horizontal_nav {
+  @include clearfix;
+  list-style-type: none;
+  > li {
+    float: left;
+    > a {
+      display: block;
+      float: left;
+    }
+  }
+}
+
+@mixin border_radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box_shadow($definition: 0px 1px 4px #444444) {
+  box-shadow: $definition;
+  -moz-box-shadow: $definition;
+  -webkit-box-shadow: $definition;
+}
+
+@mixin multiple_columns($count: 2, $gap: 15px, $rule: 1px solid #dddddd) {
+  -moz-column-count: $count;
+  -moz-column-gap: $gap;
+  -moz-column-rule: $rule;
+  -webkit-column-count: $count;
+  -webkit-column-gap: $gap;
+  -webkit-column-rule: $rule;
+  column-count: $count;
+  column-gap: $gap;
+  column-rule: $rule;
+}
+
+@mixin image_replace($image, $width, $height, $x: left, $y: top) {
+  background: {
+    image: unquote("url(../images/#{$image})");
+    position: $x $y;
+    repeat: no-repeat;
+  }
+  display: block;
+  height: $height;
+  text-indent: -9999em;
+  width: $width;
+}
+
+@mixin button($width: 96px) {
+  background-color: $brand_color;
+  color: #ffffff;
+  font: {
+    family: $header_font;
+    size: 17px;
+    weight: normal;
+  };
+  padding: 5px 0 4px;
+  text-align: center;
+  width: $width;
+  &:hover {
+    background-color: #517f24;
+  }
+}
+
+@mixin common_selector($width: 304px) {
+  background: #fff url('../images/select_bg.gif') no-repeat right 6px;
+  border: 1px solid #ddd;
+  color: #999;
+  font-size: $base_font_size;
+  padding: 6px 0;
+  width: $width;
+  span {
+    float: none;
+    padding: 0 10px 0 15px;
+  }
+  select {
+    left: 10px;
+    width: 100%;
+  }
+}
+
+@mixin input {
+  border: 1px solid #ddd;
+  color: #999;
+  padding: 6px 15px;
+  &:focus {
+    border: 1px solid #ccc;
+    outline: 1px solid #ccc;
+  }
+}
+
+@mixin label {
+  color: #fff;
+  display: block;
+  font: {
+    size: 1.1em;
+    weight: bold;
+  };
+  margin-bottom: 8px;
+}
+
+@mixin stars {
+  @include image_replace('../images/sprite.png', 122px, 19px, 0, -187px);
+  @for $i from 1 through 5 {
+    &.count-#{$i} {
+      background-position: 0 -187px + ($i * 20);
+    }
+  }
+  @for $i from 1 through 4 {
+    &.count-#{$i}5 {
+      background-position: 0 -287px + ($i * 20);
+    }
+  }
+  &.count-05 {
+    background-position: 0 -287px;
+  }
+}
+
+@mixin common_table {
+  caption {
+    color: #000;
+    font: {
+      size: 1.1em;
+      weight: bold;
+    };
+    height: 20px;
+    span {
+      font: {
+        size: 0.85em;
+        weight: normal;
+      };
+    }
+  }
+  thead {
+    th {
+      background-color: #ccc;
+      color: #444;
+      font-size: 0.9em;
+      padding: 5px;
+      &:first-child {
+        text-indent: 10px;
+      };
+    }
+  }
+  tbody {
+    font-size: 0.9em;
+    td {
+      border: {
+        bottom: 2px solid #fff;
+        top: 2px solid #fff;
+      };
+      padding: 5px;
+      &:first-child {
+        text-indent: 10px;
+      };
+      input {
+        margin-left: 10px;
+      }
+      strong {
+        color: #333;
+        font-size: 1.2em;
+      }
+      a {
+        color: $brand_color;
+        font: {
+          size: 1.2em;
+          weight: bold;
+        };
+        text-decoration: underline;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: #dedede;
+    }
+    tr:nth-child(odd) {
+      &:last-child {
+        td {
+          border-bottom: 1px solid #dedede;
+          padding-bottom: 7px;
+        }
+      };
+    }
+  }
+}
+
+@mixin marquee_box($has_shadow: true) {
+  @if has_shadow == true { @include box_shadow(0px 0px 14px rgba(0, 0, 0, 0.33)); }
+  background-color: $trans_black;
+  border-left: 9px solid $brand_color;
+  bottom: 40px;
+  color: #fff;
+  font: {
+    family: $header_font;
+    size: 1.2em;
+  };
+  left: 13%;
+  padding: 14px 0;
+  position: absolute;
+  width: 535px;
+  z-index: 5;
+  p, h1 {
+    margin: 0 17px;
+    padding-bottom: 2px;
+  }
+  .emph, h1 {
+    font: {
+      size: 2.2em;
+      weight: bold;
+    }
+    line-height: 1em;
+    padding: 0 0 5px;
+  }
+}
+
+@mixin livesearch {
+  @include box_shadow(0px 4px 4px rgba(0, 0, 0, 0.33));
+  background-color: #fff;
+  display: none;
+  left: 50px;
+  max-height: 210px;
+  overflow: auto;
+  position: absolute;
+  top: 35px;
+  width: 354px;
+  z-index: 100;
+  ul {
+    li {
+      color: $header_color;
+      display: none;
+      font-weight: bold;
+      padding: 5px 14px;
+      &:hover, &:focus, &.focus {
+        background-color: #5695D3;
+        color: #fff;
+        cursor: pointer;
+      };
+      em {
+        font: {
+          style: normal;
+          weight: normal;
+        };
+      }
+    }
+  }
+}
+
+@mixin pagination {
+  border-top: 2px solid #ccc;
+  height: 40px;
+  margin: 0 0 40px;
+  width: 100%;
+  .pagination {
+    float: right;
+    span, a, em {
+      color: #666;
+      display: block;
+      float: left;
+      font: {
+        family: $header_font;
+        size: 1.1em;
+      };
+      margin-left: 12px;
+      padding-top: 10px;
+      &.disabled {
+        color: #ccc;
+      }
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+    .current {
+      color: #000;
+      font: {
+        style: normal;
+        weight: bold;
+      }
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin floorplan_pagination {
+  height: 30px;
+  ul {
+    @include horizontal_nav;
+    float: right;
+  }
+  li {
+    color: #666;
+    font: {
+      family: $header_font;
+      size: 1.1em;
+    };
+    margin-left: 12px;
+    padding-top: 10px;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  li.paginationCurrent {
+    color: #000;
+    font: {
+      style: normal;
+      weight: bold;
+    }
+    text-decoration: underline;
+  }
+}

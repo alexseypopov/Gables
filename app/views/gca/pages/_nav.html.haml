@@ -1,0 +1,6 @@
+%nav#section_nav
+  %ul
+    - if @section && @section == 'services'
+      %li= link_to 'Apartment Gallery', url_for(:controller => 'gca/home', :action => 'gallery', :subdomain => 'gca')
+    - @page_nav.each do |nav_item|
+      %li{:class => @page && @page == nav_item ? 'active' : ''}= link_to nav_item.name, gca_page_path(nav_item.section, nav_item.path)

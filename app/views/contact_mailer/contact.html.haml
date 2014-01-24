@@ -1,0 +1,10 @@
+%h2 A new contact form has been submitted.
+- if @property
+  %p <strong>Property Viewed:</strong> #{@property.name}
+- unless @info.visitor_type.blank?
+  %p <strong>Visitor Type:</strong> #{@info.visitor_type}
+%p <strong>Name:</strong> #{@info.first_name} #{@info.last_name}
+%p <strong>Phone:</strong> #{@info.phone}
+%p <strong>Email:</strong> #{@info.email}
+%p <strong>Message:</strong><br />#{@info.message}
+%p <strong>Opt-in:</strong><br />#{@info.opt_in}

@@ -1,0 +1,136 @@
+#property #request_info_form {
+  background-color: #404040;
+  color: #fff;
+  margin-top: 20px;
+  padding: 8px 12px;
+  clear: both;
+  fieldset {
+    position: relative;
+  }
+  h2 {
+    color: #fff;
+    font: {
+      size: 1.35em !important;
+    }
+    margin-bottom: 25px;
+  }
+  .input {
+    margin-bottom: 22px;
+    label {
+      @include label;
+      float: left;
+      position: relative;
+      top: 4px;
+      width: 53px;
+    }
+    input {
+      @include input;
+      padding: 6px 10px;
+      width: 277px;
+    }
+    &.phone {
+      position: absolute;
+      right: 0;
+      top: 0;
+      input {
+        width: 145px;
+      }
+    }
+    &.email {
+      margin-left: 4px;
+    }
+  }
+  .row {
+    @include clearfix;
+    margin-left: 4px;
+    width: 352px;
+    .input {
+      float: left;
+      input {
+        width: 117px;
+      }
+      &.lname {
+        float: right;
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+  .submit {
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    button {
+      @include button;
+      float: right;
+      width: 167px;
+    }
+  }
+}
+
+#property .sub_content .vcard .tel {
+  display: none;
+}
+
+#property .main_content #community_floorplans {
+  &.gca {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  p {
+    font-size: 1em;
+    margin: 0;
+  }
+  .floorplan_tabs {
+    margin-bottom: 60px;
+  }
+  .floorplans_container {
+    @include clearfix;
+    width: 710px;
+  }
+  .floorplan_pagination {
+    @include floorplan_pagination;
+    &.top {
+      margin-left: 400px;
+      position: relative;
+      top: 25px;
+    }
+    &.bottom {
+      border-top: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+  }
+  .floorplan {
+    float: left;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    width: 135px;
+    .thumb {
+      height: 140px;
+      margin-bottom: 20px;
+      img {
+        max-height: 140px;
+        max-width: 135px;
+      }
+    }
+    p {
+      font-size: 0.9em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      strong {
+        color: #000;
+        font-size: 1.2em;
+      }
+      a {
+        color: $brand_color;
+        font-size: 0.9em;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+fieldset.border
+  .row.group
+    .field.inline
+      label for="first_name" First Name*
+      input.required id="first_name" name="first_name" type="text"
+    .field.inline
+      label for="middle_intial" MI
+      input id="middle_initial" name="middle_initial" type="text"
+    .field.inline
+      label for="last_name" Last Name*
+      input.required id="last_name" name="last_name" type="text"
+  .row.group
+    .field.inline
+      label for="email" Email
+      input id="email" name="email" class="email" type="email"
+fieldset.phone-numbers
+  .row.group
+    label.phone At least one phone number is required
+  .row.group
+    .field.inline
+      label for="home_phone" Home Phone
+      input id="home_area" class="home area" name="home_area" type="tel" maxlength="3"
+      input id="home_exch" class="home exch" name="home_exch" type="tel" maxlength="3"
+      | &mdash;
+      input id="home_sln" class="home sln" name="home_sln" type="tel" maxlength="4"
+    .field.inline.right
+      label for="work_phone" Work Phone
+      input id="work_area" class="work area" name="work_area" type="tel" maxlength="3"
+      input id="work_exch" class="work exch" name="work_exch" type="tel" maxlength="3"
+      | &mdash;
+      input id="work_sln" class="work sln" name="work_sln" type="tel" maxlength="4"
+  .row.group
+    .field.inline
+      label for="cell_phone" Cell Phone
+      input id="cell_area" class="cell area" name="cell_area" type="tel" maxlength="3"
+      input id="cell_exch" class="cell exch" name="cell_exch" type="tel" maxlength="3"
+      | &mdash;
+      input id="cell_sln" class="cell sln" name="cell_sln" type="tel" maxlength="4"

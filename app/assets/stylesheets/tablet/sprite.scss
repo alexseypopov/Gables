@@ -1,0 +1,282 @@
+@import 'mixins';
+
+/* header navigation */
+
+nav {
+  ul li {
+    &#nav-back a,
+    &#nav-logo a,
+    &#nav-login a {
+      position: relative;
+      @include hidetext;
+      &:after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 15px;
+      }
+    }
+    &#nav-back a {
+      width: 14px;
+      height: 25px;
+      &:after {
+        width: 14px;
+        height: 25px;
+        background: url(/images/tablet/icons-sprite.png) no-repeat -144px -12px;
+      }  
+    }
+    &#nav-logo a {
+      width: 65px;
+      height: 48px;
+      &:after {
+        width: 65px;
+        height: 48px;
+        background: url(/images/tablet/icons-sprite.png) no-repeat -12px -12px;
+      }
+    }
+    &#nav-login a {
+      padding: 0 25px;
+      width: 14px;
+      height: 29px;
+      &:after {
+        left: 25px;
+        width: 14px;
+        height: 29px;
+        background: url(/images/tablet/icons-sprite.png) no-repeat -78px -12px;
+      }
+    }
+  }  
+}
+
+/* button icons 
+------------------------------------------------- */
+
+.btn {
+  &.open span {
+    &::after {
+      content: "";
+      margin-left: 10px;
+      padding-left: 22px;
+      width: 22px;
+      height: 18px;
+      background: url(/images/tablet/icons-sprite.png) no-repeat -10px -262px;
+    }
+  }
+  &.refresh span {
+    &::before {
+      content: "";
+      padding-left: 30px;
+      width: 19px;
+      height: 19px;
+      background: url(/images/tablet/icons-sprite.png) no-repeat -165px -260px;
+    }
+  }
+  &.text span {
+    &::after {
+      content: "";
+      margin-left: 10px;
+      padding-left: 22px;
+      width: 21px;
+      height: 20px;
+      background: url(/images/tablet/icons-sprite.png) no-repeat -137px -260px;
+    }  
+  }    
+}
+
+/* heading icons 
+------------------------------------------------- */
+
+.icon::before {
+  display: inline-block;
+  content: "";
+  background: url(/images/tablet/icons-sprite.png) no-repeat;
+}
+
+h2.icon {
+  &::before {
+    margin-right: 14px; }
+  &.pet::before {
+    width: 35px;
+    height: 34px;
+    background-position: -12px -68px;
+  }
+  &.shopping::before {
+    width: 21px;
+    height: 31px;
+    background-position: -128px -70px; 
+  }
+  &.green::before {
+    width: 37px;
+    height: 19px;
+    background-position: -10px -107px; 
+  }
+  &.connection::before {
+    width: 37px;
+    height: 38px;
+    background-position: -54px -170px; 
+  }
+  &.furnished::before {
+    width: 43px;
+    height: 25px;
+    background-position: -99px -178px; 
+  }
+  &.brochure::before {
+    width: 38px;
+    height: 37px;
+    background-position: -144px -169px; 
+  }
+  &.building::before {
+    width: 29px;
+    height: 32px;
+    background-position: -192px -172px;
+  }
+}
+
+h4.icon,
+h3.icon {
+  line-height: 28px;
+  &::before {
+    margin-right: 5px; }
+  &.landscaping-and-environment::before {
+    width: 37px;
+    height: 22px;
+    background-position: -58px -140px;
+  }
+  &.green-transportation::before {
+    width: 24px;
+    height: 30px;
+    background-position: -30px -132px;
+  }
+  &.indoor-air-quality::before {
+    width: 34px;
+    height: 34px;
+    background-position: -196px -68px;
+  }
+  &.recycling-and-environment::before {
+    width: 29px;
+    height: 27px;
+    background-position: -100px -136px;
+  }
+  &.energy-efficiency-and-water-conservation::before {
+    width: 16px;
+    height: 31px;
+    background-position: -12px -132px;
+  }
+  &.sustainable-building::before {
+    width: 33px;
+    height: 27px;
+    background-position: -158px -76px;
+  }
+}
+
+.checkbox.icon,
+.preferred.icon {
+  &::before {
+    margin: 0 8px -6px 0;
+    width: 24px;
+    height: 23px;
+    background-position: -38px -226px;  
+  }
+  &.selected {
+    &::before {
+      width: 24px;
+      height: 26px;
+      background-position: -10px -224px;
+    }
+  }
+}
+
+/* living-guarantees */
+
+#living-guarantees {
+  .guarantee::before { background: url(/images/tablet/icons-sprite.png) no-repeat -135px -121px; }
+  .smooth::before { background: url(/images/tablet/icons-sprite.png) no-repeat -12px -175px; }
+  .maintenance::before { background: url(/images/tablet/icons-sprite.png) no-repeat -178px -126px; }
+  .rewarded::before { background: url(/images/tablet/icons-sprite.png) no-repeat -218px -124px; }
+}
+
+/* Guest Menu - completion boxes */
+
+#nav-guest { 
+  nav li {
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 10px;
+      width: 17px;
+      height: 17px;
+      background: url(/images/tablet/icons-sprite.png) no-repeat -65px -262px;
+    }
+    &.complete::before {
+      margin-right: 8px;
+      width: 19px;
+      height: 22px; 
+      background-position: -41px -257px;
+    }
+    &.small::before {
+      background: none;
+    }
+  } 
+}
+
+/* misc */
+
+.reminder {
+  position: relative;
+  padding-left: 28px;
+  font-size: 21px;
+  line-height: 120%;
+  color: #999;
+}
+
+.info {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 19px;
+  height: 19px;
+  opacity: .5;
+  background: url(/images/tablet/icons-sprite.png) no-repeat -81px -257px; 
+  &:hover,
+  &:active,
+  &:focus { opacity: 1; }
+  }
+
+ul.completed li::before {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  vertical-align: bottom; 
+  content: "";
+  width: 24px;
+  height: 26px;
+  background: url(/images/tablet/icons-sprite.png) no-repeat -10px -224px;
+}
+
+.pop-nav a.toggle {
+  position: relative;
+  &::before {
+    content: "";
+    display: inline-block;
+    margin: 5px 10px;
+    width: 20px;
+    height: 21px;
+    background: url(/images/tablet/icons-sprite.png) no-repeat -122px -12px;
+  }
+  &::after {
+    position: absolute;
+    z-index: 1;
+    left: 30px;
+    top: -1px;
+    content: "\25BE";
+    display: inline-block;
+    font-family: "trebuchet ms";
+    font-size: 19px;
+    display: inline-block;
+    margin: 5px 10px;
+    color: #000;
+  }
+}

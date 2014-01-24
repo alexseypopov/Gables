@@ -1,0 +1,49 @@
+= form_for(Property.new, url: url_for(:controller => 'gca/home', :action => 'lease', :subdomain => 'gca'), html: {:class => 'page_form', :honeypot => true}) do
+  %h2 Extend Lease / Vacate Request
+  %fieldset
+    .row
+      .input.text
+        = label_tag :lease_name, 'Resident Name'
+        = text_field_tag 'lease[name]', '', :id => 'lease_name'
+      .input.text
+        = label_tag :lease_company, 'Company (if applicable)'
+        = text_field_tag 'lease[company]', '', :id => 'lease_company'
+    .row
+      .input.text
+        = label_tag :lease_community, 'Apartment Community'
+        = text_field_tag 'lease[community]', '', :id => 'lease_community'
+      .input.text
+        = label_tag :lease_aptnumber, 'Apartment #'
+        = text_field_tag 'lease[aptnumber]', '', :id => 'lease_aptnumber'
+    .row
+      .input.text
+        = label_tag :lease_phone, 'Contact Phone'
+        = text_field_tag 'lease[phone]', '', :id => 'lease_phone'
+      .input.text
+        = label_tag :lease_email, 'Contact Email'
+        = text_field_tag 'lease[email]', '', :id => 'lease_email'
+    .row
+      .input.checkset
+        .option
+          = check_box_tag 'lease[vacate]', true, false, :id => 'lease_vacate'
+          = label_tag :lease_vacate, 'I wish to vacate my apartment'
+      .input.date.inline
+        = label_tag :lease_vacate_date, 'I will vacate on:'
+        = text_field_tag 'lease[vacate_date]', '', :id => 'lease_vacate_date'
+    %p Once notice of intent to vacate is given, I understand that an extension of the notice date will then be subject to approval by Gables Corporate Accommodations.
+    .row
+      .input.checkset
+        .option
+          = check_box_tag 'lease[extend]', true, false, :id => 'lease_vacate_no'
+          = label_tag :lease_vacate_no, 'I am not sure when I will be vacating, but I would like to extend my lease'
+      .input.date.inline
+        = label_tag :lease_extend_date, 'Extend my lease until:'
+        = text_field_tag 'lease[extend_date]', '', :id => 'lease_extend_date'
+    %p I understand I must give a 30-day written notice prior to vacating. By completing this section, I am obligated to this new lease end date.
+    .input.checkset
+      .option
+        = check_box_tag 'lease[questions]', true, false, :id => 'lease_questions'
+        = label_tag :lease_questions, 'I have questions about my lease term. Please contact me to discuss.'
+
+    .submit
+      %button{:type => 'submit'} Submit

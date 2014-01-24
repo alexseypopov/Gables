@@ -1,0 +1,42 @@
+= @guest.first_name.capitalize
+'
+= @guest.last_name.capitalize
+',
+br
+br
+
+- if @note
+  = raw @note.gsub(/\n/,"<br>")
+  br
+  br
+
+
+- if @unit_id
+  p Gables Online Application
+
+  p Click on the following link to set up your Gables account and begin the Gables Online Application process:
+
+  p: a href="https://extra.gables.com/OnlineLeasing/026_Kiosk.aspx?custid=#{@cust_id}&unitid=#{@unit_id}" First Time User
+  p Click on the following link if you already have an account and are returning to complete your application or if you have an active Gables Gateway account:
+
+  p: a href="http://extra.gables.com/OnlineLeasing/025_Login.aspx" Sign Into Existing Account
+  br
+
+- if @floorplans.length > 0
+  ' Your Floorplan Preferences:
+  - @floorplans.each do |floorplan|
+    = link_to floorplan.name, floorplan_url(floorplan)
+    '
+  br
+  br
+
+- if @unit_id
+  ' Your invitation code is #{@cust_id}-#{@unit_id}
+  br
+  br
+
+- if attachments.length > 0
+  ' Attached you'll find the brochures you requested.
+
+- if @unit_id
+  p (Please note: Gables Online Application currently supports Internet Explorer and Safari browsers.)

@@ -1,0 +1,98 @@
+.map_info_window {
+  .info_window_content {
+    .thumb {
+      img {
+        max-width: 65px;
+      }
+    }
+  }
+  &.open {
+    .info_window_content {
+      .thumb {
+        img {
+          max-height: 137px;
+          max-width: 170px;
+        }
+      }
+    }
+  }
+}
+
+#serp {
+  #serp_results {
+    .community_result {
+      .actions {
+        ul {
+          li {
+            margin-left: 55px;
+            &.compare {
+              font-weight: bold;
+              top: 0;
+            }
+          }
+        }
+      }   
+    }
+    .comparisons {
+      .submit {
+        button {
+          padding: 2px 0 1px;
+        }
+      }
+    }
+  }
+  #serp_form {
+    form {
+      .submit {
+        button {
+          padding: 1px 0 0px;
+        }
+      }
+    }
+  }
+}
+
+#site_head .wrapper {
+  #main_nav {
+    .submit {
+      button {
+        padding: 1px 0 0px !important;
+      }
+    }
+    ul {
+      li.top_level {
+        .sub_nav {
+          .features, form {
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#property {
+  .main_content {
+    .images {
+      .image_thumbs {
+        li {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+.associate_slider {
+  li {
+    img {
+      max-height: 137px;
+    }
+  }
+}
+
+.selector {
+  select {
+    left: 0px !important;
+  } 
+}

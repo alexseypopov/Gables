@@ -1,0 +1,175 @@
+#comparison_results {
+  background-color: #fff;
+  border: 12px solid #fff;
+  margin-top: 20px;
+  width: 100%;
+  .summary {
+    background-color: #ddd;
+    margin-bottom: 25px;
+    padding: 10px 14px;
+    h1 {
+      color: #535353;
+      font: {
+        size: 1.1em;
+        weight: bold;
+      };
+      margin-bottom: 4px;
+    }
+    a {
+      color: #000;
+      display: block;
+      font: {
+        size: 1.1em;
+        weight: bold;
+      };
+    }
+  }
+  .comparison_header {
+    @include clearfix;
+    margin-bottom: 30px;
+    min-height: 260px;
+    position: relative;
+    .options {
+      @include box_shadow(0px 0px 8px rgba(0, 0, 0, 0.33));
+      background-color: #404040;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 170px;
+      p {
+        color: #fff;
+        font: {
+          family: $header_font;
+          size: 1.45em;
+          weight: bold;
+        };
+        padding: 10px 10px 18px;
+      }
+      ul {
+        padding: 0 10px 2px;
+        li {
+          margin-bottom: 8px;
+          a {
+            background-color: #999;
+            color: #fff;
+            display: block;
+            font: {
+              size: 0.8em;
+              weight: bold;
+            };
+            padding: 6px 0;
+            text-align: center;
+          }
+          &.active a, a:hover, a:focus {
+            background-color: $brand_color;
+          }
+        }
+      }
+    }
+    .items {
+      margin-left: 193px;
+      .item {
+        float: left;
+        margin-right: 17px;
+        width: 135px;
+        &:last-child {
+          margin-right: 0;
+        };
+        .thumb {
+          margin-bottom: 20px;
+          img {
+            max-height: 165px;
+            max-width: 135px;
+          }
+        }
+        h2 {
+          color: $header_color;
+          font: {
+            family: $header_font;
+            size: 1.2em;
+            weight: bold;
+          };
+        }
+        p {
+          margin-bottom: 8px;
+          a {
+            color: $brand_color;
+            font-size: 1.1em;
+            text-decoration: underline;
+          }
+        }
+        a.remove {
+          @include image_replace('../images/sprite.png', 85px, 20px, -281px, -141px);
+          &:hover, &:focus {
+            background-position: -281px -161px;
+          };
+        }
+      }
+    }
+  }
+  table {
+    margin-bottom: 30px;
+    tbody {
+      tr {
+        th {
+          background-color: #fff;
+          color: $header_color;
+          font: {
+            weight: bold;
+          };
+          text-indent: 25px;
+          width: 192px;
+        }
+        td {
+          background-color: #fff;
+          padding: 10px 5px 10px 10px;
+          width: 137px;
+          &:nth-child(even) {
+            background-color: #f5f5f5;
+          }
+        }
+        &:nth-child(5) {
+          td {
+            width: 130px;
+          }
+        }
+        &:nth-child(odd) {
+          th {
+            background-color: #eee;
+          }
+          td {
+            background-color: #eee;
+            &:nth-child(even) {
+              background-color: #e9e9e9;
+            }
+          }
+        }
+        &.links {
+          th, td {
+            background-color: #fff !important;
+            a {
+              display: block;
+              font-size: 0.85em;
+              text-align: center;
+            }
+            a.button {
+              @include button;
+              font: {
+                size: 0.85em;
+                weight: bold;
+              };
+              margin: 10px 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    th, td {
+      font: {
+        size: 1.1em;
+      };
+      padding: 10px 0;
+    }
+  }
+}

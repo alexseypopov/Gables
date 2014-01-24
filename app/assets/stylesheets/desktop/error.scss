@@ -1,0 +1,94 @@
+// variables
+@import 'variables';
+
+// reset styles
+@import 'reset';
+
+// mixins
+@import 'mixins';
+
+// display block on unsupported html5 elements
+header, footer, nav, article, section, aside, hgroup, figure {
+  display: block;
+}
+// normalize font, form elements need direct intervention
+body, input, textarea, select, button {
+  color: #7F7F7F;
+  font: {
+    family: $body_font;
+    size: $base_font_size;
+  }
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #ffffff;
+  a {
+    color: $brand_color;
+    text-decoration: underline;
+  }
+}
+
+#header, #content, #footer {
+  margin: 0 auto;
+  width: 886px;
+}
+
+#header {
+  border-bottom: 3px solid #ddd;
+  padding: 47px 0 38px;
+  p {
+    text-align: center;
+    a {
+      @include image_replace('../images/sprite.png', 96px, 73px, 0, 0);
+      margin:0 auto;
+    }
+  }
+}
+
+#content {
+  border-bottom: 1px solid #ddd;
+  padding: 35px 0 40px;
+  h1, p {
+    text-align: center;
+  }
+  h1 {
+    color: $header_color;
+    font: {
+      family: $header_font;
+      size: 29px;
+      weight: bold;
+    };
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
+  p {
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+  form {
+    margin: 25px auto 0;
+    width: 409px;
+    fieldset {
+      @include clearfix;
+      width: 100%;
+      input {
+        border: 1px solid #ddd;
+        color: #999;
+        float: left;
+        padding: 8px 10px;
+        width: 280px;
+      }
+      button {
+        @include button;
+        float: right;
+        padding: 7px 0 6px;
+      }
+    }
+  }
+}
+
+#footer {
+  text-align: center;
+  padding-top: 12px;
+}

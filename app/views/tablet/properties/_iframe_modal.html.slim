@@ -1,0 +1,43 @@
+script type="text/x-handlebars" data-template-name="iframe-modal"
+ .modal
+  h3() {{title}} <a class="btn" {{action "close"}}>Cancel</a>
+  | <div class="iframe-wrap"><iframe {{bindAttr src="source"}}></iframe></div>
+
+script type="text/x-handlebars" data-template-name="email-modal"
+ .modal.email
+  h3 <a class="btn" {{action "close"}}>Cancel</a>
+  h4 PDF {{type}}
+  p Email the {{type}} to an email address for review at home (FPO).
+  form#email-form
+    fieldset
+      label Email
+      | {{view Ember.TextField valueBinding="emailAddress"}}
+      | {{#if floorplanPdf}}
+        <button class="btn" {{action "sendFloorplanPdf"}}>Send Floorplan PDF</button>
+        {{else}}
+        <button class="btn" {{action "sendBrochure"}}>Send Brochure</button>
+        {{/if}}
+
+script type="text/x-handlebars" data-template-name="submit-to-insite-modal"
+  .modal
+    h3 <a class="btn" {{action "close"}}>Cancel</a> Submit to Insite
+    | {{view Ember.Checkbox title="No Follow up required" valueBinding="App.currentGuest.no_follow_up_required"}}
+    br
+    label.inline Follow Up Date*
+    | {{view Ember.TextField valueBinding="App.currentGuest.follow_up_date" type="date"}}
+    br
+    | <button class="btn" {{bindAttr disabled="isDisabled"}} {{action "submit"}}>Submit</button>
+
+script type="text/x-handlebars" data-template-name="expiring-session-modal"
+ .modal
+   h3 Extend your session?
+   p You will be logged out momentarily.
+   p Click OK to extend your session for 15 minutes.
+   div style="text-align: center" <button class="btn" {{action "extendSession"}}>OK</button>
+
+script type="text/x-handlebars" data-template-name="error-messages-modal"
+ .modal
+   h3 Incomplete Fields
+   p Please complete all required fields.
+   p.errors
+   p style='text-align:center' <button class="btn grn" {{action "close"}}>OK</button>

@@ -1,0 +1,77 @@
+= content_for :javascript do
+  javascript:
+    var available_floor_plans = "#{@property.available_floorplans.length}" || 0;
+
+= render partial: 'community_images'
+
+#property.community
+
+  = render :partial => '/shared/address'
+
+  = render :partial => '/shared/social_icons'
+
+  span follow us
+
+  = render :partial => 'shared/office_hours'
+
+  a.button href="#RequestInformation"
+    i.icon-mail
+    span Request Information
+
+  .row
+    .cell style="width: 49%"
+      button.button
+        i.icon-phone
+        span Call
+    .cell style="width: 30px;"
+    .cell style="width: 49%"
+      button.button
+        i.icon-comment
+        span Live Chat
+
+  = render :partial => '/shared/social_share'
+
+  .community-overview
+    h2 Community Overview
+
+    #community-description
+      p
+        = truncate(raw(@property.long_description), length: 100)
+      p.hidden
+        = raw(@property.long_description)
+    #community-amenities.hidden
+      = render :partial => 'community_amenities'
+    span#see-more.see-more.toggle.off see more
+  .brochures-walk-score
+    .row
+      .cell style="width: 49%;"
+        = render :partial => '/find/community_brochures'
+      .cell style="width: 49%;padding-left: 5px;"
+        a href='/' Walk Score
+
+  #community_floorplans
+    a(name="Floorplans")
+    h2 Floorplans
+
+    - if @property.active_special
+      .callout
+        p = @property.active_special.header
+        p = @property.active_special.body
+
+    #floorplans-swiper.alternate-swipe.swiper-container.swiper-partial
+      .swiper-wrapper
+        - @property.available_floorplans.each do |available_floorplan|
+          - if available_floorplan.units.length > 0
+            .swiper-slide
+              - if available_floorplan.images.count > 0
+                = link_to image_tag(available_floorplan.images.first.thumb.url), available_floorplan.images.first.url, :class => 'zoom_image'
+              - else
+                = link_to image_tag('no_image.gif', :alt => ''), floorplan_path(available_floorplan)
+
+    #floorplans-details.floorplans-details
+      - @property.available_floorplans.each do |available_floorplan|
+        - if available_floorplan.units.length > 0
+          .floorplan-unit
+            = render :partial => '/find/floorplan_table', :locals => {:floorplan => available_floorplan, :include_compare => false}
+
+  = render :partial => '/shared/request_information_form'

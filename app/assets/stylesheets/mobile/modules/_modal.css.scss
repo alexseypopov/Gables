@@ -1,0 +1,57 @@
+@import 'mobile/base/colors';
+
+#executive {
+  margin: 0 10px 0 10px;
+  .contact .thumb img {
+    width: 100%;
+  }
+  h2 {
+    font-family: CenturyGothicBold;
+    font-weight: bold;
+  }
+}
+
+.management {
+  h2 {
+    margin-top: 0;
+    padding-top: 0;
+    color: $black;
+    font-family: CenturyGothicBold;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  img {
+    display: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 20px;
+      .name {
+        margin: 0;
+        color: $black;
+        font-family: CenturyGothicBold;
+        font-weight: bold;
+      }
+      .title {
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+#inner_page{
+  .associate .photo img{
+    width:100%;
+  }
+  ul{
+    padding:0;
+    margin:0;
+    &.tab_nav{
+      display:none;
+    }
+  }
+
+}

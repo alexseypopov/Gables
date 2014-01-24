@@ -1,0 +1,34 @@
+- content_for :head do
+  %title= "Apartments for rent in #{@query} | Gables offers Apartments for Rent, including Luxury, Furnished, Unfurnished Apartments and Corporate Housing"
+  %meta{:name => 'description', :content => "Apartment rentals in #{@query} | Gables features luxury apartments for rent including; unfurnished, furnished apartments, and corporate housing. Free apartment finder, rentals search, credit approvals and online applications at Gables.com makes it easy."}
+
+- content_for :javascripts do
+  = render :partial => '/find/maps', :locals => {:properties => @region.properties, :regions => @regions || nil, :units => nil, :subdomain => 'gca'}
+
+- content_for :marquee do
+  #marquee
+    .wrapper
+      #map_canvas
+      - if @s && @s.properties.length > 0
+        = link_to 'toggle map', '#', :class => 'toggle_map'
+      = render :partial => '/gca/shared/search'
+      
+- if @properties && @properties.length > 0
+  #serp
+    %article{:id => 'serp_results'}
+      = render :partial => 'results'
+      .pagination_wrapper
+        = will_paginate @properties, :previous_label => 'prev', :next_label => 'next'
+        
+    %aside#serp_side
+      .video
+        .video_container
+          = link_to image_tag("http://img.youtube.com/vi/OF7CrgivLWI/0.jpg", :alt => 'Watch video', :height => '175', :width => '223'), modal_video_path(:video_id => 'OF7CrgivLWI'), :class => 'video_iframe', "data-video-id" => "OF7CrgivLWI"
+        %p.title Selected to suit your needs
+        %p.more= link_to 'view our sample gallery', url_for(:controller => 'gca/home', :action => 'gallery', :subdomain => 'gca')
+      .request_form
+        = render :partial => '/gca/pages/request_form'
+      .partners
+        %h2 Not Just at Gables
+        %p If we can’t find you suitable accommodations at one of our Gables locations we can place you with one of our partners.
+        %p.more= link_to 'contact us to learn more', url_for(:controller => 'gca/home', :action => 'contact', :subdomain => 'gca')

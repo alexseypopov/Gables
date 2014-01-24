@@ -1,0 +1,45 @@
+- content_for :head do
+  %title= "#{@property.city} Apartments for Rent with photos and floor plans - Luxury #{@property.city}, #{@property.state} Apartments by Gables Urban"
+  = stylesheet_link_tag 'property'
+  = stylesheet_link_tag 'urban_property'
+
+#property.community
+  %div{:class => 'main_content', :itemscope => true, :itemtype => 'http://schema.org/Residence'}
+    = render :partial => '/find/community_images'
+    #community_overview
+      %h2= @property.short_description.blank? ? 'Community Overview' : @property.short_description
+      %p{:itemprop => 'description'}= raw(@property.long_description)
+      .columns
+        .details
+          %h2 Property Details
+          %ul
+            %li #{@property.opening_year} Opening
+            %li #{number_with_delimiter(@property.square_footage, :delimiter => ',')}  s.f. of Retail Space
+            %li #{@property.apartments_count}  Apartment Homes
+        .nearby
+          %h2 Shopping, Dining, &amp; More
+          = raw(@property.shopping_etc)
+  %aside.sub_content
+    .vcard
+      %h1{:itemprop => 'name', :class => 'fn org'}
+        %span.organization-name= @property.name
+      .adr
+        %span.type work
+        %p
+          %span.street-address #{@property.street},
+          %br
+          %span.locality #{@property.city},
+          %span.region= @property.state
+          %span.postal-code= @property.zip
+    .contact
+      %h2 Retail Leasing Contact
+      %ul
+        %li.phone= @property.phone
+        %li.email= link_to 'Send a Message', modal_contact_path(:urban_property => @property.id), :class => 'iframe'
+    %ul.sections
+      - if @property.full_brochure.url
+        %li.brochure= link_to 'View PDF', @property.full_brochure.url
+      - unless @property.site_url.blank?
+        %li.prop_website= link_to 'Property Website', @property.site_url
+      - unless @property.map_url.blank?
+        %li.prop_map= link_to 'Find on Google Maps', @property.map_url

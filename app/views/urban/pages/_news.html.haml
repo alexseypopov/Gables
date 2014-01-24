@@ -1,0 +1,22 @@
+- posts = Post.published.where(['kind LIKE ?', params[:type] ? params[:type] : '%']).order("published_at DESC").paginate(:per_page => 5, :page => params[:page] || 1)
+%h2.big_header#urban_news News
+.news
+  .pagination_wrapper.top
+    = will_paginate posts, :previous_label => 'prev', :next_label => 'next', :params => {:anchor => 'urban_news'}
+  %ul.filter_nav
+    %li{:class => !params[:type] ? 'active' : ''}= link_to 'All', '/toplevel/p/about_us#urban_news', :rel => ''
+    %li{:class => params[:type] && params[:type] == 'NewsItem' ? 'active' : ''}= link_to 'News', '/toplevel/p/about_us?type=NewsItem#urban_news', :rel => 'NewsItem'
+    %li{:class => params[:type] && params[:type] == 'Award' ? 'active' : ''}= link_to 'Awards', '/toplevel/p/about_us?type=Award#urban_news', :rel => 'Award'
+  .hfeed
+    - posts.each do |post|
+      %div{:class => "hentry #{post.kind}"}
+        - if post.image.path
+          .thumb=image_tag post.image.url, :alt => ''
+        .content{:class => post.image.path ? '' : 'full_span'}
+          %h2.entry-title= link_to post.title, post_url(post, :subdomain => false)
+          %p{:class => 'published updated', :title => 'YYYY-MM-DDTHH:MM:SS+ZZ:ZZ'}= post.published_at.to_formatted_s(:long)
+          %p.entry-summary= post.summary
+        %p.more
+          = link_to raw('read more &raquo;'), post_url(post, :subdomain => false), :rel => 'bookmark'
+  .pagination_wrapper.bottom
+    = will_paginate posts, :previous_label => 'prev', :next_label => 'next', :params => {:anchor => 'urban_news'}

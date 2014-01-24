@@ -1,0 +1,8 @@
+script type="text/x-handlebars" data-template-name="floorplans"
+  | {{view App.CommunityNavView}}
+  nav.arrows <a {{action "prev"}} class="prev"></a><a {{action "next"}} class="next"></a>
+  #floorplans
+    #floorplans-wrapper
+    #floorplans-nav
+     .dot-nav-wrap
+        .dot-nav

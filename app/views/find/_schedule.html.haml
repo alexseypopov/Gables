@@ -1,0 +1,69 @@
+#schedule_visit.jump
+  %h2 Request Information
+  = form_for(schedule, :url => type == 'unit' ? floorplan_path(@floorplan, :unit_id => @unit) : property_path(property), html: {honeypot: true}) do |form|
+    %fieldset
+      .row
+        .input.text.required
+          = form.label :first_name, 'Your Name <b>required</b>'.html_safe
+          = form.text_field :first_name, :placeholder => 'First'
+          = form.error_message_on :first_name, :prepend_text => 'First Name '
+        .input.text.last_name.required.last
+          = form.label :last_name, 'Last Name'
+          = form.text_field :last_name, :placeholder => 'Last'
+          = form.error_message_on :last_name, :prepend_text => 'Last Name '
+      .row
+        .input.text.required
+          = form.label :phone, 'Phone <b>required</b>'.html_safe
+          = form.text_field :phone
+          = form.error_message_on :phone, :prepend_text => 'Phone '
+        .input.text.last
+          = form.label :alt_phone, 'Alt. Phone'
+          = form.text_field :alt_phone
+      .input.text.required
+        = form.label :email, 'Email <b>required</b>'.html_safe
+        = form.text_field :email, :autocapitalize => 'off', :autocorrect => 'on'
+        .option
+          = check_box_tag 'schedule[opt_in]', true, false, :id => 'opt_in'
+          = label_tag :opt_in, 'Send me updates from Gables Residential'
+          %a{:title => 'Privacy Policy', :href => '/privacy', :class => 'inline'} privacy policy
+        = form.error_message_on :last_name, :prepend_text => 'Email '
+      .row
+        .input.text
+          = form.label :beds, 'Beds'
+          = form.text_field :beds
+          = form.error_message_on :beds, :prepend_text => 'Beds '
+        .input.text.last
+          = form.label :rent_range, 'Rent Range'
+          = form.text_field :rent_range
+          = form.error_message_on :rent_range, :prepend_text => 'Rent Range '
+      .input.textarea
+        = form.label :comments, 'How May We Help You?'
+        = form.text_area :comments
+        = form.error_message_on :comments, :prepend_text => 'Comments '
+      .input.date
+        = form.label :move_date, 'Move In Date'
+        = form.text_field :move_date, :placeholder => 'DD / MM / YYYY', :autocomplete => 'off'
+      .input.date.schedule
+        = form.label :visit_date1, 'Schedule a Visit: Preferred Day and Time'
+        .row
+          .input.date
+            = form.text_field :visit_date1, :placeholder => 'DD / MM / YYYY', :autocomplete => 'off'
+          .input.select
+            = form.select :visit_time1, options_for_select(schedule.times, params[:visit1_time])
+      .submit
+        - if schedule.errors.count > 0
+          .error_explanation
+            %p #{schedule.errors.count} errors prohibited your schedule from being saved. Please fix these errors and resubmit.
+        %button{:type => 'submit'} Submit
+        %p One of our leasing specialists will contact you within 24 hours.
+  .contact_info
+    - if property.images.count > 0
+      .thumb= link_to image_tag(property.images.first.url, :alt => ''), property_path(property)
+    %p <strong>#{property.name}</strong>
+    %div{:itemprop => 'address', :itemscope => true, :itemtype => 'http://schema.org/PostalAddress'}
+      %p{:itemprop => 'streetAddress'}= property.street
+      %p 
+        %span{:itemprop => 'addressLocality'} #{property.city}, 
+        %span{:itemprop => 'addressRegion'} #{property.state} 
+        #{property.zip}
+    %p{:itemprop => 'telephone', :class => 'tel'}= property.phone

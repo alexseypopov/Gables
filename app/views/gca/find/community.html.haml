@@ -1,0 +1,40 @@
+- content_for :head do
+  = render :partial => '/find/community_meta'
+
+- content_for :javascripts do
+  = render :partial => '/find/maps', :locals => {:properties => [@property], :regions => nil, :units => nil, :subdomain => 'gca'}
+  
+#property.community
+  %div{:class => 'main_content', :itemscope => true, :itemtype => 'http://schema.org/Residence'}
+    %h1{:itemprop => 'name'}= @property.name
+    = render :partial => '/find/community_images'
+    #community_overview.jump
+      %h2 Community Overview
+      %p{:itemprop => 'description'}= raw(@property.long_description)
+      = render :partial => '/find/community_amenities'
+      = render :partial => '/gca/pages/request_form'
+    = render :partial => '/find/community_maps'
+    #community_floorplans.gca.jump
+      %h2 Floorplans
+      .floorplan_pagination.top
+      %ul.floorplan_tabs
+        %li.active
+          %a{:href => '#', :data => {:class => 'floorplan'}} All
+        %li
+          %a{:href => '#', :data => {:class => 'one'}} 1 Bedroom
+        %li
+          %a{:href => '#', :data => {:class => 'two_plus'}} 2+ Bedroom
+      .floorplans_container
+        - @property.floorplans.order('bedrooms_count ASC').each do |floorplan|
+          .floorplan{:class => floorplan.bedrooms_count >= 2 ? 'two_plus' : 'one'}
+            .thumb
+              - if floorplan.images.count > 0
+                = link_to image_tag(floorplan.images.first.thumb.url, :alt => ''), floorplan.images.first.url, :class => 'zoom_image'
+              - else
+                = image_tag('no_image.gif', :alt => '')
+            %p <strong>#{floorplan.name}</strong>
+            %p= rooms(floorplan)
+            %p= link_to 'request for more info', url_for(:controller => 'gca/home', :action => 'contact', :subdomain => 'gca')
+      .floorplan_pagination.bottom
+    = render :partial => '/gca/pages/request_form'
+  = render :partial => '/find/community_sidebar', :locals => {:property => @property, :type => 'gca_community'}

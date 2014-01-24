@@ -1,0 +1,41 @@
+.amenities
+  - if @shopping_etc
+    h3 Shopping &amp; Dining
+    = raw @shopping_etc
+    p= link_to @property.urban_property.name, property_url(@property.urban_property, :subdomain => "urban"), :target => "urban"
+
+  h2 Community Amenities
+  .list_columns
+    - @property.amenities.in_groups_of((@property.amenities.length+2)/2) do |amenities|
+      ul
+        - amenities.each do |amenity|
+          - if amenity
+            li= "#{amenity.description}"
+
+  - if params[:controller].include? "gca"
+    h2 Pet Policy
+    p 'Gables Corporate Accommodations is happy to accept dogs and/or cats with a maximum of two.
+      Breed and weight restrictions apply per the community chosen for your stay.  A pet fee will
+      be required and a Pet Addendum must be signed. Service animals assisting handicapped persons
+      are allowed and no pet fee is required.'
+  - elsif (@property.allows_cats? || @property.allows_dogs?) && !@property.pet_policy.blank?
+    h2 Pet Policy
+    p= @property.pet_policy
+
+  - unless @property.community_programs.blank?
+    h2 Community Programs
+    p= raw(@property.community_programs.gsub("\n", "<br />"))
+
+  - unless @property.green_initiatives.blank?
+    h2 Green Initiatives
+    .initiatives
+      - @green_categories.each do |green_category|
+        - initiatives = @property.green_initiatives.where(:green_category_id => green_category.id)
+        - if initiatives.length > 0
+          h4= green_category.name
+          .list_columns
+            - initiatives.in_groups_of((initiatives.length+2)/2) do |records|
+              ul
+                - records.each do |initiative|
+                  - if initiative
+                    li= raw("#{initiative.name}")

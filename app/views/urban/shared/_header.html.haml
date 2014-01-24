@@ -1,0 +1,14 @@
+%header#site_head
+  .wrapper
+    %p.logo= link_to 'Gables Urban', url_for(:controller => 'urban/home', :action => 'index', :subdomain => 'urban')
+    %nav#gca_nav
+      %ul
+        %li{:class => @section && @section == 'properties' ? 'top_level urban_properties open' : 'top_level urban_properties'}
+          = link_to 'Properties', url_for(:controller => 'urban/home', :action => 'properties', :subdomain => 'urban')
+        %li{:class => @section && @section == 'services' ? 'top_level urban_services open' : 'top_level urban_services'}
+          = link_to 'Our Services', urban_page_path(Urban::ServicesPage.in_nav.first.section, Urban::ServicesPage.in_nav.first.path)
+        %li{:class => @section && @section == 'toplevel' ? 'top_level urban_about open' : 'top_level urban_about'}
+          = link_to 'About Us', urban_page_path(Urban::ToplevelPage.in_nav.first.section, Urban::ToplevelPage.in_nav.first.path)
+    = render :partial => '/shared/site_search', :locals => {:context => 'site'}
+    %p.contact= link_to 'Contact', modal_contact_path, :class => 'iframe'
+    %p.back= link_to 'Back to Gables Residential', root_url(:subdomain => false)

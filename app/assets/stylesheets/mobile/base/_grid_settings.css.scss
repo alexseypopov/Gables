@@ -1,0 +1,25 @@
+@import "neat";
+@import "neat-helpers";
+
+$column: 60px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: 960px;
+//$visual-grid: true;
+//$visual-grid-color: #f4f4f4;
+
+$mobile: new-breakpoint(max-width 480px 4);
+// Based on http://stephen.io/mediaqueries/ and http://stackoverflow.com/questions/16704243/best-widths-for-apply-media-queries-for-a-responsive-website-satisfying-portrait
+//
+// @media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */ }
+// @media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+// @media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+// @media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+// @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+// @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+$smart-phones: new-breakpoint(min-device-width 320px max-device-width 480px);
+$small-tablets: new-breakpoint(min-device-width 481px max-device-width 640px);
+$portrait-tablets: new-breakpoint(min-device-width 641px max-device-width 800px);
+$landscape-tablets: new-breakpoint(min-device-width 801px max-device-width 960px);
+$laptops: new-breakpoint(min-device-width 961px max-device-width 1120px);

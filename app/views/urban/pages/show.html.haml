@@ -1,0 +1,30 @@
+- content_for :head do
+  %title= "#{@page.name} | Gables offers Apartments for Rent, Luxury Apartments, Furnished Apartments, Unfurnished Apartments and Corporate Housing"
+  %meta{:name => 'description', :content => "Gables features luxury apartments for rent including unfurnished, furnished apartments, and corporate housing. Free apartment finder and rentals search at Gables.com makes it easy."}
+  = stylesheet_link_tag 'pages'
+
+- content_for :marquee do
+  #marquee.inner
+    .wrapper
+      .item
+        =image_tag @page.image_url, :alt => ''
+        .description_wrapper
+          .description
+            %p= @page.subtitle
+            %h1= @page.title
+            %p= @page.description
+          
+#inner_page
+  %article.main_content
+    - @page.main_blocks.each do |main_block|
+      - if main_block.editable
+        = raw(main_block.content)
+      - else
+        = render :partial => main_block.partial
+  
+  %aside.sub_content
+    - @page.side_blocks.each do |side_block|
+      - if side_block.editable
+        = raw(side_block.content)
+      - else
+        = render :partial => side_block.partial

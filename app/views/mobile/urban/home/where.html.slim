@@ -1,0 +1,96 @@
+= content_for :javascript do
+  script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  javascript:
+    var properties = #{{@properties.as_json(only: [:latitude, :longitude, :id]).to_json}}
+
+#map-wrapper
+  - if @s && @s.properties.length > 0
+    a.toggle-map 
+      span.map-is-visible.icon-list-after Show List&nbsp;
+      span.list-is-visible.icon-pin-after Show Map&nbsp;
+  #map-canvas
+
+- if @properties && @properties.length > 0
+  #serp
+    article id='serp_results' class="#{!params[:group].blank? ? params[:group] : 'community'} swiper-container swiper-partial"
+      .swiper-wrapper
+        - for property in @properties
+          /TODO: Fix the item scope
+          /.community_result[property]{:itemscope => true, :itemtype => 'http://schema.org/Residence'}
+          .swiper-slide.community_result property="property"
+            .community-info
+              .thumb itemprop='image'
+                - if property.images.count > 0
+                  = link_to image_tag(property.images.first.thumb.url, :alt => ''), property_path(property)
+                - else
+                  = link_to image_tag('no_image.gif', :alt => ''), property_path(property)
+              .details
+                h2 itemprop='name'
+                  = link_to property.name, property_path(property)
+                p #{pluralize(@s.floorplans_for(property).length, 'Floorplan')} available
+              .community-result__list-view-details
+                p = property.phone
+                p #{property.street} #{property.address2}
+                p #{property.city} #{property.state} #{property.zip}
+                .community-result__list-view-actions
+                  .row
+                    .cell style="width:48%;"
+                      a.button href="#{property_path(property)}#RequestInformation" Request Info
+                    .cell &nbsp;
+                    .cell style="width:48%;"
+                      a.button href=property_path(property) Learn More
+
+    #serp-form
+      h2.toggle.off Update Results
+      = form_tag(find_where_path, :method => 'get', :id => 'serp_form') do
+        fieldset
+          = hidden_field_tag :query, params[:query]
+          = hidden_field_tag :city, params[:city]
+          = hidden_field_tag :state, params[:state]
+          = hidden_field_tag :group, params[:group]
+          .row
+            .cell style="width:48%;"
+              = label_tag :beds
+              .styled-select
+                i.icon-chevron-down
+                = select_tag 'beds', beds_options
+            .cell style="width:30px;" &nbsp;
+            .cell
+              = label_tag :baths
+              .styled-select
+                i.icon-chevron-down
+                = select_tag 'baths', baths_options
+          .input.range
+            = label_tag :rent_min, 'Monthly Rent'
+            .row
+              .cell style="width:48%;"
+                = text_field_tag :rent_min, params[:rent_min], :placeholder => 'min'
+              .cell style="width:30px;text-align:center" to
+              .cell
+                = text_field_tag :rent_max, params[:rent_max], :placeholder => 'max'
+
+          .input.select.pets
+            = label_tag :pet_friendly
+            .styled-select
+              i.icon-chevron-down
+              = select_tag :pet_friendly, options_for_select([['any', 'any'], ['Dogs OK', 'dogs'], ['Cats OK', 'cats']], params[:pet_friendly])
+          .input.select
+            = label_tag 'amenities[]', 'Community Amenities'
+            .styled-select
+              i.icon-chevron-down
+              = select_tag 'amenities[]', options_for_select(@p_search_amenities, params[:amenities]), :multiple => 'multiple', :class => 'multiselect'
+          .input.select
+            = label_tag 'features[]', 'Apartment Features'
+            .styled-select
+              i.icon-chevron-down
+              = select_tag 'features[]', options_for_select(@u_search_amenities, params[:features]), :multiple => 'multiple', :class => 'multiselect'
+          .input.select
+            = label_tag :floorplans, 'Availability'
+            .styled-select
+              i.icon-chevron-down
+              = select_tag :floorplans, options_for_select([['Any', 'any'], ['Available', 'now']], params[:floorplans]), {:prompt => 'Select'}
+          .submit
+            button type='submit' Update Search
+
+
+

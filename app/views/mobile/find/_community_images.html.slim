@@ -1,0 +1,7 @@
+- if @property.images.count > 0
+  - video = @property.has_attribute?(:testimonial_video) && @property.testimonial_video.present? && @property.testimonial_video
+  #property-swiper.alternate-swipe.swiper-container.swiper-partial
+    .swiper-wrapper
+      - @property.images(:order => 'position ASC').each do |image|
+        .swiper-slide
+          = image_tag image.thumb.url

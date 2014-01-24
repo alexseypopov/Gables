@@ -1,0 +1,8 @@
+%nav#section_nav
+  %ul
+    - @page_nav.each do |nav_item|
+      - if ((@page && @page.section == 'company') || (@page_section && @page_section == 'company')) && nav_item.path == 'corporate_contacts'
+        %li{:class => @selected && @selected == 'news' ? 'active' : ''}= link_to 'News & Awards', posts_path
+      %li{:class => @page && @page == nav_item ? 'active' : ''}= link_to nav_item.name, page_path(nav_item.section, nav_item.path)
+    - if (@page && @page.section == 'careers') || @page_section && @page_section == 'career'
+      %li{:class => @selected && @selected == 'associates' ? 'active' : ''}= link_to 'Associate Stories', associate_path(Associate.first)

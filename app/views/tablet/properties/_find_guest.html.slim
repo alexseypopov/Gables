@@ -1,0 +1,19 @@
+script type="text/x-handlebars" data-template-name="find-guest"
+  .page-heading
+    .nav-back <a {{action "goBack"}}>&lt; Back</a>
+    h1 Find Guest
+  | {{#if searching}} <div class="spinner"><p>Searching for Guests</p></div>
+  | {{else}}
+  .content.group
+    form#find-guest-form
+      = render "name_and_phone_fields"
+      .actions <button class="btn" {{action "search"}}><span>Find Guest</span></button>
+  | {{/if}}
+
+script type="text/x-handlebars" data-template-name="no-guests-found"
+  .page-heading
+    .nav-back <a {{action "goBack"}}>&lt; Back</a>
+    h1 Find Guest
+  .content.group.message
+    h2 No Existing Guests Found
+    | <button class="btn" {{action "addGuest"}}>Continue Guest Card</button>

@@ -1,0 +1,264 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+  <head> 
+    <title>Tablet - styled objects</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/tablet.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script>
+			$(function () {
+			    var top = ($('#community').offset().top - 64) - parseFloat($('#community').css('margin-top').replace(/auto/, 0));
+			    $(window).scroll(function (event) {
+			      // y position of the scroll
+			      var y = $(this).scrollTop();
+			      // whether that's below the header
+			      if (y >= top) {
+			        // if so, add the fixed class
+			        $('#community').addClass('fixed');
+			      } else {
+			        // otherwise remove it
+			        $('#community').removeClass('fixed');
+			      }
+			    });
+			});
+			</script>  
+  </head> 
+  <body>
+    <div class="wrap">
+      <header>
+        <nav id="main">
+          <ul>
+            <li id="nav-back"><a href="#" title="">&lt;</a></li>
+            <li id="nav-logo"><a href="#" title="">Gables</a></li>
+            <li id="nav-comm"><a href="#" title="">Community Name</a></li>
+          </ul>
+        </nav>
+        <nav id="login">
+          <ul>
+            <li id="nav-res"><a href="#" title="">Residents</a></li>
+            <li id="nav-login"><a href="#" title="">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section id="community-photos">
+      	<div id="photos">
+	      	<div class="item">
+	      		<img src="images/img-comm-1.jpg" alt="Community Photo"/>
+						<div class='description_wrapper'>
+							<div class='description'>
+								<p>Experience the Gables Difference at [community name]</p>
+								<p class='emph'>This is the photo title from the Vaultware feed</p>
+							</div>
+						</div>
+	      	</div>
+	      	<div id="photo-nav-wrap">
+		      	<div id="photo-nav">
+		      		<a href="#"></a>
+		      		<a href="#"></a>
+		      		<a class="active" href="#"></a>
+		      		<a href="#"></a>
+		      		<a href="#"></a>
+		      	</div>
+	      	</div>
+	      </div> <!-- #photos -->		
+	      <nav id="community">
+	        <ul>
+	        	<li id="nav-photos"><a href="#" title="">Community Photos</a></li>
+	          <li id="nav-life"><a href="#" title="">Life at Gables</a></li>
+	          <li id="nav-plans"><a href="#" title="">Floorplans</a></li>
+	          <li id="nav-site"><a href="#" title="">Site Plan</a></li>
+	          <li id="nav-area"><a href="#" title="">Area Map</a></li>
+	          <li id="nav-apply"><a href="#" title="">Apply</a></li>
+	        </ul>
+	      </nav>
+	    </section> <!-- #community-photos -->  
+      <div id="content" class="group">
+        <h1>h1 - Heading 1 style</h1>
+        <h2>h2 - Heading 2 style</h2>
+        <h2 class="icon pet">Heading 2 with icon</h2>
+        <h3>h3 - Heading 3 style</h3>
+        <h3 class="icon building">Heading 3 with icon</h3>
+        
+        <!-- buttons - revisit styling approach based on github buttons - may be able to elminate spans -->
+        <p>
+        	<a class="btn" href="#"><span>Regular Button (30px)</span></a>
+        	<a class="btn grn" href="#"><span>Green Button</span></a>
+        	<a class="btn grn open" href="#"><span>Button With Open Icon</span></a>
+        	<a class="btn grn refresh" href="#"><span>Refresh</span></a>
+        	<a class="btn disabled"><span>Disabled Button</span></a>
+        </p>
+        <p>	
+        	<a class="btn sm"><span>This is a small button (23px)</span></a>
+        </p>
+        
+        <div style="position:relative; margin: -52px 0 0 720px;">
+	        <div class="pop">
+	        	<p>This is a popover that will be used for login and various navigation items throughout the app.</p>
+	        </div>
+	      </div> 
+	      
+	      <!-- left sidebar nav for life at gables section -->
+	      <nav id="life" style="clear: both; margin-top: 60px;">
+	      	<h4>Community</h4>
+	      	<ul>
+	      		<li class="active"><a href="#" title="">Overview</a></li>
+	      		<li><a href="#" title="">Amenities</a></li>
+	      		<li><a href="#" title="">Pet Policy</a></li>
+	      		<li><a href="#" title="">Shopping &amp; Dining</a></li>
+	      		<li><a href="#" title="">Green Initiatives</a></li>
+	      	</ul>
+	      	<h4>Gables Services</h4>
+	      	<ul>
+	      		<li><a href="#" title="">Living Guarantees</a></li>
+	      		<li><a href="#" title="">Connection Services</a></li>
+	      		<li><a href="#" title="">Furnished Apartments</a></li>
+	      	</ul>
+	      	<h4>Additional Information</h4>
+	      	<ul>
+	      		<li><a href="#" title="">Community Brochure</a></li>
+	      		<li><a href="#" title="">Floorplan Brochure</a></li>
+	      		<li><a href="#" title="">Building Specifications</a></li>
+	      	</ul>
+	      </nav> <!-- nav#life -->
+	      
+	      <!-- nav inside of a popover -->
+	      
+	      <div style="position: relative;">
+	      	<div class="pop" style="left: 800px;">
+		    		<nav>
+			      	<h4>Community</h4>
+			      	<ul>
+			      		<li><a href="#" title="">Overview</a></li>
+			      		<li><a href="#" title="">Amenities</a></li>
+			      		<li><a href="#" title="">Pet Policy</a></li>
+			      		<li><a href="#" title="">Shopping &amp; Dining</a></li>
+			      		<li><a href="#" title="">Green Initiatives</a></li>
+			      	</ul>
+			      	<h4>Gables Services</h4>
+			      	<ul>
+			      		<li><a href="#" title="">Living Guarantees</a></li>
+			      		<li><a href="#" title="">Connection Services</a></li>
+			      		<li><a href="#" title="">Furnished Apartments</a></li>
+			      	</ul>
+			      	<h4>Additional Information</h4>
+			      	<ul>
+			      		<li><a href="#" title="">Community Brochure</a></li>
+			      		<li><a href="#" title="">Floorplan Brochure</a></li>
+			      		<li><a href="#" title="">Building Specifications</a></li>
+			      	</ul>
+			      </nav> <!-- nav#life -->
+			     </pop> 
+		    </div>  
+		    
+		    <div style="clear:both;">
+		    	<form id="add-guest" action="">
+		    		<fieldset>
+		    			<div class="row group">
+			    			<div class="field inline">
+			    				<label for="test">Form Label:</label>
+			    				<input type="text" name="test" value="" placeholder="This is a placeholder..."/>
+			    			</div>
+			    			<div class="field inline">
+			    				<label for="test">Next Field</label>
+			    				<input type="text" name="test" value="" placeholder=""/>
+			    			</div>
+			    		</div>	
+			    		<div class="row group">
+			    			<div class="field inline">
+			    				<label for="test">Form Label:</label>
+			    				<input type="text" name="test" value="" placeholder="This is a placeholder..."/>
+			    			</div>
+			    			<div class="field inline">
+			    				<label for="test">Next Field</label>
+			    				<input type="text" name="test" value="" placeholder=""/>
+			    			</div>
+			    		</div>
+		    		</fieldset>
+		    		<fieldset>
+		    			<h2>Reason for Leasing - guest card form heading</h2>
+		    			<div class="row group">
+		    				<div class="field option">
+		    					<input type="checkbox" name="checkbox-name" value="off" />
+                  <label for"checkbox-name">This is a checkbox label</label>
+		    				</div>
+		    			</div>
+		    			<div class="row group">
+			    			<div class="field">
+			    				<label for="select-name">This is a select box label</label>
+				    			<select name="select-name">
+				    				<option>Select...</option>
+		                <option>This is the first option</option>
+		                <option>2 - This is the second option</option>
+		                <option>This is the third option</option>
+		                <option>This is the forth option</option>
+		                <option>5 - This is the fifth option</option>
+		              </select>
+			    			</div>
+			    		</div>	
+		    		</fieldset>
+		    	</form>
+		    	
+		    	<h2 style="margin-top: 150px;">Tables</h2>
+		    	
+		    	<div class="table-wrap">
+		    	<table cellspacing="0">
+		    		<thead>
+		    			<tr>
+		    				<th>Move Out</th>
+		    				<th>Unit</th>
+		    				<th>BLDG - FLR</th>
+		    				<th>Status</th>
+		    				<th>Mkt. Rent</th>
+		    				<th>Options / Features</th>
+		    			</tr>
+		    		</thead>
+		    		<tbody>
+		    			<tr>
+		    				<td>10/12/11</td>
+		    				<td>1106</td>
+		    				<td>100 - 1</td>
+		    				<td>On Notice - Occupied</td>
+		    				<td>$1,197 - $1,340</td>
+		    				<td>
+		    					<ul class="features">
+		    						<li>Pool View</li>
+		    						<li>Balcony</li>
+		    						<li>Stacked W/D</li>
+		    					</ul>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td>10/12/11</td>
+		    				<td>1106</td>
+		    				<td>100 - 1</td>
+		    				<td>On Notice - Occupied</td>
+		    				<td>$1,197 - $1,340</td>
+		    				<td>
+		    					<ul class="features">
+		    						<li>Pool View</li>
+		    						<li>Balcony</li>
+		    						<li>Stacked W/D</li>
+		    					</ul>
+		    				</td>
+		    			</tr>
+		    		</tbody>
+		    	</table>
+		    	</div> <!-- .table-wrap -->
+		    </div>
+	      
+	      <div style="margin: 20px 0 0 20px; width: 500px;">
+		      <div class="lb-content">
+		      	<div class="heading">
+		      		Put a button and heading text in here
+		      	</div>
+		      	<p>Add some content to this section, including a heading, text, form field and button.</p>
+		      </div>
+		    </div> 
+	      
+      </div> <!-- #content -->
+    </div> <!-- .wrap -->
+  </body>
+</html>

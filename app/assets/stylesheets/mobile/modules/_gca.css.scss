@@ -1,0 +1,26 @@
+#gca {
+  #inner_page{
+    marign-top: 0;
+    .main_content{
+      float: none;
+      width: 100%;
+    }
+  }
+  .sub_content{
+    float:none;
+    width: 100%;
+  }
+  aside{
+    margin: 0;
+    padding: 10px;
+  }
+  .initiate-search-button{
+    border:1px solid $lighter-gray;
+    background:none;
+    -webkit-box-shadow: 2px 2px 3px 2px rgba(222, 222, 222, .3);
+    box-shadow: 2px 2px 3px 2px rgba(222, 222, 222, .3);
+    width: 100%;
+    height: 40px;
+    text-align:left;
+  }
+}

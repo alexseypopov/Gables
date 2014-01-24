@@ -1,0 +1,31 @@
+%ul.tab_nav
+  %li.active= link_to 'Management', '#management_tab'
+  %li= link_to 'Service', '#service_tab'
+  %li= link_to 'Leasing', '#leasing_tab'
+#management_tab.tab
+  .feature.right.border
+    .thumb
+      =image_tag 'http://placedog.com/203/137', :alt => ''
+      = link_to raw('watch overview &raquo;'), '#'
+    %h3.title Community Manager
+    %p.description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum purus nec leo varius malesuada. Aenean commodo ante ac arcu mattis elementum. Pellentesque felis nulla, sollicitudin id vulputate eget, tristique eget tellus. Fusce vitae nunc risus.
+    %p.more= link_to raw('search jobs &raquo;'), '#'
+  .feature.right.border
+    .thumb
+      =image_tag 'http://placedog.com/203/137', :alt => ''
+      = link_to raw('watch overview &raquo;'), '#'
+    %h3.title Assistant Community Manager
+    %p.description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum purus nec leo varius malesuada. Aenean commodo ante ac arcu mattis elementum. Pellentesque felis nulla, sollicitudin id vulputate eget, tristique eget tellus. Fusce vitae nunc risus.
+    %p.more= link_to raw('search jobs &raquo;'), '#'
+  .feature.right.border
+    .thumb
+      =image_tag 'http://placedog.com/203/137', :alt => ''
+      = link_to raw('watch overview &raquo;'), '#'
+    %h3.title Service Manager
+    %p.description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum purus nec leo varius malesuada. Aenean commodo ante ac arcu mattis elementum. Pellentesque felis nulla, sollicitudin id vulputate eget, tristique eget tellus. Fusce vitae nunc risus.
+    %p.more= link_to raw('search jobs &raquo;'), '#'
+    
+#service_tab.tab
+  Service
+#leasing_tab.tab
+  Leasing

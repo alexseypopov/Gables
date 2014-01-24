@@ -1,0 +1,23 @@
+script type="text/x-handlebars" data-template-name="associate-menu"
+  small Associate
+  a.name() {{ user.name }}
+  .menu.pop.hidden
+    nav
+      h4 Pick an Action
+      ul
+        li <a {{action "findGuest"}}>Start Guest Card</a>
+        li
+          | <a {{action "pendingGuests"}}>Pending Guest Cards</a>
+          .tag() {{ user.pendingGuests }}
+        li <a {{action "nearbyCommunities"}}>Nearby communities</a>
+      h4 Community Status
+      ul
+        li <a {{action "availableUnits"}}>Available Units</a>
+        li <a {{action "availableOptions"}}>Available Options</a>
+        - if @property.sor_policy.present?
+          li.pdf <a {{action "sorPolicy"}} data-source="#{@property.sor_policy}">SOR Policy</a>
+        - if @property.lease_briefs.url
+          li.pdf <a {{action "leaseBriefs"}} data-source="#{@property.lease_briefs.url}">Lease Briefs</a>
+      h4 Account
+      ul
+        li <a {{action "logout"}}>Logout</a>

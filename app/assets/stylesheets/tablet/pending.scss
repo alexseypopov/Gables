@@ -1,0 +1,54 @@
+/* Pending Guest Cards 
+----------------------------------- */
+
+.pending-guestcards {
+  #content {
+    padding-top: 40px;
+  }
+  .content {
+    top: 130px;
+  }
+  .table-wrap {
+    margin-bottom: 53px;
+  }
+  td {
+    padding: 8px 15px;
+    &:nth-child(1) { }
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:last-child { text-align: center; }
+    &:nth-child(6) { width: 180px; }
+    .btn {
+      padding-left: 21px;
+      padding-right: 21px;
+      &.remove {
+        margin-left: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    } 
+  }
+  tr:nth-child(2n) td {
+    padding: 8px 15px;
+  }
+}
+
+.sortable{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  &:after{
+    content: '';
+    background: url(/images/tablet/select-arrow-down.png) no-repeat;
+    position: absolute;
+    right: -6px;
+    width: 13px;
+    height: 9px;
+    top: 2px;
+  }
+  &.desc:after{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+}

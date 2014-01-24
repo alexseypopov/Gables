@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PhysicalProperty xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Management Id="55495">
+    <PropertyContacts>
+      <CompanyInfo xmlns="http://my-company.com/namespace" Type="manager">
+        <ContactName>Gables Residential Services</ContactName>
+      </CompanyInfo>
+    </PropertyContacts>
+  </Management>
+	<Property ManagementID="11111">
+		<PropertyID>
+			<Identification xmlns="http://my-company.com/namespace" Type="market rate apt">
+				<PrimaryID>11111</PrimaryID>
+				<SecondaryID>11111</SecondaryID>
+				<MarketingName>Propety</MarketingName>
+				<WebSite>www.gables.com/property</WebSite>
+			</Identification>
+			<Address xmlns="http://my-company.com/namespace" Type="property">
+				<Address1>123</Address1>
+				<City>Mef</City>
+				<State>ML</State>
+				<PostalCode>11111</PostalCode>
+				<CountyName>Shelby</CountyName>
+				<Email>manager.arborsharbortown@gables.com</Email>
+			</Address>
+			<Phone xmlns="http://my-company.com/namespace" Type="office">
+				<PhoneNumber>(901) 526-0322</PhoneNumber>
+			</Phone>
+			<Phone xmlns="http://my-company.com/namespace" Type="fax">
+				<PhoneNumber>(901) 526-0354</PhoneNumber>
+			</Phone>
+		</PropertyID>
+		<ILS_Identification Type="Unspecified" RentalType="Unspecified"/>
+		<Information>
+			<StructureType>Standard</StructureType>
+			<UnitCount>346</UnitCount>
+			<LongDescription>Property</LongDescription>
+		</Information>
+	</Property>
+</PhysicalProperty>

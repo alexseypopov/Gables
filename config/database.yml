@@ -1,0 +1,23 @@
+development: &DEVELOPMENT
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  username: root
+  password:
+  database: gables_development
+  pool: 5
+  host: 127.0.0.1
+test: &test
+  <<: *DEVELOPMENT
+  database: gables_test
+staging:
+  <<: *DEVELOPMENT
+  database: gables_staging
+  password: scientist
+production:
+  <<: *DEVELOPMENT
+  database: gables_production
+  password: scientist
+
+cucumber:
+  <<: *test

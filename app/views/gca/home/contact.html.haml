@@ -1,0 +1,104 @@
+- content_for :head do
+  %title Contact Us
+  = stylesheet_link_tag 'gca_contact'
+  
+#inner_page.contact
+  %article.main_content
+    %h1 Request More Information
+    = form_for(@contact, :url => url_for(:controller => 'gca/home', :action => 'contact', :subdomain => 'gca'), html: {honeypot: true}) do |form|
+      - if @contact.errors.count > 0
+        .error_explanation
+          %p #{@contact.errors.count} errors prohibited your request form from being posted. Please fix these errors and resubmit.
+      .contact_info
+        .thumb= image_tag('corporate_acc.jpg', :alt => '')
+        %p <strong>Gables Corporate Accomodations</strong>
+        %ul.help_contact
+          %li.phone (866) 422-7368
+          %li.chat= link_to 'Live Chat', '#'
+        
+      %fieldset
+        %h2 Tell us a bit about you
+        .row
+          .input.text.required.fname
+            = form.label :first_name, 'Your Name'
+            = form.text_field :first_name
+            = form.error_message_on :first_name, :prepend_text => 'First Name '
+          .input.text.required.lname
+            = form.label :last_name, 'Last Name'
+            = form.text_field :last_name
+            = form.error_message_on :last_name, :prepend_text => 'Last Name '
+        .input.text.required
+          = form.label :email, 'Email'
+          = form.text_field :email
+          = form.error_message_on :email, :prepend_text => 'Email '
+        .input.text
+          = form.label :company, 'Company'
+          = form.text_field :company
+        .input.text
+          = form.label :primary, 'Primary Contact'
+          = form.text_field :primary
+        .row
+          .input.text.required.phone
+            = form.label :phone, 'Phone Number'
+            = form.text_field :phone
+            = form.error_message_on :phone, :prepend_text => 'Phone '
+          .input.text.alt_phone
+            = form.label :phone2, 'Alt. Phone'
+            = form.text_field :phone2
+      %fieldset
+        %h2 How can we help you? <strong>Your housing needs and dates:</strong>
+        .input.radioset
+          %h3 Please select one
+          .option
+            = form.radio_button :furnished, true
+            = form.label :furnished, 'Furnished'
+          .option
+            = form.radio_button :furnished, false
+            = form.label :furnished, 'Unfurnished'
+        .input.date.required
+          = form.label :arrival_date, 'Arrival Date'
+          = form.text_field :arrival_date, :placeholder => 'DD / MM / YYYY', :autocomplete => 'off'
+          = form.error_message_on :arrival_date, :prepend_text => 'Arrival Date '
+        .input.date.required
+          = form.label :departure_date, 'Departure Date'
+          = form.text_field :departure_date, :placeholder => 'DD / MM / YYYY', :autocomplete => 'off'
+        .input.text.required.city
+          = form.label :requested_city, 'Requested City'
+          = form.text_field :requested_city
+          = form.error_message_on :requested_city, :prepend_text => 'Requested City '
+        .input.select.required.state
+          = form.label :requested_state, 'Requested State'
+          = form.select :requested_state, options_for_select(@states), {:prompt => 'Select'}
+          = form.error_message_on :requested_state, :prepend_text => 'State '
+        .input.select
+          = form.label :apartment_type
+          = form.select :apartment_type, options_for_select(@contact.apt_type), {:prompt => 'Select'}
+        .input.text
+          = form.label :work_location
+          = form.text_field :work_location
+        .input.select
+          = form.label :housing_type, 'Type of Housing'
+          = form.select :housing_type, options_for_select(@contact.housing_types), {:prompt => 'Select'}
+        .input.text.required
+          = form.label :budget, 'Housing Budget'
+          = form.text_field :budget
+          = form.error_message_on :budget, :prepend_text => 'Budget '
+          = form.error_message_on :departure_date, :prepend_text => 'Departure Date '
+        .input.radioset
+          %h3 Are you bringing any pets with you?
+          .option
+            = form.radio_button :pets, true
+            = form.label :pets, 'Yes'
+          .option
+            = form.radio_button :pets, false
+            = form.label :pets, 'No'
+        .input.textarea
+          = form.label :comments, 'Comments/Questions'
+          = form.text_area :comments, :rows => '12'
+        .input.select
+          = form.label :find_us, 'How did you find us?'
+          = form.select :find_us, options_for_select(@contact.find_options), {:prompt => 'Select'}
+
+      .submit
+        %button{:type => 'submit'} Send
+        %p One of our leasing specialists will contact you as soon as they can.

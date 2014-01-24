@@ -1,0 +1,12 @@
+-if @property
+  address.vcard
+    .org
+      = @property.name
+    a.phone-number href="tel:#{@property.phone}" #{@property.phone}
+    .adr
+      .stree-address
+        = @property.street
+      span.locality #{@property.city},&nbsp;
+      span.region #{@property.state}&nbsp;
+      span.postal-code #{@property.zip}&nbsp;
+      span.directions get directions

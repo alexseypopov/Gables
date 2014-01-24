@@ -1,0 +1,12 @@
+#brochures.styled-select style="margin-top: 20px;"
+  i.icon-chevron-down
+  select
+    - unless @property.full_brochure_url.blank? && @property.short_brochure_url.blank? && @property.resident_brochure_url.blank?
+      option Brochures
+    - if @property.full_brochure.url
+      option = link_to 'Floorplans', @property.full_brochure.url
+    - if @property.short_brochure.url
+      option = link_to 'Community', @property.short_brochure.url
+    - if @property.resident_brochure.url
+      option = link_to 'For Residents', @property.resident_brochure.url
+

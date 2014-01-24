@@ -1,0 +1,15 @@
+%h2 A new GCA maintenance request form has been submitted. Details follow:
+%p <strong>Name:</strong> #{@info.name}
+%p <strong>Company:</strong> #{@info.company}
+%p <strong>Community:</strong> #{@info.community}
+%p <strong>Apt Number:</strong> #{@info.aptnumber}
+%p <strong>Phone:</strong> #{@info.phone}
+%p <strong>Email:</strong> #{@info.email}
+%p <strong>City:</strong> #{@info.city}
+%p <strong>State:</strong> #{@info.state}
+%p <strong>Maintenance Type(s):</strong>
+%ul
+  - if @info.request_type?
+    - @info.request_type.each do |rt|
+      %li= rt
+%p <strong>Maintenance Other:</strong> #{@info.other}

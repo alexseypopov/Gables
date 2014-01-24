@@ -1,0 +1,12 @@
+.accordion
+  dl
+    dt
+      a = 'Our Services'
+      i.icon-chevron-down
+    dd
+      = link_to 'Apartment Gallery', url_for(:controller => 'gca/home', :action => 'gallery', :subdomain => 'gca')
+    - Gca::ServicesPage.in_nav.each do |page|
+      dd
+        = link_to page.name, gca_page_path(page.section, page.path)
+    dt
+      = link_to 'Our Company', '/toplevel/p/our_company'

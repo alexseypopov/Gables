@@ -1,0 +1,115 @@
+- if property.uses_chat
+  - content_for :head do
+    %script{:type => 'text/javascript'}
+      <!-- BEGIN LivePerson Monitor. -->
+      var lpMTagConfig = {'lpServer' : "server.iad.liveperson.net",'lpNumber' : "84152841",'lpProtocol' : "http"};
+      function lpAddMonitorTag(src){if(typeof(src)=='undefined'||typeof(src)=='object'){src=lpMTagConfig.lpMTagSrc?lpMTagConfig.lpMTagSrc:'/hcp/html/mTag.js';}if(src.indexOf('http')!=0){src=lpMTagConfig.lpProtocol+"://"+lpMTagConfig.lpServer+src+'?site='+lpMTagConfig.lpNumber;}else{if(src.indexOf('site=')<0){if(src.indexOf('?')<0)src=src+'?';else src=src+'&';src=src+'site='+lpMTagConfig.lpNumber;}};var s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('charset','iso-8859- 1');s.setAttribute('src',src);document.getElementsByTagName('head').item(0).appendChild(s);} 
+      if (window.attachEvent) window.attachEvent('onload',lpAddMonitorTag); else window.addEventListener("load",lpAddMonitorTag,false);
+      if (!lpMTagConfig.sessionVar) { lpMTagConfig.sessionVar = [];}
+      lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] ='skill=Gables';
+      lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] ='Management Company=Gables Residential';
+      lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] ='Community=#{escape_javascript property.name}';
+      lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] ='Ad Source=Gables.com';
+      <!-- End Monitor Tracking Variables  -->
+
+%aside.sub_content
+  %ul.share
+    %li.heading Follow us
+    - unless @property.google_id.blank?
+      %li.google= link_to 'Google Plus', "https://plus.google.com/#{@property.google_id}", :rel => 'external'
+    - unless @property.twitter_url.blank?
+      %li.twitter= link_to 'Twitter', @property.twitter_url, :rel => 'external'
+    - else
+      %li.twitter= link_to 'Twitter', 'http://twitter.com/gables', :rel => 'external'
+    - unless @property.facebook_url.blank?
+      %li.facebook= link_to 'Facebook', @property.facebook_url, :rel => 'external'
+    - else
+      %li.facebook= link_to 'Facebook', 'http://www.facebook.com/gablesresidential', :rel => 'external'
+    - unless @property.pinterest_url.blank?
+      %li.pinterest= link_to 'Pinterest', @property.pinterest_url, :rel => 'external'
+    - else
+      %li.pinterest= link_to 'Pinterest', 'http://pinterest.com/GablesLiving', :rel => 'external'
+  %ul.sections
+    %li.community= link_to 'Community Overview', '#community_overview', :class => 'anchor'
+    - if type == 'community' || type == 'gca_community'
+      %li.neighborhood= link_to 'Neighborhood Map', '#community_map', :class => 'anchor'
+    %li.floorplans
+      %a{:href => '#community_floorplans', :class => 'anchor'}
+        - if type == 'community' || type == 'gca_community'
+          Floorplans
+        - else
+          Recently Viewed
+    - if (type == 'community' || type == 'gca_community') && !property.green_initiatives.blank?
+      %li.green= link_to 'Green Initiatives', '#green_initiatives', :class => 'anchor'
+    - if ((type == 'community') && (@property.allows_cats? || @property.allows_dogs?)) || type == 'gca_community'
+      %li.pets= link_to 'Pet Policy', '#pet_policy', :class => 'anchor'
+    - if @shopping_etc
+      %li.shopping= link_to 'Shopping & Dining', '#shopping-dining', :class => 'anchor'
+    - if params[:controller].include? "gca"  
+      %li.request= link_to 'Request Information', '#request_section', :class => 'anchor'
+    - else
+      %li.request= link_to 'Request Information', '#schedule_visit', :class => 'anchor'
+    - if property.uses_chat
+      %li.chat= render partial: '/find/chat_button', locals: {property: property, text: 'Live Chat'}
+
+  .vcard.prop_address
+    .adr
+      %span.type work
+      %p
+        %span.street-address #{property.street}
+        %br
+        - if property.address2
+          %span.street-address #{property.address2}
+          %br
+        %span.locality= link_to "#{property.city},", find_where_path(:query => property.city)
+        %span.region= link_to property.state, find_where_path(:query => Carmen::state_name(property.state))
+        %span.postal-code= link_to property.zip, find_where_path(:query => property.zip)
+        %br
+        %span.tel= property.phone
+
+    %p.office-hours Office Hours
+    #grouped-office-hours
+      - property.grouped_office_hours.each do |hours|
+        .hours
+          %p <strong>#{hours[:day]}</strong>
+          %p #{hours[:hours]}
+    = link_to 'Resident Login', 'https://extra.gables.com/gateway/', :rel => 'external', :id => 'resident-request'
+  - if property.resident_reviews_id.present? || property.yelp_id.present? || (property.google_id.present? && property.rating)
+    .reviews-block
+      %h2 Reviews
+      - if property.resident_reviews_id.present?
+        %iframe(height="110" src="http://www.kingsleysolutions.com/reviews/gables-residential.aspx?ID=#{property.resident_reviews_id}")
+      - if property.yelp_id.present?
+        %a.reviews{"data-yelp-id" => property.yelp_id}
+          %img(src="/images/yelp_logo_50x25.png")
+          %img.stars
+          %span.count
+      - if property.google_id.present? && property.rating
+        .google-review
+          %img(src="/images/google-plus-1-icon.png" width='32' height='24')
+          %a.Sea(href="#{property.google_place_data['url']}" target='google-plus')
+            %span.wN Score
+            .YP.pi.PP.a-p.a-p-Na{:style => "-webkit-user-select: none; "}
+              %span.Wy
+                %span.Vy OVERALL
+                %br
+                %span.ix= (property.rating * 10).to_i
+          - if property.google_place_data['reviews']
+            %a.count(href="#{property.google_place_data['url']}" target='google-plus') #{property.google_place_data['reviews'].length} reviews
+  - unless property.video_id.blank? && property.testimonial_video.blank?
+    .video
+      - if property.testimonial_video.present?
+        %h2 What Our Residents Are Saying
+        .video_container
+          = link_to image_tag("http://img.youtube.com/vi/#{property.testimonial_video}/0.jpg", :alt => 'Watch video', :height => '205', :width => '274'), modal_video_path(:video_id => property.testimonial_video), :class => 'video_iframe', "data-video-id" => property.testimonial_video
+      - if property.video_id.present?
+        %h2 Community Video
+        .video_container
+          = link_to image_tag("http://img.youtube.com/vi/#{property.video_id}/0.jpg", :alt => 'Watch video', :height => '205', :width => '274'), modal_video_path(:video_id => property.video_id), :class => 'video_iframe', "data-video-id" => property.video_id
+  = render :partial => '/find/community_life'
+  -unless params[:controller].include? "gca"
+    .furnished
+      %h2 Furnished Apartments Available
+      %a{:title => 'Furnished apartments', :href => "http://gca.gables.com#{listing_path(property)}#request_section"}
+        = image_tag('furnished.jpg', :alt => 'Furnished Apartments') 
+        Contact us to get a furnished unit at this community

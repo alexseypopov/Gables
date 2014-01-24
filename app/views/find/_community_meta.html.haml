@@ -1,0 +1,10 @@
+%title= "#{@property.name} Apartments: Photos, Floorplans, Availability and Pricing. Address: #{@property.street}, #{@property.city}, #{@property.state}. Luxury Gables Apartments for Rent."
+%meta{:name => 'description', :content => "Rent a beautiful #{@property.name} apartment in #{@property.city}, #{@property.state}. Furnished, Unfurnished, and Corporate options available. Free apartment finder and rentals search at Gables.com makes it easy."}
+%meta{"property" => "og:title", :content => @property.name}
+%meta{"property" => "og:type", :content => 'product'}
+%meta{"property" => "og:url", :content => property_url(@property)}
+%meta{"property" => "og:image", :content => @property.images.count > 0 ? @property.images.first.url : '/images/no_image.gif'}
+%meta{"property" => "og:description", :content => @property.short_description}
+%meta{"property" => "og:site_name", :content => 'Gables Residential'}
+- if @property.path.present? && request.subdomain.blank?
+  %link{"rel" => "canonical", "href" => @property.path}

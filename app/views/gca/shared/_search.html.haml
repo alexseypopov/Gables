@@ -1,0 +1,22 @@
+#search_form
+  = form_tag(url_for(:controller => 'gca/find', :action => 'where', :subdomain => 'gca'), :method => 'get', :id => 'apartment_search_form') do
+    %fieldset
+      - if params[:state].blank?
+        %p.title Find a Furnished Apartment
+      - else
+        %p.desc Showing communities near <span>&ldquo;#{params[:city]}, #{params[:state]}&rdquo;</span>
+      .row
+        .input.select.state
+          = label_tag :state_s, 'State'
+          = select_tag :state, options_for_select(Carmen::state_codes('US').map {|state| [state, state]}, params[:state]), {:prompt => 'Select', :id => 'state_s'}
+        .input.select.city
+          = label_tag :city
+          = select_tag :city, options_for_select([], params[:city]), {:prompt => 'Select', :id => 'city_s'}
+          %ul.states_list
+            - Carmen::state_codes('US').each do |state|
+              %li{:data => {:state => state}}
+                %ul
+                  - gca_cities_for(state).each do |city|
+                    %li= city
+        .submit
+          %button{:type => 'submit'} Search

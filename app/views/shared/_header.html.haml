@@ -1,0 +1,111 @@
+%header#site_head
+  .wrapper
+    %p.logo= link_to 'Gables Residential', context == 'external' ? root_url : root_path, :target => context == 'iframe' ? '_top' : nil
+    - unless context == 'iframe' || context == 'external'
+      %nav#main_nav
+        %ul
+          - if @section == 'community'
+            - find_class = 'find top_level open'
+          - elsif %w(life company careers).include? @section
+            - find_class = 'find top_level'
+          - elsif @section == 'home' || @properties.blank?
+            - find_class = 'find top_level active'
+          - else
+            - find_class = 'find top_level'
+          %li{:class => find_class}
+            = link_to 'Find an Apartment', '#'
+            .sub_nav{:class => @s ? 'has_search' : 'not_search'}
+              - if @s
+                = render :partial => '/shared/apartment_search_results_form', :locals => {:context => context}
+              - else
+                = render :partial => '/shared/apartment_search_form', :locals => {:context => context}
+          %li{:class => @section && @section == 'life' ? 'life top_level open' : 'life top_level'}
+            = link_to 'Life at Gables', '#'
+            .sub_nav
+              %ul.sections
+                - LifePage.in_nav.each do |page|
+                  %li= link_to page.name, page_path(page.section, page.path)
+                %li= link_to 'Pay Rent Online', 'https://extra.gables.com/gateway/', :rel => 'external'
+                %li= link_to 'Maintenance Request', 'https://extra.gables.com/gateway/', :rel => 'external'
+                %li= link_to 'Resident Login', 'https://extra.gables.com/gateway/', :rel => 'external'
+              %ul.features
+                %li
+                  %a{:href => '/life/p/why_gables'}
+                    =image_tag 'nav/why_gables.jpg', :alt => ''
+                    Why Gables
+                %li
+                  %a{:href => '/life/p/green_initiatives'}
+                    =image_tag 'nav/green.jpg', :alt => ''
+                    Green Initiatives
+                %li
+                  %a{:href => '/life/p/community_service'}
+                    =image_tag 'nav/community_service.jpg', :alt => ''
+                    Community Service
+          %li{:class => @section && @section == 'company' ? 'company top_level open' : 'company top_level'}
+            = link_to 'Our Company', '#'
+            .sub_nav
+              %ul.sections
+                - CompanyPage.in_nav.each do |page|
+                  - if page.path == 'corporate_contacts'
+                    %li= link_to 'News & Awards', posts_path
+                  %li= link_to page.name, page_path(page.section, page.path)
+              %ul.features
+                %li
+                  %a{:href => 'http://urban.gables.com'}
+                    =image_tag 'nav/urban.jpg', :alt => ''
+                    Retail Destinations
+                %li
+                  %a{:href => 'http://www.gcarent.com/', :rel => 'external'}
+                    =image_tag 'nav/corporate.jpg', :alt => ''
+                    Furnished Accommodations
+                %li
+                  %a{:href => '/company/p/real_estate'}
+                    =image_tag 'nav/management.jpg', :alt => ''
+                    Real Estate Services
+          %li{:class => @section && @section == 'careers' ? 'careers top_level open' : 'careers top_level'}
+            = link_to 'Careers', '#'
+            .sub_nav
+              %ul.sections
+                - CareerPage.in_nav.each do |page|
+                  %li= link_to page.name, page_path(page.section, page.path)
+                %li= link_to 'Associate Stories', associate_path(Associate.first)
+              %ul.features
+                %li
+                  %a{:href => '/company/p/careers_overview'}
+                    =image_tag 'nav/working.jpg', :alt => ''
+                    Working at Gables
+              = form_tag('/careers/p/search_results', :method => 'get', :id => 'job_search') do
+                %fieldset
+                  %legend Join the Team
+                  = select_tag 'department', options_for_select(Associate.departments, params[:deparment]), {:prompt => 'Select Department'}
+                  = select_tag 'team_state', options_for_select([['All','']] + Associate.states, params[:state]), {:prompt => 'Select State'}
+                  .submit
+                    %button{:type => 'submit'} Search
+                    =link_to 'Browse Positions', '/careers/p/search'
+    = render :partial => '/shared/site_search', :locals => {:context => context}
+    %p.translate_link
+      = link_to 'Translate', '#'
+      :plain
+        <div id="google_translate_element" style="position: absolute; right: 107px;"></div>
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,es,fr,it,ja,ko,nl,pt,ru,th,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-8527803-1'}, 'google_translate_element');
+          }
+        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <style>
+          .goog-te-gadget { font-family: "century gothic", arial, sans-serif; color: #fff; border: none; }
+          .goog-te-menu-value span { color: transparent; font-size: 14px; }
+          .goog-te-gadget-simple {background-color:transparent; height: 21px; width: 96px; border: none; }
+          .goog-te-gadget-simple a.goog-te-menu-value 
+          .goog-te-gadget img { display: none; }
+          .goog-te-gadget-icon { display: none !important; }
+          .goog-te-banner-frame { top: auto; bottom: 0px; }
+          .goog-te-menu-value { display: none !important; }
+        </style>
+    %p.resident_login= link_to 'Resident Login', 'https://extra.gables.com/gateway/', :target => context == 'iframe' ? '_top' : nil
+    - if @property
+      .contact_buttons
+        - unless @property.phone.blank?
+          .community_phone= @property.phone
+        - if @property.uses_chat
+          .chat= render :partial => 'chat_button', :locals => {:property => @property, :text => 'Chat live now'}

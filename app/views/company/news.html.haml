@@ -1,0 +1,41 @@
+- content_for :head do
+  %title= "News & Awards | Gables offers Apartments for Rent, Luxury Apartments, Furnished Apartments, Unfurnished Apartments and Corporate Housing"
+  = stylesheet_link_tag 'pages'
+
+- content_for :marquee do
+  = render :partial => 'marquee'
+
+- content_for :section_nav do
+  - @page_nav = CompanyPage.in_nav 
+  - @page_section = 'company'
+  - @selected = 'news'
+  = render :partial => '/pages/nav'
+      
+#inner_page
+  %article.main_content
+    .news
+      .pagination_wrapper.top
+        = will_paginate @posts, :previous_label => 'prev', :next_label => 'next'
+      %ul.filter_nav
+        %li{:class => !params[:type] ? 'active' : ''}= link_to 'All', posts_path, :rel => ''
+        %li{:class => params[:type] && params[:type] == 'NewsItem' ? 'active' : ''}= link_to 'News', posts_path(:type => 'NewsItem'), :rel => 'NewsItem'
+        %li{:class => params[:type] && params[:type] == 'Award' ? 'active' : ''}= link_to 'Awards', posts_path(:type => 'Award'), :rel => 'Award'
+      .hfeed
+        - @posts.each do |post|
+          %div{:class => "hentry #{post.kind}"}
+            - if post.image.path
+              .thumb=image_tag post.image.url, :alt => ''
+            .content{:class => post.image.path ? '' : 'full_span'}
+              %h2.entry-title= link_to post.title, post_path(post)
+              %p{:class => 'published updated', :title => 'YYYY-MM-DDTHH:MM:SS+ZZ:ZZ'}
+                - if post.kind == 'NewsItem'
+                  = post.published_at.to_formatted_s(:long)
+                - else
+                  = post.published_at.to_formatted_s(:year)
+              %p.entry-summary= post.summary
+            %p.more
+              = link_to raw('read more &raquo;'), post_path(post), :rel => 'bookmark'
+      .pagination_wrapper.bottom
+        = will_paginate @posts, :previous_label => 'prev', :next_label => 'next'
+          
+  = render :partial => 'article_sub_content'

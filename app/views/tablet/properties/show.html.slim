@@ -1,0 +1,41 @@
+javascript:
+  var property_name = "#{@property.name}";
+  var property_phone = "#{@tablet_property && @tablet_property.phone}";
+  var photos = #{{@images.to_json}};
+  var site_plans = #{{@property.site_plans.to_json}};
+  var property_insite_id = #{{@property.insite_id}};
+  var floorplans = #{{@floorplans.as_json(:include => {:images => {}, :amenities => {}, :units => {:include => :amenities}}).to_json}};
+  var not_leasing_reasons = #{{Tablet::NotLeasingReason.all.to_json}};
+header
+#content
+#print-only
+
+= render "header"
+= render "community_nav"
+= render "photos"
+= render "floorplans"
+= render "floorplan"
+= render "life_at_gables"
+= render "site_plans"
+= render "area_map"
+= render "associate_menu"
+= render "units"
+= render "nearby_communities"
+= render "vaultware_units"
+= render "available_units"
+= render "available_options"
+= render "find_guest"
+= render "select_guest"
+= render "select_apartment"
+= render "apartment_preferences"
+= render "add_guest"
+= render "guest_menu"
+= render "pending_guests"
+= render "gather_licenses"
+= render "gables_difference"
+= render "take_homes"
+= render "notes"
+= render "thank_you_note"
+= render "invite_to_apply"
+= render "return_licenses"
+= render "iframe_modal"

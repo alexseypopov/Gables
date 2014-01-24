@@ -1,0 +1,49 @@
+@import "bourbon";
+@import 'mobile/base/colors';
+
+@include font-face(CenturyGothic, 'CenturyGothic');
+@include font-face(CenturyGothicItalic, 'CenturyGothic-Italic');
+@include font-face(CenturyGothicBold, 'CenturyGothic-Bold');
+@include font-face(CenturyGothicBoldItalic, 'CenturyGothic-BoldItalic');
+
+$base-font-size: 1.0em;
+$xx-large: 2em;
+$x-large: 1.4em;
+$large: 1.1em;
+$small: .85em;
+
+body{
+  font-family: "CenturyGothic", "Trebuchet MS", "Helvetica Neue", sans-serif;
+  font-size: $base-font-size;
+}
+
+h1,
+.feature .title{
+  font-size: $large;
+  font-family: 'CenturyGothicBold', "Trebuchet MS", "Helvetica Neue", sans-serif;
+}
+
+#query{
+  font-size: $small;
+}
+h2{
+  font-size: $large;
+}
+
+.main-links i{
+  font-size: $base-font-size;
+}
+
+#mobile-site-nav, #social{
+  font-size: $xx-large;
+}
+
+#find-near-me{
+  font-size: .85em !important;
+}
+#search-icon, #search-cancel-button{
+  font-size: $x-large;
+}
+p{
+  color: $dark-gray;
+}

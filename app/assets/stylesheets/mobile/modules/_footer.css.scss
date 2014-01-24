@@ -1,0 +1,59 @@
+@import 'mobile/base/colors';
+
+#footer a, #site-links a {
+  display: block;
+}
+#footer {
+  color: $black;
+  background-color: $nav-accordion-primary-green;
+  .accordion, .accordion.footer{
+    margin: 0;
+    display:block;
+    dl{
+      box-shadow: none;
+    }
+    dt{
+      background-color: $nav-accordion-primary-green;
+      border-bottom: 1px solid $nav-accordion-primary-green-border-bottom;
+    }
+    dd{
+      border-top: 1px solid $nav-accordion-primary-green-border-top;
+      border-bottom: 1px solid $nav-accordion-primary-green-border-bottom;
+      background-color: $nav-accordion-primary-green-dark;
+      a{
+        color: #3f3f3f;
+      }
+    }
+  }
+}
+
+.footer-links {
+  background-color: $lightest-gray;
+  a, #site-search {
+    display: inline-table;
+    width: 100%;
+    border-bottom: 1px solid $light-gray;
+    padding: 15px 5px 15px 10px;
+    color: $gray;
+    span {
+      display: table-cell;
+      width: 100%;
+    }
+    i {
+      display: table-cell;
+      text-align: right;
+      font-size: 1.6em;
+      padding-right: 5px;
+      width: 50px;
+    }
+    input[type=text] {
+      border: 1px solid $light-gray;
+    }
+  }
+}
+
+.legal {
+  color: $gray;
+  padding: 0 10px 10px 10px;
+  background-color: $lightest-gray;
+}

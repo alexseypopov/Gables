@@ -1,0 +1,86 @@
+AZ:
+  cities:
+  - Phoenix
+CA:
+  cities:
+  - Carlsbad
+  - El Cajon
+  - Marina Del Rey
+  - Murrieta
+  - San Diego
+  - San Marcos
+  - Temecula
+  - Wildomar
+DC:
+  cities:
+  - Washington
+FL:
+  cities:
+  - Boca Raton
+  - Boynton Beach
+  - Clearwater
+  - Coral Springs
+  - Jacksonville
+  - Miami
+  - Orlando
+  - Palm Beach Gardens
+  - Saint Petersburg
+  - Tampa
+  - Wellington
+  - Wilton Manors
+GA:
+  cities:
+  - Atlanta
+  - Decatur
+  - Doraville
+  - Duluth
+  - Dunwoody
+  - Norcross
+  - Smyrna
+IL:
+  cities:
+  - Naperville
+MD:
+  cities:
+  - BETHESDA
+  - Columbia
+  - Hyattsville
+MA:
+  cities:
+  - CAMBRIDGE
+NJ:
+  cities:
+  - Hoboken
+NY:
+  cities:
+  - Holbrook
+TN:
+  cities:
+  - Memphis
+TX:
+  cities:
+  - Arlington
+  - Austin
+  - Bedford
+  - Carrollton
+  - Dallas
+  - Euless
+  - Fort Worth
+  - Grand Prairie
+  - Houston
+  - Irving
+  - Lewisville
+  - PLANO
+  - Richardson
+  - Round Rock
+  - San Antonio
+  - Sugar Land
+VA:
+  cities:
+  - Arlington
+  - Fairfax
+  - Virginia Beach
+  - Woodbridge
+WA:
+  cities:
+  - Redmond

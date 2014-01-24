@@ -1,0 +1,13 @@
+{
+    "name": "Gables-Ender",
+    "version": "0.0.1",
+    "homepage": "http://www.digitalscientists.com",
+    "author": {
+        "name": "Digital Scientists"
+    },
+    "devDependencies": {
+        "grunt": "0.4.1",
+        "grunt-cli": "0.1.9",
+        "grunt-ender": "~0.2.0"
+    }
+}

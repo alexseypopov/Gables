@@ -1,0 +1,26 @@
+.management.border
+  %h2 Company Officers
+  - Executive.where(:category => 'Company Officer').order('position ASC').in_groups_of(3) do |executives|
+    .associate_slider
+      %ul
+        - executives.each do |executive|
+          - if executive
+            %li
+              = image_tag executive.image.url, :alt => ''
+              %p.name= executive.name
+              %p.title= raw(executive.title)
+              %p.permalink= link_to 'more info +', modal_executive_path(:id => executive.id), :class => 'bio_iframe'
+        
+.management
+  - cats = ['Corporate', 'Development & Construction', 'Operations']
+  - cats.each do |cat|
+    %h2= cat
+    - Executive.where(:category => cat).order('position ASC').in_groups_of(3) do |executives|
+      %ul.manager_row
+        - executives.each do |executive|
+          - if executive
+            %li
+              %a{:href => modal_executive_path(:id => executive.id), :class => 'bio_iframe'}
+                %p.name= executive.name
+                %p.title= raw(executive.title)
+                %p.permalink more info +

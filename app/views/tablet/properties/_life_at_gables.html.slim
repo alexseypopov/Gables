@@ -1,0 +1,116 @@
+script type="text/x-handlebars" data-template-name="life-at-gables"
+  | {{view App.CommunityNavView}}
+  #life-at-gables.sidebar.group.content
+    aside#sidebar
+      .pop-nav <a class="toggle" {{action "toggleMenu"}}></a>
+      nav.side#life
+        h4 Community
+        a name="life-at-gables" class="anchor"
+        ul
+          li.active: a href="#community-overview" Overview
+          li: a href="#community-amenities" Amenities
+          - if (@property.allows_cats? || @property.allows_dogs?) && @property.pet_policy.present?
+            li: a href="#pet-policy" Pet Policy
+          - if @property.shopping_and_dining.present?
+            li: a href="#shopping-dining" Shopping &amp; Dining
+          - if @property.green_initiatives.present?
+            li: a href="#green-initiatives" Green Initiatives
+        h4 Gables Services
+        ul
+          li: a href="#living-guarantees" Living Guarantees
+          li: a href="#connection-services" Connection Services
+          li: a href="#furnished-apartments" Furnished Apartments
+        - if @property.short_brochure.url or @property.full_brochure.url or @property.building_specifications.present?
+          h4 Additional Information
+          ul
+            - if @property.short_brochure.url
+              li: a href="#community-brochure" Community Brochure
+            - if @property.full_brochure.url
+              li: a href="#floorplan-brochure" Floorplan Brochure
+            - if @property.building_specifications.present?
+              li: a href="#building-specifications" Building Specifications
+    article#primary.life
+      section#community-overview
+        h1 #{@property.name}
+        p itemprop="description" = @property.long_description
+      section#community-amenities
+        h2 Community Amenities
+        ul
+          - @property.amenities.each do |amenity|
+            li= amenity.description
+      - if (@property.allows_cats? || @property.allows_dogs?) && @property.pet_policy.present?
+        section#pet-policy
+          h2.icon.pet Pet Policy
+          p = @property.pet_policy
+      - if @property.shopping_and_dining.present?
+        section#shopping-dining
+          h2.icon.shopping Shopping &amp; Dining
+          p== @property.shopping_and_dining
+      - if @property.green_initiatives.present?
+        section#green-initiatives
+          h2.icon.green Green Initiatives
+          .multicol
+            - @green_categories.each do |category, initiatives|
+                .category-wrap
+                  h3.icon class=category.name.parameterize = category.name
+                  ul
+                    - initiatives.each do |initiative|
+                      li== initiative.name
+      section#living-guarantees
+        h2 Living Guarantees
+        = raw @living_guarantees.content if @living_guarantees
+      section#connection-services
+        h2.icon.connection Connection Services
+        = raw @connection_services.content if @connection_services
+        p
+          - if @connection_services_url
+            a.btn.grn.open href=@connection_services_url.content target="whitefence"
+              span Learn More
+      section#furnished-apartments
+        h2.icon.furnished Furnished Apartments
+        = raw @furnished_apartments.content if @furnished_apartments
+        p
+          a.btn.grn.open href="http://gca.gables.com" target="gca"
+            span Learn More
+      - if @property.short_brochure.url
+        section#community-brochure
+          h2.icon.brochure
+            | Community Brochure
+            | {{#if App.currentGuest}}
+            | {{view Ember.Checkbox title="Add to Follow Up" valueBinding="App.currentGuest.community_brochure" class="checkbox"}}
+            | {{/if}}
+          - block = Block.where(:title => "Life at Gables Community Brochure").first
+          = raw block.content if block
+          p <a class="btn grn open pdf" data-source="#{@property.short_brochure.url}"
+            {{action "viewBrochure"}}><span>View PDF</span></a>
+            <a class="btn grn open" data-type="community"
+                {{action "emailPDF"}}><span>Email PDF</span></a>
+      - if @property.full_brochure.url
+        section#floorplan-brochure
+          h2.icon.brochure
+            | Floorplans
+            | {{#if App.currentGuest}}
+            | {{view Ember.Checkbox title="Add to Follow Up" valueBinding="App.currentGuest.floorplan_brochure" class="checkbox"}}
+            | {{/if}}
+          - block = Block.where(:title => "Life at Gables Floorplans").first
+          = raw block.content if block
+          p <a class="btn grn open pdf"
+             data-source="#{@property.full_brochure.url}"
+            {{action "viewBrochure"}}><span>View PDF</span></a>
+            <a class="btn grn open" data-type="floorplans" {{action "emailPDF"}}><span>Email PDF</span></a>
+      - if @property.building_specifications.present?
+        section#building-specifications
+          h2.icon.building
+            | Building Specifications
+            | {{#if App.currentGuest}}
+            | {{view Ember.Checkbox title="Add to Follow Up" valueBinding="App.currentGuest.building_specifications" class="checkbox"}}
+            | {{/if}}
+          p
+            = raw @property.building_specifications
+            - if @property.building_specifications_file.url
+              br
+              | <a class="btn grn open pdf"
+                 data-source="#{@property.building_specifications_file.url}"
+                {{action "viewBrochure"}}><span>View PDF</span></a>
+              | <a class="btn grn open" data-type="specifications" {{action "emailPDF"}}><span>Email PDF</span></a> 
+

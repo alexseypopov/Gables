@@ -1,0 +1,238 @@
+body {
+  background: #fff url('../images/body_bg.gif') repeat-x left top;
+  color: #444;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  color: #254CD2;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 1.65em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+#container, #footer .wrapper {
+  margin: 0 auto;
+  max-width: 923px;
+  width: 95%;
+}
+
+#header {
+  height: 113px;
+  position: relative;
+}
+  #header a {
+    display: block;
+    padding-top: 11px;
+  }
+  #header p {
+    color: #666;
+    font-size: 1.3em;
+    min-width: 275px;
+    max-width: 410px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 50%;
+  }
+    #header p a {
+      display: inline;
+      padding-top: 0;
+      text-decoration: none;
+    }
+    
+#marquee {
+  background-color: #fff;
+  left: 0;
+  line-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 113px;
+  width: 100%;
+  white-space: nowrap;
+}
+  #marquee:after {
+    background: url('../images/shadow_top.png') repeat-x left top;
+    content: '.';
+    display: block;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #marquee:before {
+    background: url('../images/shadow_bottom.png') repeat-x left bottom;
+    bottom: 0;
+    content: '.';
+    display: block;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+    #marquee ul {
+      width: 1750px;
+    }
+      #marquee ul li {
+        float: left;
+      }
+
+#content {
+  position: relative;
+  margin-top: 367px;
+}
+
+#main_content, #sub_content div {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#main_content {
+  background-color: #fff;
+  width: 65%;
+}
+  #main_content .section {
+    border-bottom: 1px solid #ddd;
+    padding: 5% 5% 2%;
+  }
+  #main_content p {
+    font-size: 1.3em;
+    line-height: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  #main_content p.more {
+    font-size: 1.35em;
+  }
+    #main_content p.more a {
+      background: url('../images/arrow.gif') no-repeat right center;
+      padding-right: 24px;
+    }
+  #main_content ul {
+    font-size: 1.3em;
+    list-style-type: none;
+    margin: 0 0 1.25em 15px;
+  }
+    #main_content ul li {
+      background: url('../images/bullet.gif') no-repeat left 9px;
+      padding-left: 15px;
+    }
+  #main_content .columns {
+    -moz-column-count: 2;
+    -moz-column-gap: 75px;
+    -moz-column-rule: none;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 75px;
+    -webkit-column-rule: none;
+    column-count: 2;
+    column-gap: 75px;
+    column-rule: none;
+  }
+
+#sub_content {
+  position: absolute;
+  right: 0;
+  top: 67px;
+  width: 32.5%;
+}
+  #sub_content h2 {
+    color: #fff;
+    font-weight: bold;
+  }
+  #sub_content .contact {
+    background-color: #eee;
+  }
+    #sub_content .contact h2 {
+      background-color: #5A7EBC;
+      padding: 2px 14px;
+    }
+    #sub_content .contact p {
+      color: #666;
+      font-size: 1.3em;
+      padding: 0 14px 25px;
+    }
+  #sub_content .definition {
+    background-color: #5A7EBC;
+    padding: 5px 14px;
+  }
+    #sub_content .definition h2 {
+      margin-bottom: 2px;
+    }
+    #sub_content .definition p {
+      color: #fff;
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    #sub_content .definition ol {
+      color: #fff;
+      font-size: 1.1em;
+      list-style-type: none;
+    }
+      #sub_content .definition ol li {
+        margin-bottom: 8px;
+      }
+      
+#footer {
+  background-color: #fff;
+  border-top: 3px solid #aaa;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+  #footer p {
+    margin-bottom: 5px;
+  }
+  #footer .contact a, #footer .copyright {
+    font-family: Arial, sans-serif;
+  }
+  #footer .contact {
+    color: #666;
+    font-size: 1.3em;
+  }
+    #footer .contact a {
+      font-size: 0.85em;
+      padding-right: 10px;
+      text-decoration: none;
+    }
+  #footer .copyright {
+    color: #999;
+    font-size: 0.95em;
+  }
+  
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  #header p, #marquee, #sub_content .definition {
+    display: none;
+  }
+  #header a {
+    margin-left: 5%;
+  }
+  #container {
+    width: 100%;
+  }
+  #content {
+    margin-top: 0;
+    padding-top: 145px;
+  }
+  #sub_content {
+    top: 15px;
+  }
+  #main_content, #sub_content {
+    width: 100%;
+  }
+  #footer {
+    margin-top: 0;
+  }
+}

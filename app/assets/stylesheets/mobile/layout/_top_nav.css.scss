@@ -1,0 +1,9 @@
+@import "mobile/base/grid_settings";
+@import "neat";
+
+#main_nav{
+  @include media($mobile){
+    @include outer-container();
+  }
+
+}

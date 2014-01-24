@@ -1,0 +1,10 @@
+.sidebar_list
+  %h2 Featured Communities<br />New Opportunities
+  %ul
+    - Property.where(:featured => true).order(:created_at).limit(3).each do |property|
+      %li
+        %a{:href => '/careers/p/search'}
+          - if !property.images.empty?
+            =image_tag property.images.first.url, :alt => ''
+          %strong= property.name
+          #{property.city}, #{property.state}

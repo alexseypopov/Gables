@@ -1,0 +1,15 @@
+- content_for :head do
+  %title Site Search
+  = javascript_include_tag 'http://www.google.com/jsapi'
+  = stylesheet_link_tag 'http://www.google.com/cse/style/look/default.css'
+  
+#inner_page{:style => 'padding-top: 25px'}
+  #cse_search_results &nbsp;
+  :javascript
+    google.load("search", "1", {"nocss" : true});
+    var googleSearchIframeName = "cse_search_results";
+    var googleSearchFormName = "cse_search_box";
+    var googleSearchFrameWidth = 940;
+    var googleSearchDomain = "www.google.com";
+    var googleSearchPath = "/cse";
+  = javascript_include_tag 'http://www.google.com/afsonline/show_afs_search.js'

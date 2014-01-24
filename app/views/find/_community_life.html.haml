@@ -1,0 +1,9 @@
+#tumblr_feed.blog
+  %h2 
+    Life at
+    = @property.name
+  .hfeed
+  - unless @property.nil? || (!@property.nil? && @property.blog_url.blank?)
+    %p.blog_link= link_to 'More from the blog', @property.blog_url
+  - else
+    %p.blog_link= link_to 'More from the blog', 'http://blog.gables.com/'

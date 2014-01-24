@@ -1,0 +1,62 @@
+= form_for(Property.new, url: url_for(:controller => 'gca/home', :action => 'maintenance', :subdomain => 'gca'), html: {:class => 'page_form', :honeypot => true}) do
+  %h2 Maintenance Request Form
+  %fieldset
+    .row
+      .input.text
+        = label_tag :maintenance_name, 'Resident Name'
+        = text_field_tag 'maintenance[name]', '', :id => 'maintenance_name'
+      .input.text
+        = label_tag :maintenance_company, 'Company (if applicable)'
+        = text_field_tag 'maintenance[company]', '', :id => 'maintenance_company'
+    .row
+      .input.text
+        = label_tag :maintenance_community, 'Apartment Community'
+        = text_field_tag 'maintenance[community]', '', :id => 'maintenance_community'
+      .input.text
+        = label_tag :maintenance_aptnumber, 'Apartment #'
+        = text_field_tag 'maintenance[aptnumber]', '', :id => 'maintenance_aptnumber'
+    .row
+      .input.text
+        = label_tag :maintenance_phone, 'Contact Phone'
+        = text_field_tag 'maintenance[phone]', '', :id => 'maintenance_phone'
+      .input.text
+        = label_tag :maintenance_email, 'Contact Email'
+        = text_field_tag 'maintenance[email]', '', :id => 'maintenance_email'
+    .row
+      .input.text
+        = label_tag :maintenance_city, 'City'
+        = text_field_tag 'maintenance[city]', '', :id => 'maintenance_city'
+      .input.select.state
+        = label_tag :maintenance_state, 'State'
+        = select_tag 'maintenance[state]', options_for_select(Carmen::states('US').map {|state| [state.first, state.last]}, params[:maintenance_state]), {:prompt => 'Select'}
+    .input.checkset
+      %h3 Please indicate the type of request:
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Leak', false, :id => 'maintenance_type_leak'
+        = label_tag :maintenance_type_leak, 'Leak'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Heating / Air Conditioning', false, :id => 'maintenance_type_heat'
+        = label_tag :maintenance_type_heat, 'Heating / Air Conditioning'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Cable / Telephone / Internet', false, :id => 'maintenance_type_tel'
+        = label_tag :maintenance_type_tel, 'Cable / Telephone / Internet'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Furniture or Housewares Item', false, :id => 'maintenance_type_furniture'
+        = label_tag :maintenance_type_furniture, 'Furniture or Housewares Item'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Maid Service', false, :id => 'maintenance_type_maid'
+        = label_tag :maintenance_type_maid, 'Maid Service'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Accounting Question', false, :id => 'maintenance_type_accounting'
+        = label_tag :maintenance_type_accounting, 'Accounting Question'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'I want to add services to my apartment', false, :id => 'maintenance_type_services'
+        = label_tag :maintenance_type_services, 'I want to add services to my apartment'
+      .option
+        = check_box_tag 'maintenance[request_type][]', 'Other', false, :id => 'maintenance_type_other'
+        = label_tag :maintenance_type_other, 'Other'
+    .input.text
+      = label_tag :maintenance_other, 'Other request type'
+      = text_field_tag 'maintenance[other]', '', :id => 'maintenance_other'
+    .submit
+      %button{:type => 'submit'} Submit

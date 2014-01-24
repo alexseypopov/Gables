@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+  <head> 
+    <title>Life at Gables</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/tablet.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>
+      $(function () {
+          var top = ($('#community').offset().top - 64) - parseFloat($('#community').css('margin-top').replace(/auto/, 0));
+          $(window).scroll(function (event) {
+            // y position of the scroll
+            var y = $(this).scrollTop();
+            // whether that's below the header
+            if (y >= top) {
+              // if so, add the fixed class
+              $('#community').addClass('fixed');
+            } else {
+              // otherwise remove it
+              $('#community').removeClass('fixed');
+            }
+          });
+      });
+      </script>  
+  </head> 
+  <body id="life-at-gables" class="community sidebar">
+    <div class="wrap">
+      <header>
+        <nav id="main">
+          <ul>
+            <li id="nav-back"><a href="#" title="">&lt;</a></li>
+            <li id="nav-logo"><a href="#" title="">Gables</a></li>
+            <li id="nav-comm"><a href="#" title="">[Community Name goes here]</a></li>
+          </ul>
+        </nav>
+        <nav id="login">
+          <ul>
+            <li id="nav-res"><a href="#" title="">Residents</a></li>
+            <li id="nav-login"><a href="#" title="">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="content" class="group">
+        <article id="primary" class="life">
+          <section class="overview">
+            <h1>Arbors of Harbortown</h1>
+            <p>Experience the excitement of Atlanta’s Midtown West neighborhood. Call Gables 820 West home and enjoy nearby King Plow Arts Center, Atlantic Station and all west side has to offer. Just moments from Downtown and Buckhead, Gables 820 West has some of the most unique amenities in town including a saline pool with aqua lounge, outdoor theater, fitness center and billiards room. You’ll also know you’re doing your part for the environment while living in responsible green luxury in one of Atlanta’s first EarthCraft-certified apartment communities. With one and two bedroom apartments offering skyline views, hardwood floors, 9’ ceilings, granite counters with brick backsplashes and unique built-in desks and bookcases, you’ll be the envy of the neighborhood.</p>
+          </section>  
+          <section>
+            <h2>Community Amenities</h2>
+            <ul>
+              <li>Club quality fitness center</li>
+              <li>Earthcraft and Energy Star certified</li>
+              <li>Gated parking and street access</li>
+              <li>Mezzanine coffee bar and internet lounge</li>
+              <li>Rentable storage space</li>
+              <li>Skyline views</li>
+              <li>Two landscaped courtyards with bbqs</li>
+            </ul>
+          </section>
+          <section>
+            <h2 class="icon pet">Pet Policy</h2>
+            <p>We are happy to accept dogs and cats. A maximum of two pets, up to 75 pounds per pet. Pet stations are located throughout the community. Additional pet fee is required. Breed restrictions do apply.</p>
+          </section>
+          <section>
+            <h2 class="icon shopping">Shopping &amp; Dining</h2>
+            <p>Shopping and dining content</p>
+          </section>
+          <section>
+            <h2 class="icon green">Green Initiatives</h2>
+            <div class="col2 group">
+              <div class="item">
+                <h3 class="icon building">Sustainable Building</h3>
+                <ul>
+                  <li>EarthCraft® certified community - www.earthcrafthouse.com</li>
+                </ul>
+              </div>
+              <div class="item group">
+                <h3 class="icon something">Another Heading</h3>
+                <ul>
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                  <li>Item 4</li>
+                </ul>
+              </div>  
+          </section>
+          <section>
+            <h2>Living Guarantees</h2>
+            <p>Living Guarantees content</p>
+          </section>
+          <section>
+            <h2 class="icon connection">Connection Services</h2>
+            <p>Gables Connection Service is a convenient one-stop shop for ordering the utilities or other services you may need for your new home.</p>
+            <p><a class="btn grn open" href="#"><span>Learn More</span></a></p>
+          </section>
+          <section>
+            <h2 class="icon furnished">Furnished Apartments</h2>
+            <p>For living solutions that feel like home, Gables Corporate Accommodations can help you find exactly what you are looking for. Whether you need a studio apartment in the city or a three bedroom apartment in the suburbs, we will help you find the perfect apartment for your stay.</p>
+            <p><a class="btn grn open" href="#"><span>Learn More</span></a></p>
+          </section>
+          <section>
+            <h2 class="icon brochure">Community Brochure</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis justo sed leo ornare ultricies id ut justo.</p>
+        </section>
+          <section>
+            <h2 class="icon building">Building Specifications</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis justo sed leo ornare ultricies id ut justo.</p>
+        </section>  
+        </article>
+        <aside id="sidebar">
+          <nav id="life">
+            <h4>Community</h4>
+            <ul>
+              <li class="active"><a href="#" title="">Overview</a></li>
+              <li><a href="#" title="">Amenities</a></li>
+              <li><a href="#" title="">Pet Policy</a></li>
+              <li><a href="#" title="">Shopping &amp; Dining</a></li>
+              <li><a href="#" title="">Green Initiatives</a></li>
+            </ul>
+            <h4>Gables Services</h4>
+            <ul>
+              <li><a href="#" title="">Living Guarantees</a></li>
+              <li><a href="#" title="">Connection Services</a></li>
+              <li><a href="#" title="">Furnished Apartments</a></li>
+            </ul>
+            <h4>Additional Information</h4>
+            <ul>
+              <li><a href="#" title="">Community Brochure</a></li>
+              <li><a href="#" title="">Floorplan Brochure</a></li>
+              <li><a href="#" title="">Building Specifications</a></li>
+            </ul>
+          </nav> <!-- nav#life -->
+        </aside> <!-- #sidebar -->
+      </div> <!-- #content -->
+    </div> <!-- .wrap -->
+  </body>
+</html>

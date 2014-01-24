@@ -1,0 +1,11 @@
+script type="text/x-handlebars" data-template-name="available-units"
+  .page-heading
+    .nav-back <a {{action "goBack"}}>&lt; Back</a>
+    h1 Available Units
+    .action-bar
+      fieldset
+        .field.inline
+          label.inline Show
+          | {{view Ember.Select contentBinding="App.showOptions"
+              selectionBinding="App.unitsController.showOption"}}
+  | {{view App.UnitView contentBinding="App.unitsController.filtered"}}

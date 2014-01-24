@@ -1,0 +1,160 @@
+#inner_page.contact {
+  .main_content {
+    float: none;
+    margin: 0 auto;
+    width: 640px;
+  }
+  h1, h2 {
+    color: $header_color;
+    font: {
+      family: $header_font;
+      weight: bold;
+    };
+  }
+  h1 {
+    border-bottom: 1px solid #ccc;
+    font-size: 2.3em;
+    margin-bottom: 27px;
+    padding-bottom: 15px;
+  }
+  form {
+    .contact_info {
+      float: right;
+      width: 222px;
+      .thumb {
+        margin-bottom: 15px;
+      }
+      p {
+        color: $header_color;
+        margin-bottom: 8px;
+      }
+      ul {
+        li {
+          color: #000;
+          display: block;
+          font: {
+            size: 1.1em;
+            weight: bold;
+          };
+          margin-bottom: 5px;
+          padding: 2px 0 2px 38px;
+        }
+        li.phone {
+          background: url('../images/sprite2.png') no-repeat 0 -551px;
+        }
+        li.chat {
+          background: url('../images/sprite2.png') no-repeat 0 -691px;
+          a {
+            color: inherit;
+          }
+        }
+      }
+    }
+    fieldset {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 40px;
+      width: 360px;
+      h2 {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+        strong {
+          color: #828282;
+          display: block;
+          font: {
+            size: 0.7em;
+            weight: normal;
+          };
+        }
+      }
+    }
+    label {
+      @include label;
+      color: $header_color;
+    }
+    .input {
+      margin-bottom: 27px;
+    }
+    .input.text, .input.date {
+      input {
+        @include input;
+        padding: 6px 5px;
+        width: 348px;
+      }
+    }
+    .input.date {
+      input {
+        background: url('../images/sprite2.png') no-repeat 4px -1105px;
+        padding-left: 39px;
+        width: 314px;
+      }
+    }
+    .selector {
+      @include common_selector;
+      width: 358px;
+    }
+    .radioset {
+      @include clearfix;
+      width: 100%;
+      h3 {
+        margin-bottom: 5px;
+      }
+      label {
+        display: inline;
+        margin-bottom: 0;
+        padding-left: 5px;
+      }
+      .option {
+        float: left;
+        width: 50%;
+      }
+    }
+    textarea {
+      border: 1px solid #ddd;
+      padding: 6px 5px;
+      width: 348px;
+    }
+    .row {
+      @include clearfix;
+      width: 100%;
+      .input {
+        float: left;
+      }
+      .fname, .lname, .phone, .alt_phone, .zip {
+        input {
+          width: 156px;
+        }
+      }
+      .lname {
+        label {
+          visibility: hidden;
+        }
+      }
+      .lname, .alt_phone {
+        float: right;
+      }
+      .zip {
+        float: right;
+      }
+      .state {
+        float: left;
+        .selector {
+          width: 166px;
+        }
+      }
+    }
+    .submit {
+      height: 35px;
+      button {
+        @include button;
+        float: left;
+        margin-right: 14px;
+        width: 137px;
+      }
+      p {
+        font-size: 0.85em;
+        float: left;
+        width: 205px;
+      }
+    }
+  }
+}

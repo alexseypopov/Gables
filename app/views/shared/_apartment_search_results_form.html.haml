@@ -1,0 +1,26 @@
+= form_tag(find_where_path, :method => 'get', :id => 'apartment_search_results_form', :target => context == 'iframe' ? '_top' : nil) do
+  %fieldset
+    %h1= raw(h1)
+    - cache('aparment_search_results_form') do
+      = hidden_field_tag :floorplans, params[:floorplans] || 'any'
+      .input.select.state
+        = label_tag :state
+        = select_tag :state, options_for_select(@states, params[:state]), {:prompt => 'Select'}
+      .input.select.city
+        = label_tag :city
+        = select_tag :city, options_for_select(cities_for(@states.first), params[:city]), {:prompt => 'Select'}
+        %ul.states_list
+          - @states.each do |state|
+            %li{:data => {:state => state}}
+              %ul
+                - cities_for(state).each do |city|
+                  %li= city
+    .input.text.description
+      = label_tag :query
+      = text_field_tag :query, params[:query], :placeholder => 'Enter City, Zip, Landmark, or Community Name', :autocomplete => 'off'
+      #live_search{:class => @s.properties.length > 0 ? '' : 'did_you_mean', :data => {:query => params[:query] || ''}}
+        %ul
+          - @live_search_options.each do |option|
+            %li= option
+    .submit
+      %button{:type => 'submit'} Search

@@ -1,0 +1,48 @@
+a.request-info(name="RequestInformation")
+h2 Request Information
+= form_for(@schedule, :url => @type == 'unit' ? floorplan_path(@floorplan, :unit_id => @unit) : property_path(@property), html: {honeypot: true}) do |form|
+
+  input type='text' id='first_name' placeholder='First Name'
+  = form.error_message_on :first_name, :prepend_text => 'First Name '
+
+  input type='text' id='last_name' placeholder='Last Name'
+  = form.error_message_on :last_name, :prepend_text => 'Last Name '
+
+  input type='text' id='phone' placeholder='Phone Number'
+  = form.error_message_on :phone, :prepend_text => 'Phone '
+
+  input type='text' id='alt_phone' placeholder='Alternative Phone Number'
+
+  input type='text' id='email' placeholder='Email' autocapitalize='off' autocorrect='on'
+
+  = check_box_tag 'schedule[opt_in]', true, false, :id => 'opt_in'
+  = label_tag :opt_in, ' Send me updates from Gables Residential'
+  a title='Privacy Policy' href='/privacy' class='inline' privacy policy
+  = form.error_message_on :last_name, :prepend_text => 'Email '
+
+  input type='text' id='beds' placehoder='Beds'
+  = form.error_message_on :beds, :prepend_text => 'Beds '
+
+  input type='text' id='rent_range' placeholder='Rent Range'
+  = form.error_message_on :rent_range, :prepend_text => 'Rent Range '
+
+  textarea id='comments' style='width:100%' placeholder='How may we help you?'
+  = form.error_message_on :comments, :prepend_text => 'Comments '
+
+  label for='move_date' Move In Date
+  input type='date' id='move_date' placeholder='DD / MM / YYYY' autocomplete='off'
+
+  label for='visit_date1' Schedule a Visit
+  input type='date' id='visit_date1' placeholder='DD / MM / YYYY' autocomplete='off'
+
+  .styled-select
+    .select
+      i.icon-chevron-down
+      = form.select :visit_time1, options_for_select(@schedule.times, params[:visit1_time])
+  .submit
+    - if @schedule.errors.count > 0
+      .error_explanation
+        p #{@schedule.errors.count} errors prohibited your schedule from being saved. Please fix these errors and resubmit.
+    button.button type='submit'
+      span Submit
+    p One of our leasing specialists will contact you within 24 hours.

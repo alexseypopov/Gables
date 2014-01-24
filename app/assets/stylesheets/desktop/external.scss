@@ -1,0 +1,338 @@
+// variables
+@import 'variables';
+
+// mixins
+@import 'mixins';
+
+#job_search_container {
+  p.subtitle {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+  .pagination {
+    float: right;
+    height: 30px;
+    li {
+      display: inline;
+      font: {
+        family: $header_font;
+        size: 15px;
+      };
+      margin-left: 12px;
+      a {
+        color: #333;
+        text-decoration: underline;
+      }
+    }
+  }
+  table {
+    margin-bottom: 45px;
+    width: 100%;
+  }
+  th, td {
+    font-size: 13px;
+    padding: 6px;
+    &:first-child {
+      padding-left: 18px;
+    };
+  }
+  thead th {
+    background-color: $careers_color;
+    color: #fff;
+  }
+  tbody td {
+    background-color: #fff;
+    border: {
+      bottom: 4px solid #fff;
+      top: 4px solid #fff;
+    };
+    color: $body_color;
+    a {
+      text-decoration: underline;
+    }
+  }
+  tbody tr:nth-child(even) td {
+    background-color: #eee;
+  }
+  form {
+    margin-bottom: 30px;
+    fieldset {
+      width: 595px;
+    }
+    h2 {
+      background-color: $careers_color;
+      color: #fff;
+      font: {
+        size: 15px;
+        weight: bold;
+      };
+      margin-bottom: 35px;
+      padding: 8px 0;
+      position: relative;
+      text-indent: 12px;
+      width: 100%;
+    }
+    .selector {
+      @include common_selector(445px);
+    }
+    .input {
+      @include clearfix;
+      margin-bottom: 25px;
+      width: 100%;
+      label {
+        color: #333;
+        display: block;
+        float: left;
+        font: {
+          size: 15px;
+          weight: bold;
+        };
+        margin-right: 18px;
+        text-align: right;
+        width: 130px;
+      }
+      input {
+        @include input;
+        padding: {
+          left: 10px;
+          right: 10px;
+        };
+        width: 425px;
+      }
+      input, .selector {
+        float: left;
+      }
+    }
+    .multiselect {
+      select {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 445px;
+      }
+    }
+    .range {
+      float: right;
+      .input {
+        float: left;
+        margin-left: 15px;
+        width: auto;
+        label {
+          font-size: 13px;
+          position: relative;
+          text-align: left;
+          top: 6px;
+          width: auto;
+        }
+        input {
+          padding: {
+            left: 5px;
+            right: 5px;
+          };
+          width: 70px;
+        }
+      }
+      .selector {
+        width: 80px;
+        span {
+          padding-left: 5px;
+        }
+      }
+    }
+    .submit {
+      clear: both;
+      button {
+        @include button;
+        float: right;
+        font-size: 19px;
+        width: 160px;
+      }
+    }
+  }
+  .footnote {
+    border-top: 2px solid $careers_color;
+    a {
+      color: #fff;
+      display: block;
+      font-family: $header_font;
+      margin: 0 auto 30px;
+      padding: 4px 0 6px;
+      text-align: center;
+      width: 200px;
+      &.back {
+        background-color: $careers_color;
+      }
+    }
+  }
+}
+
+.main_content {
+  float: left;
+  width: 640px;
+}
+.sub_content {
+  float: right;
+  width: 275px;
+  h2 {
+    color: $header_color;
+    font: {
+      family: $header_font;
+      size: 1.2em;
+      weight: bold;
+    };
+    margin-bottom: 15px;
+  }
+  ul {
+    font-size: 1.1em;
+    line-height: 1.4em;
+  }
+}
+
+#request_confirmation, #request_form {
+  a {
+    color: $brand_color;
+    text-decoration: underline;
+  }
+  h1 {
+    color: $header_color;
+    font: {
+      family: $header_font;
+      size: 1.7em;
+      weight: bold;
+    };
+    margin-bottom: 25px;
+  }
+  h2 {
+    background-color: $brand_color;
+    color: #fff;
+    font: {
+      size: 15px;
+      weight: bold;
+    };
+    margin-bottom: 20px;
+    padding: 8px 0;
+    position: relative;
+    text-indent: 12px;
+    width: 100%;
+  }
+}
+
+#request_confirmation {
+  p {
+    margin-bottom: 1em;
+    &:last-child {
+      border-top: 2px solid $brand_color;
+      margin-top: 2em;
+      padding-top: 30px;
+    };
+  }
+  blockquote {
+    margin: 2em 0 2em 45px;
+    p:last-child {
+      border: 0;
+      color: $header_color;
+      font-weight: bold;
+      margin-top: 0;
+      padding-top: 0;
+    };
+  }
+  .submit {
+    margin-bottom: 1em;
+    a {
+      @include button;
+      display: block;
+      margin: 0 auto;
+      text-decoration: none;
+      width: 280px;
+    }
+  }
+}
+
+#request_form {
+  dl {
+    @include clearfix;
+    margin-bottom: 15px;
+    width: 500px;
+    dt, dd {
+      display: block;
+      float: left;
+      margin-bottom: 4px;
+    }
+    dt {
+      color: $header_color;
+      font-weight: bold;
+      width: 100px;
+    }
+    dd {
+      width: 400px;
+    }
+  }
+  form {
+    border-bottom: 2px solid $brand_color;
+    margin: 25px 0;
+  }
+  fieldset {
+    width: 595px;
+  }
+  .input {
+    @include clearfix;
+    margin-bottom: 25px;
+    width: 100%;
+    label {
+      color: #333;
+      display: block;
+      float: left;
+      font: {
+        size: 15px;
+        weight: bold;
+      };
+      margin-right: 18px;
+      text-align: right;
+      width: 150px;
+    }
+    input {
+      @include input;
+      padding: {
+        left: 10px;
+        right: 10px;
+      };
+      width: 405px;
+    }
+    input, .selector {
+      float: left;
+    }
+    &.phone {
+      input {
+        margin-right: 5px;
+        width: 40px;
+      }
+    }
+    &.radios {
+      input {
+        float: none;
+        padding: 0;
+        width: 15px;
+      }
+      .options {
+        float: right;
+        width: 425px;
+        label {
+          display: inline;
+          float: none;
+          font-weight: normal;
+          margin-right: 4px;
+          width: auto;
+        }
+      }
+    }
+  }
+  .submit {
+    clear: both;
+    margin: 0 0 30px 168px;
+    button {
+      @include button;
+      font-size: 19px;
+      margin-top: 10px;
+      width: 160px;
+    }
+  }
+}

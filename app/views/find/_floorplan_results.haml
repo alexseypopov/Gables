@@ -1,0 +1,19 @@
+- @properties.each do |property|
+  - floorplans = @s.floorplans_for(property).order('rent_min')
+  - floorplans.each do |floorplan|
+    .floorplan_result
+      .floorplan_info
+        .thumb
+          - if floorplan.images.count > 0
+            = image_tag floorplan.images.first.thumb.url, :alt => ''
+            = link_to 'show large image', floorplan.images.first.thumb.url
+          - else
+            = image_tag 'no_image.gif', :alt => ''
+        .details
+          %h2= link_to raw("#{floorplan.name} <span>#{rooms(floorplan)}</span>"), floorplan_path(floorplan)
+          %p at #{link_to property.name, property_path(property)}
+          %h3 Available Features
+          %ul
+            - property.amenities.each do |amenity|
+              %li= "- #{amenity.description}"
+      = render :partial => 'floorplan_table', :locals => {:floorplan => floorplan, :include_compare => true}

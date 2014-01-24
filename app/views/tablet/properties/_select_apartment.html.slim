@@ -1,0 +1,49 @@
+script type="text/x-handlebars" data-template-name="select-apartment"
+  #select-apartment.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Select Apartment
+    .content.group
+      form#select-apartment
+        fieldset.border
+          .row.group
+            .field.inline
+              label.inline for="select_bedrooms" Bedrooms
+              | {{ view Ember.Select contentBinding="App.bedOptions"
+                    optionLabelPath="content.name" prompt="All"
+                    selectionBinding="App.unitsController.selectedBeds"}}
+            .field.inline
+              label.inline for="select_bathrooms" Bathrooms
+              | {{ view Ember.Select contentBinding="App.bathOptions"
+                    optionLabelPath="content.id" prompt="All"
+                    selectionBinding="App.unitsController.selectedBaths"}}
+            .field.inline
+              label.inline for="select_occupants" Occupants
+              | {{ view Ember.Select contentBinding="App.numberOccupants" prompt="Select"
+                    selectionBinding="App.currentGuest.num_occupants"}}
+          .row.group
+            .field.rent-range
+              label for="rent_range" Rent Range
+              .outputs
+                output.low ${{minRent}}
+                output.high ${{maxRent}}
+              #rent-range
+          .row.group
+            .field.inline
+              label.inline for="lease_term" Lease Term
+              select name="lease-term" id="lease_term"
+                option Select
+                option 9 mo.
+                option 12 mo
+                option 15 mo.
+            .field.inline.right
+              label.inline for="move_in_date" Move In Date*
+              | {{view Ember.TextField class="select" valueBinding="App.currentGuest.move_in_date" type="date"}}
+        fieldset
+          .row.group
+            .field
+              label for="apartment_needs" Specific Needs
+              | {{view Ember.TextArea valueBinding="App.currentGuest.apartment_needs" attributeBindings="spellcheck" spellcheck="true"}}
+        .actions
+          | <button class="btn" {{action "search"}}>Find Apartment</button>
+            <a {{action "search"}}>See all Available</a>

@@ -1,0 +1,39 @@
+script type="text/x-handlebars" data-template-name="apartment-preferences"
+  .page-heading
+    .nav-back <a {{action "goBack"}}>&lt; Back</a>
+    h1 Apartment Preferences
+    .action-bar.units-filter
+      fieldset
+        .field.inline
+          label Beds
+          | {{ view Ember.Select contentBinding="App.bedOptions"
+                optionLabelPath="content.name" prompt="All"
+                selectionBinding="App.unitsController.selectedBeds"}}
+        .field.inline
+          label Baths
+          | {{ view Ember.Select contentBinding="App.bathOptions"
+                optionLabelPath="content.id" prompt="All"
+                selectionBinding="App.unitsController.selectedBaths"}}
+        .field.inline
+          label Occupants
+          | {{ view Ember.Select contentBinding="App.numberOccupants" prompt="Select"
+                selectionBinding="App.currentGuest.num_occupants"}}
+        .field.inline
+          label Move In Date
+          | {{view Ember.TextField class="select" valueBinding="App.currentGuest.move_in_date" type="date"}}
+        | {{#if App.unitsController.leaseTermOption}}
+        .field.inline
+          label Lease Term
+          | {{ view Ember.Select contentBinding="App.leaseTermOptions"
+                prompt="Select" selectionBinding="App.unitsController.leaseTerm"}}
+        | {{/if}}
+        .field.inline
+          label Show
+          | {{view Ember.Select contentBinding="App.showOptions"
+              selectionBinding="App.unitsController.showOption"}}
+  | {{#if App.unitsController.filtered}}
+  | {{view App.UnitView class="apartment-preferences" contentBinding="App.unitsController.filtered"}}
+  | {{else}}
+  h2.centered style="padding-top: 300px;" No apartments found. Please update your preferences and try again.
+  | {{/if}}
+  .page-footer <button class="btn grn" {{bindAttr disabled="isDisabled"}} {{action "complete"}}>Mark Complete</button>

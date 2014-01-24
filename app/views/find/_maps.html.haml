@@ -1,0 +1,55 @@
+:plain
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+= javascript_include_tag 'map'
+%script{:type => 'text/javascript'}
+  $(function() {
+  - if regions && regions.length > 0
+    GMap.zoom = 4;
+    GMap.center = new google.maps.LatLng(41.59,-93.62);
+    GMap.initialize();
+    var regions = [];
+    - regions.each do |region|
+      = "regions.push({"+                     |
+          "id: '#{region.id}',"+              |
+          "lat: #{region.latitude},"+         |
+          "lng: #{region.longitude},"+        |
+          "name: '#{region.name}'"+           |
+        "});"                                 |
+    GMap.addCityMarkers(regions);
+  - else
+    GMap.use_bounds = true;
+    GMap.zoom = 11;
+    GMap.initialize();
+    var points = [];
+    - if properties && properties.length > 0
+      - properties.reverse.each do |property|
+        = "points.push({"+                                                                                    |
+          "data: {"+                                                                                          |
+          "floorplan_count: '#{property.available_floorplans(@s).length}',"+                                  |
+          "link: '#{subdomain == 'gca' ? listing_path(property) : property_path(property)}',"+                                                              |
+          "id: '#{property.id}',"+                                                                            |
+          "image: '#{property.images.count > 0 ? property.images.first.thumb.url : '/images/no_image.gif'}',"+  |
+          "title: '#{property.name.gsub("'","\\\'")}',"+                                                       |
+          "rent: '#{rent_range(property.available_floorplans(@s))}'"+                                         |
+          "},"+                                                                                               |
+          "lat: #{property.latitude},"+                                                                       |
+          "lng: #{property.longitude}"+                                                                       |
+          "});"                                                                                               |
+    - if units && units.length > 0                           
+      - @units.reverse.each do |unit|
+        = "points.push({"+                                                                                                                  |
+          "data: {"+                                                                                                                        |
+          "floorplan_count: '#{unit.floorplan.property.available_floorplans(@s).length}',"+                                                     |
+          "link: '#{subdomain == 'gca' ? listing_path(unit.floorplan.property) : property_path(unit.floorplan.property)}',"+                                                                             |
+          "id: '#{unit.floorplan.property.id}',"+                                                                                           |
+          "image: '#{unit.floorplan.property.images.count > 0 ? unit.floorplan.property.images.first.thumb.url : '/images/no_image.gif'}',"+  |
+          "title: '#{unit.floorplan.property.name}',"+                                                                                       |
+          "rent: '#{rent_range(unit.floorplan.property.available_floorplans(@s))}'"+                                         |
+          "},"+                                                                                                                             |
+          "lat: #{unit.floorplan.property.latitude},"+                                                                                      |
+          "lng: #{unit.floorplan.property.longitude}"+                                                                                      |
+          "});"                                                                                                                             |
+    GMap.addCommunityMarkers(points);
+    GMap.addCenterMarker();
+  GMap.finish();
+  });

@@ -1,0 +1,16 @@
+script type="text/x-handlebars" data-template-name="return-licenses"
+  div#return-licenses.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Return Licenses
+    .content.group
+      form#licenses
+        label Guest Names
+        .table-wrap.no-header
+          table  cellspacing="0"
+            tbody
+              | {{#each names}}
+              tr: td() {{view Ember.Checkbox titleBinding="name" valueBinding="checked"}}
+              | {{/each}}
+    .page-footer <button class="btn grn" {{bindAttr disabled="isDisabled"}} {{action "complete"}}>Mark Complete</button>
+

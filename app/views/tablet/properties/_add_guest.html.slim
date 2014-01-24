@@ -1,0 +1,89 @@
+script type="text/x-handlebars" data-template-name="add-guest"
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1
+        | Add Guest
+    .content.group
+      form#add-guest-form action=""
+        | <input type="hidden" name="insite_id" {{bindAttr value="App.currentGuest.insite_id" }}/>
+        = render "name_and_phone_fields"
+        fieldset
+          h2 Reason for Leasing
+          .row.group
+            .field
+              = select_tag :tablet_leasing_reason_id, \
+                options_from_collection_for_select( \
+                  [Tablet::LeasingReason.new(:name => "Select")] + \
+                   Tablet::LeasingReason.all, :id, :name)
+        erb:
+          <fieldset {{bindAttr class="App.currentGuest.referrer_disabled"}}>
+            <h2>Referrer</h2>
+            <div class="row group">
+              <div class="field">
+                <label for="tablet_lead_source_id">How did you learn about us?*</label>
+                <%= select_tag :tablet_lead_source_id, options_from_collection_for_select(
+                    [Tablet::LeadSource.new(:name => "Select")] + @lead_sources, :id, :name)
+                %>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        | <div {{bindAttr class="hideReferralFields:hidden"}}>
+        .row.group
+          .field.inline
+            label for="referral_name" Referral Name
+            input id="referral_name" name="referral_name" type="text"
+          .field.inline.right
+            label for="referral_fee" Referral Fee
+            input id="referral_fee" name="referral_fee" type="text"
+        | </div>
+        | <div {{bindAttr class="hideEscortedFields:hidden"}}>
+        .row.group
+          .field.option.inline
+            input id="escorted" name="escorted" type="checkbox" value="1"
+            label for="escorted" Escorted?
+        | </div>
+        | </fieldset>
+        fieldset
+          h2 Apartment Needs
+          .row.group
+            .field.option.inline
+              input id="pets" name="pets" type="checkbox" value="1"
+              label for="pets" Pets?
+            .field.option.inline
+              input id="furnished" name="furnished" type="checkbox" value="1"
+              label for="furnished" Furnished? (GCA 866-422-7368)
+          .row.group
+            .field
+              label for="apartment_needs" Specific Needs
+              textarea id="apartment_needs" name="apartment_needs" type="text" spellcheck="true"
+        fieldset
+          h2 Current Address
+          .row.group
+            .field
+              label for="address_line1" Address
+              input id="address_line1" name="address_line1" type="text"
+              input id="address_line2" name="address_line2" type="text"
+          .row.group
+            .field
+              label for="zip" Zip
+              input id="zip" name="zip" type="tel"
+        fieldset
+          h2 Employer
+          .row.group
+            .field
+              label for="employer_name" Name
+              input id="employer_name" name="employer_name" type="text"
+          .row.group
+            .field
+              label for="employer_address_line1" Address
+              input id="employer_address_line1" name="employer_address_line1" type="text"
+              input id="employer_address_line2" name="employer_address_line2" type="text"
+          .row.group
+            .field
+              label for="employer_zip" Zip
+              input id="employer_zip" name="employer_zip" type="tel"
+        p{} (* Required)
+    .page-footer
+      | <button class="btn grn" {{action "save"}}>Save</button>
+        <button class="btn grn" {{bindAttr disabled="isDisabled"}} {{action "complete"}}>Mark Complete</button>

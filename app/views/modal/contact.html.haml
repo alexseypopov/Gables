@@ -1,0 +1,60 @@
+#contact_us
+  - if @property
+    %h1 Contact #{@property.name}
+  - else
+    %h1 Contact Us
+  = form_for(@contact, :url => modal_contact_path, html: {honeypot: true}) do |form|
+    %fieldset
+      - unless @property.nil?
+        - if request.subdomain.include?('urban')
+          = form.hidden_field :urban_property, :value => @property.id
+        - else
+          = form.hidden_field :property, :value => @property.id
+      = form.hidden_field :subdomain, :value => request.subdomain
+      .row
+        .input.text.required
+          = form.label :first_name, 'Your Name <b>required</>'.html_safe
+          = form.text_field :first_name, :placeholder => 'First'
+          = form.error_message_on :first_name, :prepend_text => 'First Name '
+        .input.text.last_name.required.last
+          = form.label :last_name, 'Last Name'
+          = form.text_field :last_name, :placeholder => 'Last'
+          = form.error_message_on :last_name, :prepend_text => 'Last Name '
+      .row
+        .input.text.required
+          = form.label :phone, 'Phone <b>required</b>'.html_safe
+          = form.text_field :phone
+          = form.error_message_on :phone, :prepend_text => 'Phone '
+        .input.text.required.last
+          = form.label :email, 'Email <b>required</b>'.html_safe
+          = form.text_field :email, :autocapitalize => 'off', :autocorrect => 'on'
+          = form.error_message_on :last_name, :prepend_text => 'Email '
+      - unless @property || request.subdomain.include?('urban') || request.subdomain.include?('gca')
+        .row
+          .input.radioset
+            %h2 Are you a
+            .option
+              = form.radio_button :visitor_type, 'Resident'
+              = form.label :visitor_type_resident, 'Resident'
+            .option
+              = form.radio_button :visitor_type, 'Client/Investor'
+              = form.label :visitor_type_clientinvestor, 'Client/Investor'
+            .option
+              = form.radio_button :visitor_type, 'Vendor/Other'
+              = form.label :visitor_type_vendorother, 'Vendor/Other'
+          .input.select.flexselect.last
+            = form.label :property
+            = form.select :property, options_for_select(@propertylist, params[:contact] ? params[:contact][:property] : ''), {:prompt => ''}
+            = form.error_message_on :property, :prepend_text => 'Property '
+      .input.textarea
+        = form.label :message, 'Message'
+        = form.text_area :message
+      - if @contact.errors.count > 0
+        .error_explanation
+          %p #{@contact.errors.count} errors prohibited your contact form from being sent. Please fix these errors and resubmit.
+      .submit
+        - if request.subdomain.include?('gca')
+          %p A GCA representative will contact you within 24 hours.
+        - elsif @property.blank?
+          %p One of our leasing specialists will contact you within 24 hours to setup an appointment.
+        %button{:type => 'submit'} Send

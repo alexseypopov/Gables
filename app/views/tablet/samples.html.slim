@@ -1,0 +1,1522 @@
+.content.group
+  h1 h1 - Heading 1 style
+  h2 h2 - Heading 2 style
+  h2.icon.pet Heading 2 with icon
+  h3 h3 - Heading 3 style
+  h3.icon.building Heading 3 with icon
+  p
+    a.btn href="#"
+      span Regular Button (30px)
+    a.btn.grn href="#"
+      span Green Button
+    a.btn.grn.open href="#"
+      span Button With Open Icon
+    a.btn.grn.refresh href="#"
+      span Refresh
+    a.btn.disabled
+      span Disabled Button
+  p
+    a.btn.sm This is a small button (23px)
+  div style="position:relative; margin: -52px 0 0 720px;"
+    .pop
+      p This is a popover that will be used for login and various navigation items throughout the app.
+div style="clear:both;"
+  form#add-guest action=""
+    fieldset
+      .row.group
+        .field.inline
+          label for="test"
+          input name="test" placeholder="This is a placeholder..." type="text" value=""
+        .field.inline
+          label for="test"
+          input name="test" placeholder="" type="text" value=""
+      .row.group
+        .field.inline
+          label for="test"
+          input name="test" placeholder="This is a placeholder..." type="text" value=""
+        .field.inline
+          label for="test"
+          input name="test" placeholder="" type="text" value=""
+    fieldset
+      h2 Reason for Leasing - guest card form heading
+      .row.group
+        .field.option
+          input name="checkbox-name" type="checkbox" value="off"
+          label for="checkbox-name" This is a checkbox label
+      .row.group
+        .field
+          label for="select-name"
+          select name="select-name"
+            option Select...
+            option This is the first option
+            option 2 - This is the second option
+            option This is the third option
+            option This is the forth option
+            option 5 - This is the fifth option
+  h2 style="margin-top: 150px;"
+  .table-wrap
+    table cellspacing="0"
+      thead
+        tr
+          th Move Out
+          th Unit
+          th BLDG - FLR
+          th Status
+          th Mkt. Rent
+          th Options / Features
+      tbody
+        tr
+          td 10/12/11
+          td 1106
+          td 100 - 1
+          td On Notice - Occupied
+          td $1,197 - $1,340
+          td
+            ul.features
+              li Pool View
+              li Balcony
+              li Stacked W/D
+        tr
+          td 10/12/11
+          td 1106
+          td 100 - 1
+          td On Notice - Occupied
+          td $1,197 - $1,340
+          td
+            ul.features
+              li Pool View
+              li Balcony
+              li Stacked W/D
+
+h2 Modals
+.modal
+  h3
+    | Basic Modal - Heading Text
+    .btn Close
+  p Add some content to this section, including a heading, text, form field and button.
+  p Add some content to this section, including a heading, text, form field and button.
+  p Add some content to this section, including a heading, text, form field and button.
+
+.modal.email
+  h3
+    .btn Cancel
+  h4 PDF Brochure
+  p Email the brochure to an email address for review at home (FPO).
+  form#email-form
+    fieldset
+      label for="email_address" Email
+      input name="email_address" type="email"
+      button.btn type="submit" Send Brochure
+
+.modal.floorplans
+  h3
+    | 1st Unit Type Preference
+    .btn Cancel
+  .floorplan.group
+    section.floorplan-image
+      img src="http://placehold.it/176x160" alt="Floorplan Image"  
+    section.floorplan-details
+      .meta.multicol.group
+        h1 Floorplan Name
+        .bed-bath # Beds / # Baths
+        .sqft 795 Sqft.
+        .rent $1,055 - $1,355
+      .features
+        ul.multicol
+          li Breakfast Bar
+          li Frost-Free Refrigerators with Ice Makers
+          li Full Size Washer &amp; Dryer Hook Ups
+          li Self Cleaning Ovens
+          li Spacious Closets and Pantries
+          li Patios/Balconies
+          li Ceiling Fan Connections
+        a.btn href="#" 
+          span Mark as 1st Preference 
+
+/! Floorplans Layout - body ID and class below can be set on either the body or wrap element
+div#floorplans.swipeview.community
+  .content.group
+    .floorplan.group
+      section.floorplan-image
+        img src="http://placehold.it/515x475" alt="Floorplan Image"
+      section.floorplan-details
+        .filter.group
+          p.title Filter Floorplans
+          form action="#"
+            fieldset
+              div.field.inline
+                label for="select-name" Beds
+                select name="select-name"
+                  option All
+                  option 1
+                  option 2
+                  option 3
+              div.field.inline
+                label for="select-name" Baths
+                select name="select-name"
+                  option 2
+                  option 3
+        .meta.multicol.group
+          h1 Floorplan Name
+          .bed-bath # Beds / # Baths
+          .sqft 795 Sqft.
+          .rent $1,055 - $1,355
+        .features
+          h3 Features
+          ul.multicol
+            li Breakfast Bar
+            li Frost-Free Refrigerators with Ice Makers
+            li Full Size Washer &amp; Dryer Hook Ups
+            li Self Cleaning Ovens
+            li Spacious Closets and Pantries
+            li Patios/Balconies
+            li Ceiling Fan Connections
+          a.btn.view href="#"
+            span View (3) Available Units
+    #floorplans-nav
+     .dot-nav-wrap
+        .dot-nav
+          a href="#"
+          a href="#"
+          a class="active" href="#"
+          a href="#"
+          a href="#"
+
+/! Site plan Layout - body ID and class can be set on either the body or wrap element
+div#siteplan.community
+  .wrap
+    .content.group
+      #siteplan-images
+        img src="http://placehold.it/1024x768" alt="Site Plan Image"
+      #siteplan-nav
+        .centering-container
+          ul
+            li.selected
+              a href="#" title=""
+                img src="http://placehold.it/115x96" alt=""
+            li
+              a href="#" title=""
+                img src="http://placehold.it/115x96" alt=""
+            li
+              a href="#" title=""
+                img src="http://placehold.it/115x96" alt=""
+                
+/! Area Map Layout - body ID and class can be set on either the body or wrap element
+div#areamap.community
+  .wrap
+    .content.group
+      #area-map
+        /!iframe src="http://www.walkscore.com/m/score/820-West-Marietta-St-N.W."
+        
+/! Find Guest Layout - body ID and class can be set on either the body or wrap element
+div#find-guest.guestcard.associate
+  .wrap
+    .page-heading
+      h1 Find Guest
+    .content.group
+      form#find-guest-form action=""
+        fieldset.border
+          .row.group
+            .field.inline
+              label for="first_name" First Name
+              input id="first_name" name="first_name" type="text" value=""
+            .field.inline
+              label for="middle_intial" MI
+              input id="middle_initial" name="middle_initial" type="text" value=""
+            .field.inline
+              label for="last_name" Last Name
+              input id="last_name" name="last_name" type="text" value=""
+          .row.group
+            .field.inline
+              label for="email" Email
+              input id="email" name="email" type="email" value=""
+        fieldset
+          .row.group
+            .field.inline
+              label for="home_phone" Home Phone
+              input id="home_area" class="area" name="home_area" type="tel" value=""
+              input id="home_exch" class="exch" name="home_exch" type="tel" value=""
+              | &mdash;
+              input id="home_sln" class="sln" name="home_sln" type="tel" value=""
+            .field.inline.right
+              label for="work_phone" Work Phone
+              input id="work_area" class="area" name="work_area" type="tel" value=""
+              input id="work_exch" class="exch" name="work_exch" type="tel" value=""
+              | &mdash;
+              input id="work_sln" class="sln" name="work_sln" type="tel" value=""
+          .row.group
+            .field.inline
+              label for="cell_phone" Cell Phone
+              input id="cell_area" class="area" name="cell_area" type="tel" value=""
+              input id="cell_exch" class="exch" name="cell_exch" type="tel" value=""
+              | &mdash;
+              input id="cell_sln" class="sln" name="cell_sln" type="text" value=""
+        .actions
+          button.btn.disabled type="submit"
+            span Find Guest
+              
+/! Select Guest Layout - body ID and class can be set on either the body or wrap element
+div#select-guest.guestcard.associate
+  .wrap
+    .page-heading
+      h1 Select Guest
+    .content.group
+      ul.guests
+        li
+          h2 Lastname, Firstname
+          .select
+            a.btn.sm
+              span Select
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Phone
+                  th Email
+                  th Date
+                  th Community
+                  th Status
+              tbody
+                tr
+                  td (404) 555-0111
+                  td jzimmerman@example.com
+                  td 08/12/2011
+                  td Sherwood Forest At Coral Springs
+                  td.status
+                    span Prospect
+        li
+          h2 Lastname, Firstname
+          .select
+            a.btn.sm
+              span Select
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Phone
+                  th Email
+                  th Date
+                  th Community
+                  th Status
+              tbody
+                tr
+                  td (404) 555-0111
+                  td jzimmerman@example.com
+                  td 08/12/2011
+                  td Gables 820 West
+                  td.status
+                    span Prospect
+        li
+          h2 Lastname, Firstname
+          .select
+            a.btn.sm
+              span Select
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Phone
+                  th Email
+                  th Date
+                  th Community
+                  th Status
+              tbody
+                tr
+                  td (404) 555-0111
+                  td jzimmerman@example.com
+                  td 08/12/2011
+                  td Gables Midtown
+                  td.status
+                    span.skip Skip
+      .actions.center
+        a.btn
+          span More Results
+        a.btn.grn
+          span Add Guest
+
+/! Add Guest Layout - body ID and class can be set on either the body or wrap element
+div#add-guest.guestcard.associate
+  .wrap
+    .page-heading
+      h1
+        | Add Guest
+        a.btn.grn
+          span Mark Complete
+    .content.group
+      form#add-guest-form action=""
+        fieldset.border
+          .row.group
+            .field.inline
+              label for="first_name" First Name
+              input id="first_name" name="first_name" type="text" value=""
+            .field.inline
+              label for="middle_intial" MI
+              input id="middle_initial" name="middle_initial" type="text" value=""
+            .field.inline
+              label for="last_name" Last Name
+              input id="last_name" name="last_name" type="text" value=""
+          .row.group
+            .field.inline
+              label for="email" Email
+              input id="email" name="email" type="email" value=""
+        fieldset
+          .row.group
+            .field.inline
+              label for="home_phone" Home Phone
+              input id="home_area" class="area" name="home_area" type="tel" value=""
+              input id="home_exch" class="exch" name="home_exch" type="tel" value=""
+              | &mdash;
+              input id="home_sln" class="sln" name="home_sln" type="tel" value=""
+            .field.inline.right
+              label for="work_phone" Work Phone
+              input id="work_area" class="area" name="work_area" type="tel" value=""
+              input id="work_exch" class="exch" name="work_exch" type="tel" value=""
+              | &mdash;
+              input id="work_sln" class="sln" name="work_sln" type="tel" value=""  
+          .row.group
+            .field.inline
+              label for="cell_phone" Cell Phone
+              input id="cell_area" class="area" name="cell_area" type="tel" value=""
+              input id="cell_exch" class="exch" name="cell_exch" type="tel" value=""
+              | &mdash;
+              input id="cell_sln" class="sln" name="cell_sln" type="tel" value=""
+        fieldset
+          h2 Reason for Leasing
+          .row.group
+            .field
+              select id="reason_leasing" name="reason_leasing"
+                option Select...
+                option This is the first option
+                option 2 - This is the second option
+                option This is the third option
+                option This is the forth option
+                option 5 - This is the fifth option
+        fieldset
+          h2 Referrer
+          .row.group
+            .field
+              label for="referral_source" How did you learn about us?
+              select id="referral_source" name="referral_source"
+                option Gables.com
+                option This is the first option
+                option 2 - This is the second option
+                option This is the third option
+                option This is the forth option
+                option 5 - This is the fifth option
+          .row.group
+            .field.inline
+              label for="referral_name" Referral Name
+              input id="referral_name" name="referral_name" type="text" value=""
+            .field.inline.right
+              label for="referral_fee" Referral Fee
+              input id="referral_fee" name="referral_fee" type="text" value=""
+          .row.group
+            .field.option.inline
+              input id="broker" name="broker" type="checkbox" value="off"
+              label for="broker" Broker?
+            .field.option.inline
+              input id="resident" name="resident" type="checkbox" value="off"
+              label for="resident" Resident?
+            .field.option.inline
+              input id="escorted" name="escorted" type="checkbox" value="off"
+              label for="escorted" Escorted?
+        fieldset
+          h2 Apartment Needs
+          .row.group
+            .field.option.inline
+              input id="pets" name="pets" type="checkbox" value="off"
+              label for="pets" Pets?
+            .field.option.inline
+              input id="furnished" name="furnished" type="checkbox" value="off"
+              label for="furnished" Furnished? (GCA 866-422-7368)
+          .row.group
+            .field
+              label for="apartment_needs" Specific Needs
+              textarea id="apartment_needs" name="apartment_needs" type="text" value="" spellcheck="true"
+        fieldset
+          h2 Current Address
+          .row.group
+            .field
+              label for="address" Address
+              input id="address_1" name="address" type="text" value=""
+              input id="address_2" name="address" type="text" value=""
+          .row.group
+            .field
+              label for="zip" Zip
+              input id="zip" name="zip" type="number" value=""
+        fieldset
+          h2 Employer
+          .row.group
+            .field
+              label for="employer_name" Name
+              input id="employer_name" name="employer_name" type="text" value=""
+          .row.group
+            .field
+              label for="employer_address" Address
+              input id="employer_address_1" name="employer_address" type="text" value=""
+              input id="employer_address_2" name="employer_address" type="text" value=""
+          .row.group
+            .field
+              label for="employer_zip" Zip
+              input id="employer_zip" name="employer_zip" type="number" value=""
+        .actions
+          button.btn type="submit"
+            span Save
+
+/! Nearby Communities Layout - body ID and class can be set on either the body or wrap element
+div#nearby-communities.associate
+  .wrap
+    .page-heading
+      h1 Nearby Communities
+    .content.sidebar.group
+      aside#sidebar
+        nav.side
+          ul
+            li: a href="#anchor1" Gables Vinings
+            li: a href="#anchor2" Gables Midtown
+            li: a href="#anchor3" East Rock Springs
+      article#primary
+        ul.communities
+          li
+            h2 Gables Vinings
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Unit Type
+                    th Description
+                    th Available
+                    th Rent Range
+                    th Available Date
+                tbody
+                  tr
+                    td A1
+                    td 1 Bed / 1 Bath
+                    td 8
+                    td $805 - $940
+                    td 09/03/11
+                  tr
+                    td A2
+                    td 1 Bed / 1 Bath
+                    td 5
+                    td $805 - $940
+                    td 09/03/2012
+                  tr
+                    td A2
+                    td 1 Bed / 1 Bath
+                    td 5
+                    td $805 - $940
+                    td 09/03/2012
+                  tr
+                    td A2
+                    td 1 Bed / 1 Bath
+                    td 5
+                    td $805 - $940
+                    td 09/03/2012
+                  tr
+                    td A2
+                    td 1 Bed / 1 Bath
+                    td 5
+                    td $805 - $940
+                    td 09/03/2012
+          li
+            h2 Gables Midtown
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Unit Type
+                    th Description
+                    th Available
+                    th Rent Range
+                    th Available Date
+                tbody
+                  tr
+                    td A1
+                    td 1 Bed / 1 Bath
+                    td 8
+                    td $805 - $940
+                    td 09/03/11
+                  tr
+                    td A2
+                    td 1 Bed / 1 Bath
+                    td 5
+                    td $805 - $940
+                    td 09/03/2012
+          li
+            h2 East Rock Springs
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Unit Type
+                    th Description
+                    th Available
+                    th Rent Range
+                    th Available Date
+                tbody
+                  tr
+                    td A1
+                    td 1 Bed / 1 Bath
+                    td 8
+                    td $805 - $940
+                    td 09/03/11
+                  tr
+                    td A2
+                    td 1 Bed / 1 Bath
+                    td 5
+                    td $805 - $940
+                    td 09/03/2012
+                    
+/! Available Options Layout - body ID and class can be set on either the body or wrap element
+div#available-options.associate
+  .wrap
+    .page-heading
+      h1 Available Options
+    .content.sidebar.group
+      aside#sidebar
+        nav.side
+          ul
+            li: a href="#anchor1" Storage Units
+            li: a href="#anchor2" Carports
+            li: a href="#anchor3" Garages
+      article#primary
+        ul.options
+          li
+            h2 Storage Units
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Name
+                    th Rel Date
+                    th Price
+                    th Actual Status
+                    th Contract Status
+                    th Unit No.
+                tbody
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  
+          li
+            h2 Carports
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Name
+                    th Rel Date
+                    th Price
+                    th Actual Status
+                    th Contract Status
+                    th Unit No.
+                tbody
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+          li
+            h2 Garages
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Name
+                    th Rel Date
+                    th Price
+                    th Actual Status
+                    th Contract Status
+                    th Unit No.
+                tbody
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+                  tr
+                    td S1 - 12
+                    td 10/08/11
+                    td $55
+                    td Available
+                    td Available
+                    td None
+    
+/! Apartment Preferences Layout - body ID and class can be set on either the body or wrap element
+div#apartment-preferences.associate
+  .wrap
+    .page-heading
+      h1
+        | Apartment Preferences
+        a.btn.grn
+          span Mark Complete
+      form.units-filter action="#"
+        fieldset
+          .field
+            label for="beds" Beds
+            select name="beds"
+              option All
+              option 1
+              option 2
+              option 3
+          .field
+            label for="baths" Baths
+            select name="baths"
+              option All
+              option 1
+              option 2
+              option 3
+          .field
+            label for="rent-range" Rent Range
+            select name="rent-range-low"
+              option $900
+              option $1000
+              option $1100
+            span -
+            select name="rent-range-high"
+              option $1500
+              option $2000
+              option $2500
+              option $3000+
+          .field
+            select name="additional-options"
+              option More
+              option Popover
+              option With
+              option More
+              option Filters
+          .field
+            button.btn type="submit"
+              span Update
+    .content.group
+      ul.units
+        li
+          .meta
+            h2 
+              | Floorplan Name 
+              span.bed-bath 
+                | # Beds / # Baths - #### Sqft.
+          .view
+            a.btn.sm
+              span View Floorplan
+          a.preferred.icon Preferred
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Moveout
+                  th Unit
+                  th Bldg - Flr
+                  th Status
+                  th Mkt. Rent
+                  th Options / Features
+              tbody
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+        li
+          .meta
+            h2 
+              | Floorplan Name 
+              span.bed-bath 
+                | # Beds / # Baths - #### Sqft.
+          .view
+            a.btn.sm
+              span View Floorplan
+          a.preferred.icon.selected Preferred
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Moveout
+                  th Unit
+                  th Bldg - Flr
+                  th Status
+                  th Mkt. Rent
+                  th Options / Features
+              tbody
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+
+/! Available Units - body ID and class can be set on either the body or wrap element
+div#available-units.associate
+  .wrap
+    .page-heading
+      h1
+        | Available Units
+        a.btn.grn.refresh
+          span Refresh
+    .content.group
+      ul.units
+        li
+          .meta
+            h2 
+              | Floorplan Name 
+              span.bed-bath 
+                | # Beds / # Baths - #### Sqft.
+          .view
+            a.btn.sm
+              span View Floorplan
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Moveout
+                  th Unit
+                  th Bldg - Flr
+                  th Status
+                  th Mkt. Rent
+                  th Options / Features
+              tbody
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+        li
+          .meta
+            h2 
+              | Floorplan Name 
+              span.bed-bath 
+                | # Beds / # Baths - #### Sqft.
+          .view
+            a.btn.sm
+              span View Floorplan
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Moveout
+                  th Unit
+                  th Bldg - Flr
+                  th Status
+                  th Mkt. Rent
+                  th Options / Features
+              tbody
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                      
+/! Invite to Apply - Select Unit - body ID and class can be set on either the body or wrap element
+div#invite-select.associate
+  .wrap
+    .page-heading
+      h1 Invite to Apply
+    .content.group
+      ul.units
+        li
+          .meta
+            h2 
+              | Floorplan Name 
+              span.bed-bath 
+                | # Beds / # Baths - #### Sqft.
+          .view
+            a.btn.sm
+              span View Floorplan
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Moveout
+                  th Unit
+                  th Bldg - Flr
+                  th Status
+                  th Mkt. Rent
+                  th Options / Features
+                  th Apply
+              tbody
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                  td
+                    a.btn.grn.open href="#"
+                      span Select
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                  td
+                    a.btn.grn.open href="#"
+                      span Select
+        li
+          .meta
+            h2 
+              | Floorplan Name 
+              span.bed-bath 
+                | # Beds / # Baths - #### Sqft.
+          .view
+            a.btn.sm
+              span View Floorplan
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Moveout
+                  th Unit
+                  th Bldg - Flr
+                  th Status
+                  th Mkt. Rent
+                  th Options / Features
+                  th Apply
+              tbody
+                tr
+                  td 10/12/11
+                  td 1106
+                  td 100 - 1
+                  td On Notice - Occupied
+                  td $1,197 - $1,340
+                  td
+                    ul.features
+                      li Pool View
+                      li Balcony
+                      li Stacked W/D
+                  td
+                    a.btn.grn.open href="#"
+                      span Select
+                      
+/! Pending Guest Cards - body ID and class can be set on either the body or wrap element
+div#pending-guestcards.associate
+  .wrap
+    .page-heading
+      h1 Pending Guest Cards
+    .content.group
+      h2 My Guests
+      .table-wrap
+        table.my-guests cellspacing="0"
+          thead
+            tr
+              th Name
+              th Visit Date
+              th 
+          tbody
+            tr
+              td Zimmerman, Jonathan
+              td 01/22/12
+              td 
+                a.btn.grn href="#"
+                  span Open
+                a.btn.remove href="#"
+                  span Remove
+            tr
+              td Zimmerman, Jonathan
+              td 01/22/12
+              td 
+                a.btn.grn href="#"
+                  span Open
+                a.btn.remove href="#"
+                  span Remove
+            tr
+              td Zimmerman, Jonathan
+              td 01/22/12
+              td 
+                a.btn.grn href="#"
+                  span Open
+                a.btn.remove href="#"
+                  span Remove
+      h2 All Guests
+      .table-wrap
+        table.all-guests cellspacing="0"
+          thead
+            tr
+              th Guest Name
+              th Visit Date
+              th Leasing Associate
+              th
+          tbody
+            tr
+              td Zimmerman, Jonathan
+              td 01/22/12
+              td Zimmerman, Jonathan
+              td
+                a.btn.grn href="#"
+                  span Open
+            tr
+              td Zimmerman, Jonathan
+              td 01/22/12
+              td Zimmerman, Jonathan
+              td
+                a.btn.grn href="#"
+                  span Open
+            tr
+              td Zimmerman, Jonathan
+              td 01/22/12
+              td Zimmerman, Jonathan
+              td
+                a.btn.grn href="#"
+                  span Open
+                  
+/! Gather Licenses Layout - body ID and class can be set on either the body or wrap element
+div#gather-licenses.guestcard.associate
+  .wrap
+    .page-heading
+      h1
+        | Gather Licenses
+        a.btn.grn
+          span Mark Complete
+    .content.group
+      form#licenses action=""
+        fieldset.border
+          .row.group
+            .field.inline
+              label for="guest_name_1" Guest Name
+              input id="guest_name_1" class="guest_name" name="guest_name_1" type="text" value=""
+        fieldset
+          .row.group
+            .field.inline
+              label for="guest_name_2" Guest Name
+              input id="guest_name_2" class="guest_name" name="guest_name_2" type="text" value=""
+        .actions
+          button.btn.disabled type="submit"
+            span Add Guest
+            
+/! Return Licenses Layout - body ID and class can be set on either the body or wrap element
+div#return-licenses.guestcard.associate
+  .wrap
+    .page-heading
+      h1
+        | Return Licenses
+        a.btn.grn
+          span Mark Complete
+    .content.group
+      form#licenses
+        label Guest Names
+        .table-wrap.no-header
+          table  cellspacing="0"
+            tbody
+              tr
+                td
+                  input name="checkbox-name" type="checkbox" value="on"
+                    checked
+                  label for="checkbox-name" Jonathan Zimmerman
+              tr
+                td
+                  input name="checkbox-name" type="checkbox" value="off"
+                  label for="checkbox-name" Jenny Finke
+
+/! Select Apartment Layout - body ID and class can be set on either the body or wrap element
+div#select-apartment.guestcard.associate
+  .wrap
+    .page-heading
+      h1 Select Apartment
+    .content.group
+      form#select-apt action=""
+        fieldset.border
+          .row.group
+            .field.inline
+              label.inline for="select_bedrooms" Bedrooms
+              select name="select_bedrooms" id="bedrooms"
+                option Select
+                option 1
+                option 2
+                option 3
+            .field.inline
+              label.inline for="select_bathrooms" Bathrooms
+              select name="select_bathrooms" id="bathrooms"
+                option Select
+                option 1
+                option 2
+                option 3
+            .field.inline
+              label.inline for="select_occupants" Occupants
+              select name="select_occupants" id="occupants"
+                option Select
+                option 1
+                option 2
+                option 3
+          .row.group
+            .field.rent-range
+              label for="rent_range" Rent Range
+              div.low
+                input id="rent_range_low" name="rent_range_low" type="range" min="700" max="1000" step="25"
+                output#low $Low
+              div.high
+                input id="rent_range_high" name="rent_range_high" type="range" min="1100" max="3000" step="25"
+                output#high $High
+          .row.group
+            .field.inline
+              label.inline for="lease_term" Lease Term
+              select name="lease-term" id="lease_term"
+                option Select
+                option 9 mo.
+                option 12 mo
+                option 15 mo.
+            .field.inline.right
+              label.inline for="move_in_date" Move In
+              input id="move_in_month" class="month" name="move_in_month" type="number" value=""
+              |/
+              input id="move_in_day" class="day" name="move_in_day" type="number" value=""
+              |/
+              input id="move_in_year" class="year" name="move_in_year" type="number" value=""
+        fieldset
+          .row.group
+            .field
+              label for="apartment_needs" Specific Needs
+              textarea id="apartment_needs" name="apartment_needs" type="text" value="" spellcheck="true"
+        .actions
+          button.btn type="submit"
+            span Find Apartment
+          a href="#" See all Available
+          
+/! Gables Difference Layout - body ID and class can be set on either the body or wrap element
+div#gables-difference.guestcard.associate
+  .wrap
+    .page-heading
+      h1
+        | Gables Difference
+        a.btn.grn
+          span Mark Complete
+    .content.group
+      form#benchmarks
+        fieldset.benchmarks
+          .row.group
+            .field.option
+              input name="checkbox-name" type="checkbox" value="off"
+              label.large for="checkbox-name" Be Friendly and Sincere and Focus on the Customer
+          .row.group    
+            .field.option
+              input name="checkbox-name" type="checkbox" value="off"
+              label.large for="checkbox-name" Toured only clean & Move-in ready apartments
+          .row.group  
+            .field.option
+              input name="checkbox-name" type="checkbox" value="off"
+              label.large for="checkbox-name" Discuss Apartment Features   
+        fieldset.benchmarks  
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Community Features
+              tbody
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Community Overview
+                      a.info href="#" more information
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Community Amenities
+                      a.info href="#" more information
+        fieldset.benchmarks
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Commitment to Service
+              tbody
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="on"
+                      label for="checkbox-name" Green Initiatives
+                      a.info href="#" more information
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Our Mission
+                      a.info href="#" more information
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Ten Pledges
+                      a.info href="#" more information
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Gables.com
+                      a.info href="#" more information
+        fieldset.benchmarks            
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Resident Benefits
+              tbody      
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" 24-hour Maintenance Response
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Great Rewards
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Smooth Move
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Gables Gateway
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" 30-Day Guarantee
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Connection Services
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Appreciation Day
+        fieldset
+          .field
+              label for="guest_objections" Guest Objections
+              textarea id="guest_objections" name="guest_objections" type="text" value="" spellcheck="true"
+
+/! Take Homes Layout - body ID and class can be set on either the body or wrap element
+div#takehomes.guestcard.associate
+  .wrap
+    .page-heading
+      h1
+        | Take Homes
+        a.btn.grn Mark Complete
+    .content.group
+      form#take-homes
+        fieldset.border.benchmarks.group
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th PDFs to Send
+              tbody
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Community Brochure
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Floorplans
+                tr
+                  td
+                    .field.option
+                      input name="checkbox-name" type="checkbox" value="off"
+                      label for="checkbox-name" Building Specifications      
+          .row.group
+            .field.option.indent
+              input name="email-optin" type="checkbox" value="off"
+              label.large for="email-optin" Also recieve emails with community updates
+        fieldset.benchmarks
+          .row.group
+            label Benchmarks
+            .table-wrap.no-header
+              table cellspacing="0"
+                tbody
+                  tr
+                    td
+                      p.reminder Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tortor quis mauris pellentesque fringilla sit amet non risus.
+                  tr
+                    td
+                      .field.option
+                        input name="checkbox-name" type="checkbox" value="off"
+                        label.large for="checkbox-name" Asked “Would you like to leave a deposit today”
+
+/! Notes Layout - body ID and class can be set on either the body or wrap element
+div#notes.guestcard.associate
+  .wrap
+    .page-heading
+      h1 Notes
+    .content.group
+      form#notes-form action=""
+        fieldset
+          .row.group
+            .field
+              label for="notes_likes" Likes
+              textarea id="notes_likes" name="notes_likes" type="text" value="" spellcheck="true"
+          .row.group
+            .field
+              label for="notes_dislikes" Dislikes
+              textarea id="notes_dislikes" name="notes_dislikes" type="text" value="" spellcheck="true"
+          .row.group
+            .field
+              label for="notes_remarks" Remarks
+              textarea id="notes_remarks" name="notes_remarks" type="text" value="" spellcheck="true"
+          .row.group
+            .field
+              label for="notes_hotbuttons" Hot Buttons
+              textarea id="notes_hotbuttons" name="notes_hotbuttons" type="text" value="" spellcheck="true"  
+
+/! Thank You Card Layout - body ID and class can be set on either the body or wrap element
+div#thank-you.guestcard.associate
+  .wrap
+    .page-heading
+      h1 Thank You Card
+    .content.group
+      form#thankyou-form action=""
+        fieldset.border
+          .row.group
+            .field
+              label for="select-name" Reason for not leasing today
+              select name="select-name"
+                option Select One
+                option This is the first option
+                option This is the second option
+                option This is the third option
+          .row.group
+            .field
+              textarea id="reason_detail" name="reason_detail" type="text" value=""
+          .row.group
+            .field.option.inline
+              input name="checkbox-name" type="checkbox" value="off"
+              label for="checkbox-name" Follow up required 
+            .field.inline.right
+              label.inline for="follow_up_date" Date
+              input id="follow_up_month" class="month" name="follow_up_month" type="number" value=""
+              |/
+              input id="follow_up_day" class="day" name="follow_up_day" type="number" value=""
+              |/
+              input id="follow_up_year" class="year" name="follow_up_year" type="number" value=""
+        fieldset
+          .row.group
+            .field
+              label for="personal_note" Personal Note
+              textarea id="personal_note" name="personal_note" type="text" value="" spellcheck="true"
+          .row.group
+            .field.inline.wide
+              label for="select-name" 1st Unit Type Preference
+              select name="select-name"
+                option Select One
+                option This is the first option
+                option This is the second option
+                option This is the third option
+            .field.inline
+              label for="select-name" 2nd Unit Type Preference
+              select name="select-name"
+                option Select One
+                option This is the second option
+          .row.group
+            button.btn type="submit" Send Card      
+
+/! Invite to Apply Layout - body ID and class can be set on either the body or wrap element
+div#invite-apply.guestcard.associate
+  .page-heading
+    h1 Invite to Apply
+  .content.group
+    ul.completed
+      li Submitted to Insite
+      li Invitation email sent to jzimmerman@gmail.com
+    .invitation
+      label Invitation Code
+      p.code 01364028-00016928
+      a.btn.text href="#"
+        span Text Invitation Code
+
+/! Left Nav
+#space style="margin-top: 100px; clear:both;"
+#life-at-gables.sidebar.group.content
+  aside#sidebar
+    nav.side#life
+      h4 Community
+      a name="life-at-gables" class="anchor"
+      ul
+        li.active: a href="#community-overview" Overview
+        li: a href="#community-amenities" Amenities
+        li: a href="#pet-policy" Pet Policy
+        li: a href="#shopping-dining" Shopping &amp; Dining
+        li: a href="#green-initiatives" Green Initiatives
+      h4 Gables Services
+      ul
+        li: a href="#living-guarantees" Living Guarantees
+        li: a href="#connection-services" Connection Services
+        li: a href="#furnished-apartments" Furnished Apartments
+      h4 Additional Information
+      ul
+        li: a href="#community-brochure" Community Brochure
+        li: a href="#floorplan-brochure" Floorplan Brochure
+        li: a href="#building-specifications" Building Specifications
+    .pop-nav
+      a.toggle
+      .menu.pop
+        nav
+          h4 Community
+          a name="life-at-gables" class="anchor"
+          ul
+            li.active: a href="#community-overview" Overview
+            li: a href="#community-amenities" Amenities
+            li: a href="#pet-policy" Pet Policy
+            li: a href="#shopping-dining" Shopping &amp; Dining
+            li: a href="#green-initiatives" Green Initiatives
+          h4 Gables Services
+          ul
+            li: a href="#living-guarantees" Living Guarantees
+            li: a href="#connection-services" Connection Services
+            li: a href="#furnished-apartments" Furnished Apartments
+          h4 Additional Information
+          ul
+            li: a href="#community-brochure" Community Brochure
+            li: a href="#floorplan-brochure" Floorplan Brochure
+            li: a href="#building-specifications" Building Specifications
+  article#primary
+    h1 Some content here
+    p More content here   

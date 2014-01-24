@@ -1,0 +1,36 @@
+script type="text/x-handlebars" data-template-name="units-table"
+  | {{#if App.unitsController.searching}} <div class="spinner"><p>Searching for Available Units</p></div> {{/if}}
+  ul.content
+    | {{#each content}}
+    li
+      .meta
+        h2
+          | {{name}}
+          span.bed-bath() {{bedrooms_count}} Beds / {{bathrooms_count}} Baths - {{area_min}} Sqft.
+      | {{#if App.currentGuest}} {{view Ember.Checkbox title="Preferred" valueBinding="preferred" class="preferred"}} {{/if}}
+      .view 
+        | <a class="btn sm" {{bindAttr data-id="id"}} {{action viewFloorplan}}>View</a>
+          <a class="btn sm" {{bindAttr data-id="id"}} {{action "print"}}>Print</a>
+      .table-wrap
+        table cellspacing="0"
+          thead
+            tr
+              th Available
+              th Unit
+              th Bldg - Flr
+              th Current Status
+              th Vac
+              th Mkt. Rent
+              th Options / Features
+          tbody
+            | {{#each units}}
+            tr
+              td() {{Available_x0020_Date}}
+              td() {{PUNIT_No}}
+              td() {{PUNIT_Floor}}
+              td() {{Status}}
+              td() {{Days_x0020_Vacant}}
+              td() {{Rent}}
+              td() {{Features}}
+            | {{/each}}
+    | {{/each}}

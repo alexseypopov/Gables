@@ -1,0 +1,33 @@
+script type="text/x-handlebars" data-template-name="select-guest"
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Select Guest
+    .content.group
+      ul.guests
+        | {{#each App.guestsController.content}}
+        li
+          h2() {{last_name}}, {{first_name}} {{middle_initial}}
+          .right
+            | <a class="btn sm" {{action "select"}}
+              {{bindAttr data-id="id"}}
+              {{bindAttr data-insite-id="insite_id"}}>Select</a>
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Phone
+                  th Email
+                  th Date
+                  th Community
+                  th Status
+              tbody
+                tr
+                  td() {{home_phone}}
+                  td() {{email}}
+                  td
+                  td() {{property_name}}
+                  td.status
+                    span() {{status}}
+        | {{/each}}
+      .actions.center
+        | <a class="btn grn" {{action "addGuest"}}>Add Guest</a>

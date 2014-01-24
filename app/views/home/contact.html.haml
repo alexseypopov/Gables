@@ -1,0 +1,28 @@
+- content_for :head do
+  %title Contact
+
+%h2 Corporate
+%p Phone
+%p
+%p Address
+%p 
+
+%h2 Communities
+%ul
+  - @regions.each do |region|
+    %li
+      %p= region.name
+      %ul
+        - region.properties.published.each do |property|
+          %li
+            %p= property.address
+            %p= property.phone
+            = link_to 'contact form', modal_contact_path(:property => property.id), :class => 'iframe'
+    %li
+      %p Other
+      %ul
+        - Property.without_region.each do |property|
+          %li
+            %p= property.address
+            %p= property.phone
+            = link_to 'contact form', modal_contact_path(:property => property.id), :class => 'iframe'

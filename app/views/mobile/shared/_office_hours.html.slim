@@ -1,0 +1,7 @@
+-if @property
+  h2.toggle.off
+    = 'Office Hours'
+  dl.weekly-schedule
+    - @property.grouped_office_hours.each do |hours|
+      dt.days #{hours[:day]}
+      dd.hours #{hours[:hours]}

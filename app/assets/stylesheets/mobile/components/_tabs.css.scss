@@ -1,0 +1,25 @@
+.tabs{
+  display:inline-table;
+  margin: 0 10px 0 10px;
+
+  .tab {
+    background-color: $header-green;
+    color: $white;
+    display: table-cell;
+    padding: 5px;
+
+  }
+}
+.tab-container{
+  border-top: 1px solid $header-green;
+  margin: 0 10px 0 10px;
+  padding: 10px 0 10px 0;
+  line-height: 190%;
+  a{
+    display:block;
+  }
+}
+hr.tabs-divider{
+  margin-top: 0 !important;
+  background: 1px solid $header-green;
+}

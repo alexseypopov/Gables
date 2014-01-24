@@ -1,0 +1,46 @@
+script type="text/x-handlebars" data-template-name="available-options"
+  #available-options.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Available Options
+    | {{#if App.noAvailableOptions}}
+    .content: h2.centered style="padding-top: 100px;" {{App.noAvailableOptions}}
+    | {{else}}
+    | {{#unless App.availableOptions}} <div class="spinner"><p>Searching for Available Options</p></div>
+    | {{else}}
+    .content.sidebar.group
+      aside#sidebar
+        .pop-nav <a class="toggle" {{action "toggleMenu"}}></a>
+        nav.side
+          ul
+            |{{#each App.availableOptions}}
+            li <a {{bindAttr data-id="this.name"}} {{action "scrollTo"}}>{{this.name}}</a>
+            |{{/each}}
+      article#primary
+        ul.options
+          |{{#each App.availableOptions}}
+          li
+            |<h2 {{bindAttr data-id="this.name"}}>{{this.name}}</h2>
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Name
+                    th Rel Date
+                    th Price
+                    th Actual Status
+                    th Contract Status
+                    th Unit No.
+                tbody
+                  |{{#each this.options}}
+                  tr
+                    td() {{Option_x0020_Name}}
+                    td() {{Release_x0020_Date}}
+                    td() {{Price}}
+                    td() {{Actual_x0020_Status}}
+                    td() {{Contract_x0020_Status}}
+                    td() {{Unit_x0020_No}}
+                  |{{/each}}
+          |{{/each}}
+    | {{/unless}}
+    | {{/if}}

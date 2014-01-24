@@ -1,0 +1,16 @@
+= form_tag('/careers/p/search_results', :method => 'get', :id => 'join_team_form') do
+  %h2 Join the Team
+  %fieldset
+    = hidden_field_tag :refer, params[:path]
+    .input.text
+      = label_tag :keywords
+      = text_field_tag :keywords, params[:keywords], :placeholder => 'Enter Keywords (opt)'
+    .input.select
+      = label_tag :department
+      = select_tag :department, options_for_select(Associate.departments, params[:deparment]), {:prompt => 'Select Department'}
+    .input.select
+      = label_tag :team_state
+      = select_tag :team_state, options_for_select(Associate.states, params[:state]), {:prompt => 'Select State'}
+    .submit
+      %button{:type => 'submit'} Search
+      = link_to 'browse positions', "/careers/p/search?refer=#{params[:path]}"

@@ -1,0 +1,31 @@
+@import "mobile/base/colors";
+// A standard address component for the site
+// http://microformats.org/about
+// http://pageladder.com/using-hcard-microformat-with-html5-address-tags-for-local-search-optimization/
+.vcard{
+  font-style: normal;
+  color: $dark-gray;
+  font-size: 1.1em;
+  .org{
+    font-size: 1.35em;
+    padding: 0 0 5px 0;
+    font-family: CenturyGothicBold, Arial;
+    color: $black;
+  }
+  .phone-number{
+    a{
+      font-family: CenturyGothicBold, Arial;
+      color: $link-green;
+    }
+  }
+  .adr{
+    .locality{}
+    .region{}
+    .postal-code{}
+  }
+  .directions{
+    vertical-align: top;
+    font-size: .85em;
+    color: $gray;
+  }
+}

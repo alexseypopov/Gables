@@ -1,0 +1,25 @@
+#community_map.jump
+  %h2 In the Neighborhood
+  %ul.tab_nav
+    %li.active= link_to 'Area Map', '#map_tab'
+    - unless !@property.show_walkscore?
+      %li= link_to 'Walkscore Map', '#walkscore_tab'
+    - unless !@property.show_walkscore?
+      #walkscore_container.walkscore{:data => {:id => @property.id}} Loading Walkscore...
+  #map_tab.tab
+    #map_canvas
+  - unless !@property.show_walkscore?
+    #walkscore_tab.tab
+      :javascript
+        var ws_wsid = 'fa7bbaf7196843fb90979fb913048f6a';
+        var ws_address = "#{@property.street},  #{@property.city} #{@property.state} #{@property.zip}";
+        var ws_map_icon_type = 'building';
+        var ws_width = '640';
+        var ws_height = '430';
+        var ws_layout = 'horizontal';
+        var ws_transit_score = 'true';
+        var ws_commute = 'true';
+        var ws_map_modules = 'all';
+      #ws-walkscore-tile
+      - content_for :javascripts do
+        = javascript_include_tag 'http://www.walkscore.com/tile/show-walkscore-tile.php'

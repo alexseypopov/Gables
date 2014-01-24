@@ -1,0 +1,144 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+  <head> 
+    <title>Community Jobs</title>
+    <meta charset='utf-8'> 
+    <meta content='chrome=1' http-equiv='X-UA-Compatible'> 
+    <link href="/packages/external.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/packages/external.js"></script>
+  </head> 
+  <body>
+    <div id="job_search_container">
+      <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum purus nec leo varius malesuada. Aenean commodo ante ac arcu mattis elementum.</p>
+      <ul class="pagination">
+        <li>Page 1 of 2</li>
+        <li><a href="#">prev page</a></li>
+        <li><a href="#">next page</a></li>
+      </ul>
+      <table cellpadding="5" cellspacing="0" width="100%" border="0">
+        <thead>
+          <tr>
+            <th>Job ID</th>
+            <th>Job Title</th>
+            <th>Location</th>
+            <th>Posted Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2011-1754</td>
+            <td><a href="#">Service Technician</a></td>
+            <td>US-GA-Atlanta</td>
+            <td>01 / 31 / 2011</td>
+          </tr>
+          <tr>
+            <td>2011-1749</td>
+            <td><a href="#">Assistant Service Manager</a></td>
+            <td>US-GA-Atlanta</td>
+            <td>01 / 31 / 2011</td>
+          </tr>
+          <tr>
+            <td>2011-1744</td>
+            <td><a href="#">Regional Manager</a></td>
+            <td>US-GA-Dunwoody</td>
+            <td>01 / 31 / 2011</td>
+          </tr>
+          <tr>
+            <td>2011-1743</td>
+            <td><a href="#">Leasing Professional</a></td>
+            <td>US-GA-Atlanta</td>
+            <td>01 / 31 / 2011</td>
+          </tr>
+          <tr>
+            <td>2011-1739</td>
+            <td><a href="#">Groundsperson</a></td>
+            <td>US-GA-Dunwoody</td>
+            <td>01 / 31 / 2011</td>
+          </tr>
+          <tr>
+            <td>2011-1725</td>
+            <td><a href="#">Regional Service Manager</a></td>
+            <td>US-GA-Atlanta</td>
+            <td>01 / 31 / 2011</td>
+          </tr>
+        </tbody>
+      </table>
+      <form method="post" action="#">
+        <h2>Start a New Search</h2>
+        <fieldset>
+          <div class="input text">
+            <label for="f_keywords">Keywords</label>
+            <input type="text" maxlength="255" id="f_keywords" name="searchKeyword" placeholder="Enter Keywords" />
+          </div>
+          <div class="input multiselect">
+            <label for="f_location">Location</label>
+            <select id="f_location" name="searchLocation" multiple="multiple" size="4">
+              <option value="" selected="selected">(All)</option>
+              <option value="-12901-">Arizona</option>
+              <option value="-12906-">California</option>
+              <option value="-12910-">Florida</option>
+              <option value="-12911-">Georgia</option>
+              <option value="-12914-">Illinois</option>
+              <option value="-12921-">Maryland</option>
+              <option value="-12922-">Massachusetts</option>
+              <option value="-12931-">New Jersey</option>
+              <option value="-12933-">New York</option>
+              <option value="-12943-">Tennessee</option>
+              <option value="-12944-">Texas</option>
+              <option value="-12947-">Virginia</option>
+              <option value="-12948-">Washington</option>
+              <option value="-12949-">Washington, DC</option>
+            </select>
+          </div>
+          <div class="input multiselect">
+            <label for="f_title">Department</label>
+            <select id="f_title" name="searchCategory" multiple="multiple" size="4">
+              <option value="" selected="selected">(All)</option>
+              <option value="8713">Accounting</option>
+              <option value="14288">Asset Management</option>
+              <option value="12305">Brokerage</option>
+              <option value="12308">Capex</option>
+              <option value="12307">Construction</option>
+              <option value="12306">Corporate Accommodations</option>
+              <option value="12309">Development</option>
+              <option value="12310">Executive</option>
+              <option value="8725">Human Resources</option>
+              <option value="8730">Information Technology</option>
+              <option value="14297">Marketing</option>
+              <option value="12311">Operations</option>
+              <option value="12312">Property - Onsite</option>
+              <option value="12313">Retail</option>
+              <option value="12314">Training (L&amp;D)</option>
+            </select>
+          </div>
+          <div class="range">
+            <div class="input select">
+              <label for="f_distance">Find jobs within</label>
+              <select name="searchRadius" id="f_distance">
+          			<option value="">select</option>
+          			<option value="5">5</option>
+          			<option value="10">10</option>
+          			<option value="20">20</option>
+          			<option value="30">30</option>
+          			<option value="50">50</option>
+          			<option value="100">100</option>
+          		</select>
+            </div>
+            <div class="input text">
+              <input type="hidden" name="ss" value="1" />
+              <label for="f_zip">miles of Zip Code</label>
+              <input type="text" maxlength="10" id="f_zip" name="searchZip" />
+            </div>
+          </div>
+          <div class="submit">
+            <button type="submit">Search</button>
+          </div>
+        </fieldset>
+      </form>
+      <div class="footnote">
+        <a href="#" class="back">&laquo; Back to Welcome Page</a>
+        <a href="#"><img src="/images/icims.gif" alt="Powered by the Icims Talent Platform" /></a>
+      </div>
+    </div>
+  </body>
+</html>

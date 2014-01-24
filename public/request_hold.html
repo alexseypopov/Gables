@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+  <head> 
+    <title>Request to Hold</title>
+    <meta charset='utf-8'> 
+    <meta content='chrome=1' http-equiv='X-UA-Compatible'> 
+    <link href="/packages/external.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/packages/external.js"></script>
+  </head> 
+  <body>
+    <div id="main_content">
+      <div class="main_content">
+        <div id="request_form">
+          <h1>Request to Hold Apartment #{apartment_number} at {community_name}</h1>
+          <h2>Apartment Details</h2>
+          <dl>
+            <dt>Rent</dt>
+            <dd>{rent_terms} <a href="#">Change your Lease Terms</a></dd>
+            <dt>Building</dt>
+            <dd>300</dd>          
+          </dl>
+          <p>Add $25 to all rates for Valet Trash. Rental rates vary by lease term.</p>
+          <form name="aspnetForm" method="get" action="request_hold_confirmation.html" onsubmit="" id="aspnetForm">
+            <fieldset>
+              <div class="input text">
+                <label for="first_name">First Name*</label>
+                <input name="ctl00$contentMain$txtFName" id="first_name" type="text" />
+              </div>
+              <div class="input text">
+                <label for="last_name">Last Name*</label>
+                <input name="ctl00$contentMain$txtLName" id="last_name" type="text" />
+              </div>
+              <div class="input text">
+                <label for="email_address">Email Address*</label>
+                <input name="ctl00$contentMain$txtEmail" id="email_address" type="text" />
+              </div>
+              <div class="input phone">
+                <label for="area_code">Phone Number</label>
+                <input name="ctl00$contentMain$txtPhone1" id="area_code" type="text" />
+                <input name="ctl00$contentMain$txtPhone2" type="text" />
+                <input name="ctl00$contentMain$txtPhone3" type="text" />
+              </div>
+              <div class="input radios">
+                <label for="has_visited">Have you visited this community?*</label>
+                <div class="options">
+                  <input name="ctl00_contentMain_rblIsVisited_0" id="has_visited" value="true" type="radio" />
+                  <label for="has_visited">Yes</label>
+                  <input name="ctl00_contentMain_rblIsVisited_0" id="has_not_visited" value="false" type="radio" />
+                  <label for="has_not_visited">No</label>
+                </div>
+              </div>
+              <div class="submit">
+                <p><a href="#">Add a note to this request</a></p>
+                <button type="submit">Submit</button>
+              </div>
+            </fieldset>
+          </form>
+          <div class="footnote">
+            <p>*Valid for new residents only. Square footages displayed are approximate and may vary slightly. Rental rates, availability, deposits, apartment features and specials are subject to change without notice. Discounts and other credits not already included in the price displayed will be calculated upon lease execution. Minimum lease terms and occupancy guidelines may apply. Deposits may fluctuate based on credit, rental history, income, and/or other qualifying standards. Additional taxes and fees may apply and will be disclosed per governing laws and company policies. Rent based on 12 month term unless otherwise indicated.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sub_content">
+        <h2>Amenities</h2>
+        <ul>
+          <li>- Poolside lounge with entertainment bar, pool table and Plasma TV</li>
+          <li>- Salt Water Swimming Pool with Aqua Lounge</li>
+          <li>- 24 hour, Club quality fitness center</li>
+          <li>- Cyber Cafe with free WIFI</li>
+          <li>- 3 miles to Phipps Plaza and Lenox Mall</li>
+          <li>- Atlanta's most desirable zip code</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

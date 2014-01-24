@@ -1,0 +1,90 @@
+- content_for :head do
+  = render :partial => 'community_meta'
+  
+- content_for :javascripts do
+  = render :partial => 'maps', :locals => {:properties => [@property], :regions => nil, :units => nil, :subdomain => nil}
+  - if params[:schedule_success]
+    %script{:type => 'text/javascript'}
+      setTimeout(function() {
+      _gaq.push(['_trackPageview', '/schedule_success']);
+      }, 1000);
+
+#property.community
+  %div{:class => 'main_content', :itemscope => true, :itemtype => 'http://schema.org/Residence'}
+    %h1{:itemprop => 'name'}= @property.name
+    = render :partial => 'community_images'
+    #community_overview.jump
+      %h2 Community Overview
+      %p{:itemprop => 'description'}= raw(@property.long_description)
+      .share-page
+        %a{:href => "#", :id => "toggle-share"}Share this page
+        %ul#share-icons
+          - if @property.images.any?
+            %li.pin
+              %a{:href => "http://pinterest.com/pin/create/button/?url=#{request.url}&media=http://#{request.host}#{@property.images.first.url(:large)}&description=#{@property.name}".html_safe, :target => 'st_pinterest'} Pinterest
+          %li.like
+            %a{:href => "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", :target => 'st_facebook'} Facebook
+          %li.tweet 
+            %a{:href => "https://twitter.com/intent/tweet?original_referer=#{request.url}&url=#{request.url}", :target => 'st_twitter'} Twitter
+          %li.plus
+            %a{:href => "https://plusone.google.com/_/+1/confirm?&hl=en-US&wwc=1&url=#{request.url}", :target => 'st_plus'} Google+
+      = render :partial => 'community_amenities'
+      - if @property.active_special
+        .promotion_block
+          %p.heading= @property.active_special.header
+          %p.text= @property.active_special.body
+      - if @property.available_floorplans.length > 0
+        .availability
+          %p <strong>#{pluralize(@property.available_floorplans.length, 'Floorplan')} Available Today</strong>
+          = link_to 'View Floorplans', '#community_floorplans', :class => 'anchor'
+          = link_to 'Request Info', '#schedule_visit', :class => 'anchor'
+    %a(name="Maps")
+    = render :partial => 'community_maps'
+    #community_floorplans.jump
+      %a(name="Floorplans")
+      %h2 Floorplans
+      %p #{@property.available_floorplans.length} available
+      %ul.tab_nav
+        %li.active= link_to 'Available', '#available_tab'
+        %li= link_to 'All', '#all_tab'
+      #available_tab.tab
+        - if @property.active_special
+          .promotion_block
+            %p.heading= @property.active_special.header
+            %p.text= @property.active_special.body
+        .floorplans
+          - @property.available_floorplans.each do |available_floorplan|
+            - if available_floorplan.units.length > 0
+              .floorplan
+                .thumb
+                  - if available_floorplan.images.count > 0
+                    = link_to image_tag(available_floorplan.images.first.thumb.url), available_floorplan.images.first.url, :class => 'zoom_image'
+                  - else
+                    = link_to image_tag('no_image.gif', :alt => ''), floorplan_path(available_floorplan)
+                = render :partial => '/find/floorplan_table', :locals => {:floorplan => available_floorplan, :include_compare => false}
+        .floorplan_pagination
+      #all_tab.tab
+        .all_floorplans
+          - @property.floorplans.each do |floorplan|
+            .all_floorplan
+              .thumb
+                - if floorplan.images.count > 0
+                  = link_to image_tag(floorplan.images.first.thumb.url, :alt => ''), floorplan_path(floorplan)
+                - else
+                  = link_to image_tag('no_image.gif', :alt => ''), floorplan_path(floorplan)
+              %p <strong>#{floorplan.name}</strong>
+              %p= rooms(floorplan)
+              %p= link_to 'notify me when available', (floorplan.use_propertysolutions_data? ? notify_me_when_available_url(floorplan, @property) : floorplan.availability_url)
+        .all_floorplan_pagination
+      = render :partial => 'customize_search', :locals => {:query => @property.address}
+    %a(name="Schedule")
+    = render :partial => 'schedule', :locals => {:schedule => @schedule, :property => @property, :type => 'community'}
+  = render :partial => 'community_sidebar', :locals => {:property => @property, :type => 'community'}
+- if @property.uses_chat
+  .chat-wrapper
+    #chat-now
+      .header
+        %span.title Live Chat
+        %span.close &#x00D7;
+      %p Live chat is available for those seeking information about leasing a new home.
+      = render :partial => '/find/chat_button', :locals => {:property => @property, :text => "Chat Now"}

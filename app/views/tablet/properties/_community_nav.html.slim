@@ -1,0 +1,10 @@
+script type="text/x-handlebars" data-template-name="community-nav"
+  nav#community
+    ul
+      li.nav-back   <a {{action "goBack"}}>&lt; Back</a>
+      li#nav-photos <a {{bindAttr class="isPhotos:active"}} {{action "communityPhotos"}}>Community Photos</a>
+      li#nav-life   <a {{bindAttr class="isLife:active"}} {{action "lifeAtGables"}}>Life at Gables</a>
+      li#nav-plans  <a {{bindAttr class="isFloorplans:active"}} {{action "floorplans"}}>Floorplans</a>
+      li#nav-site   <a {{bindAttr class="isSite:active"}} {{action "sitePlans"}}>Site Plan</a>
+      li#nav-area   <a {{bindAttr class="isArea:active"}} {{action "areaMap"}}>Area Map</a>
+      li#nav-apply:  a href="https://extra.gables.com/OnlineLeasing/026_Kiosk.aspx" Apply

@@ -1,0 +1,325 @@
+/*  Styles for Floorplans
+---------------------------------------------------------------- */
+
+.filter {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  width: auto;
+  background: #000;
+  box-shadow: none;
+  opacity: .9;
+  &:after {
+    content: " ";
+    clear: both;
+  }
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 148px;
+    bottom: -8px;
+    z-index: 99;
+    height: 20px;
+    width: 20px;
+    background: rgba(0,0,0,1);
+    box-shadow: none;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 17px;
+    color: #777;
+  }
+  fieldset {
+    padding-bottom: 0;
+    padding-top: 0;
+    background: none;
+    .field {
+      &.inline {
+        margin-right: 15px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    label {
+      float: left;
+      margin-right: 10px;
+      padding-left: 0;
+      font-size: 19px;
+      line-height: 29px;
+      color: #fff;
+      }
+    select {
+      padding: 2px 20px 2px 7px;
+      width: 80px;
+      font-size: 17px;
+      color: #000;
+    }
+  }
+}
+
+.floorplans-page{
+  margin-top: -64px;
+  nav#community{
+    position: fixed;
+    top: 64px;
+  }
+}
+/* add class to the #photo-nav called .dot-nav for the swipe navigation dot styling */
+#floorplans, #floorplans-wrapper {
+  height: 100%;
+  img {
+    pointer-events:none;
+  }
+}
+
+#floorplans{
+  .floorplan{
+    height: 100%;
+    float: left;
+    left: 50%;
+    position: relative;
+  }
+  .center{
+    margin-left: -50%;
+    float: left;
+    margin-top: 108px;
+  }
+}
+
+.floorplan {
+  .modal & {
+    margin-bottom: 40px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  .floorplan-footer {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    width: 95%;
+    text-align: right;
+    background: #fff;
+    .btn {
+      margin-left: 6px;
+    }
+    .preferred {
+      float: left;
+      padding-top: 4px;
+      line-height: 20px;
+      color: #333;
+    }
+  }
+  .floorplan-image {
+    float: left;
+    margin-bottom: 52px;
+    padding-bottom: 20px;
+    width: 660px;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    border-right: 1px solid #ccc;
+    &::-webkit-scrollbar {
+        width: 0 !important;
+      }
+    img {
+      margin: 0 auto;
+      padding: 40px 25px;
+    }
+    .modal & {
+      margin-top: 17px;
+      padding: 0;
+      width: 212px;
+      border: none;
+      img {
+        padding: 0;
+      }
+    }
+  }
+  .floorplan-details {
+    float: left;
+    margin-bottom: 52px;
+    padding: 0 24px;
+    width: 315px;
+    .modal & {
+      padding: 0 0 0 20px;
+      width: 360px;
+    }
+    h1 {
+      margin-bottom: 5px;
+      .modal & {
+        margin-bottom: 0;
+        padding-top: 9px;
+        font-size: 25px;
+        line-height: 1;
+        border-top: 3px solid #999;
+      }
+    }
+    .meta {
+      margin-bottom: 11px;
+      font-size: 21px;
+      line-height: 28px;
+      color: #777;
+      .bed-bath {
+        font-size: 25px;
+        line-height: 32px;
+        color: #666;
+      }
+      &.multicol {
+        -webkit-column-count: 1;
+      }
+      .modal & {
+        font-size: 17px;
+        line-height: 24px;
+        color: #666;
+        .bed-bath {
+          display: inline;
+          font-size: 17px;
+          line-height: 24px;
+        }
+        .rent {
+          font-family: verdana, sans-serif;
+          font-size: 13px;
+          line-height: 20px;
+          color: #333;
+          -webkit-font-smoothing: subpixel-antialiased;
+        }
+        .sqft {
+          display: inline;
+          margin-left: 60px;
+        }
+      }
+    }
+    .features {
+      padding-top: 25px;
+      border-top: 2px solid #000;
+      ul {
+        height: 240px;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+          width: 0 !important;
+        }
+        li {
+          margin-left: 20px;
+          list-style-type: disc;
+        }
+      }
+      .modal & {
+        padding-top: 12px;
+        border-top: 1px solid #999;
+        ul {
+          margin-bottom: 17px;
+          height: auto;
+          overflow: hidden;
+        }
+        li {
+          margin-bottom: 8px !important;
+          font-family: verdana, sans-serif;
+          font-size: 13px;
+          line-height: 16px;
+          color: #333;
+          list-style-type: disc;
+          margin-left: 17px !important;
+          -webkit-font-smoothing: subpixel-antialiased;
+        }
+      }
+    }
+    h3 {
+      font-size: 19px;
+    }
+    ul {
+      margin-bottom: 25px;
+      li {
+        font-size: 17px;
+        line-height: 22px;
+        color: #777;
+      }
+      &.multicol {
+        -webkit-column-count: 1;
+        .modal & {
+          -webkit-column-count: 2;
+        }
+      }
+    }
+  }
+}
+
+#floorplans-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 29px;
+  border-top: 1px solid #a8a8a8;
+  background: -webkit-linear-gradient(top, #fff 0%, #f4f4f4 50%, #ececec 50%, #f3f3f3 100%);;
+  .dot-nav-wrap {
+    margin-top: 9px;
+  }
+}
+
+/*  Media Queries
+---------------------------------------------------------------- */
+
+@media all and (max-width: 1023px),
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .floorplan .floorplan-image {
+    height: 610px;
+  }
+}
+
+@media all and (orientation : portrait) {
+  #swipeview-slider .floorplan {
+    .floorplan-image {
+      height: 520px;
+      float: none;
+      border-bottom: 1px solid #ccc;
+      padding: 0;
+    }
+    .floorplan-details {
+      float: none;
+      margin: 0 auto;
+      padding: 0;
+      width: 92%;
+      h1{ line-height: 33px; }
+      .bed-bath{ line-height: 24px; }
+      .sqft { padding-top: 13px; }
+      .features {
+        padding-top: 10px;
+        ul.multicol {
+          height: 115px;
+          -webkit-column-count: 2;
+          margin-bottom: 0;
+        }
+        .btn.view {
+          margin-left: 51%;
+        }
+      }
+      .meta.multicol {
+        -webkit-column-count: 2;
+      }
+    }
+    .filter {
+      margin-top: -23px;
+      padding: 6px 15px 4px 15px;
+      &:before {
+        left: 49%;
+      }
+      .title {
+        float: left;
+        line-height: 34px;
+      }
+      form {
+        float: right;
+      }
+    }
+  }
+}

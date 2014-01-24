@@ -1,0 +1,59 @@
+@import 'mobile/base/colors';
+
+.social-icons {
+
+  span, a {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  span {
+    margin: 10px 10px 0 0;
+  }
+  a {
+    margin: 10px 5px 0 0;
+    &:visited {
+      color: $white;
+    }
+    &.secondary {
+      color: $black;
+      background-color: $lightest-gray;
+    }
+  }
+  &.footer{
+    background-color: $lightest-gray;
+    padding: 0 10px 10px 10px;
+  }
+}
+
+.icon-social-pinterest,
+.icon-social-facebook,
+.icon-social-twitter,
+.icon-social-google,
+.icon-social-tumblr {
+  color: $white;
+  font-size: 2.2em;
+  &.dark {
+    background-color: $dark-gray;
+  }
+}
+
+.icon-social-pinterest {
+  background-color: $social-pinterest;
+}
+
+.icon-social-facebook {
+  background-color: $social-facebook;
+}
+
+.icon-social-twitter {
+  background-color: $social-twitter;
+}
+
+.icon-social-google {
+  background-color: $social-google;
+}
+
+.icon-equal-housing, .icon-accessibility {
+  font-size: 2.2em;
+}
+

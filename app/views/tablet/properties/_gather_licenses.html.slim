@@ -1,0 +1,21 @@
+script type="text/x-handlebars" data-template-name="gather-licenses"
+  #gather-licenses.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Gather Licenses
+    .content.group
+      form#licenses
+        fieldset.border
+          .row.group
+            .field.inline
+              label
+                | Guest Name
+                input class="guest_name" name="guest_names[]" type="text"
+        fieldset.border
+          .row.group
+            .field.inline
+              label
+                | Guest Name
+                input class="guest_name" name="guest_names[]" type="text"
+        .actions <button class="btn" {{action "addGuest"}}>Add Guest</button>
+    .page-footer <button class="btn grn" {{action "complete"}}>Mark Complete</button>

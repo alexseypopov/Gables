@@ -1,0 +1,120 @@
+//Mixins
+
+@mixin triangle($size, $rotate) {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+    border-width: 0 0 $size $size;
+    border-color: transparent transparent rgba(0,0,0,.85) transparent;
+    -moz-transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+@mixin hidetext {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin pop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 20px 18px;
+  width: 284px;
+  color: #fff;
+  background: #000;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  //opacity: .90;
+  a {
+    color: #fff; }
+  &:after {
+    content: " ";
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    z-index: 99;
+    height: 20px;
+    width: 20px;
+    background: black;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+@mixin pop-nav{
+  .btn {
+    margin: 12px 10px 0 0;
+    padding: 0 8px;
+    font-size: 15px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  ul {
+    margin-bottom: 25px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    li {
+      position: relative;
+      display: block;
+      float: none;
+      margin-left: 0;
+      padding: 8px 0;
+      list-style-type: none;
+      line-height: 28px;
+      background: none;
+      border: none;
+      a {
+        display: inline;
+        padding: 0;
+        font-size: 25px;
+        font-weight: normal;
+        color: #fff;
+        border: none;
+        background: -webkit-linear-gradient(top, white 0%, white 50%, #939393 50%, #939393 100%) no-repeat bottom;
+        background-size: 100% 2px;
+      }
+      &.small a { font-size: 17px; }
+      .tag {
+        position: absolute;
+        z-index: 1;
+        top: 8px;
+        left: -47px;
+        background: #55891C;
+        width: 31px;
+        height: 32px;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 32px;
+        text-align: center;
+        &:after {
+          content: " ";
+          right: -5px;
+          top: 11px;
+          z-index: 1;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 10px 10px;
+          border-color: transparent transparent #55891C transparent;
+          -webkit-transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+  h4 {
+    margin-bottom: 0;
+    font-size: 17px;
+    font-weight: normal;
+    color: #777;
+    /* 999 is in the comp - adjusting for opacity - may need to reset */
+  }
+}

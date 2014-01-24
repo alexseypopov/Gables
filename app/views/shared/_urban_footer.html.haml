@@ -1,0 +1,20 @@
+= render :partial => '/shared/news', :locals => {:context => 'site'}
+
+%footer#site_info
+  .wrapper
+    %nav#footer_nav
+      %ul
+        %li.top_level
+          = link_to 'Properties', url_for(:controller => 'urban/home', :action => 'properties', :subdomain => 'urban')
+        %li.top_level
+          = link_to 'Services', urban_page_path(Urban::ServicesPage.in_nav.first.section, Urban::ServicesPage.in_nav.first.path)
+        %li.top_level
+          = link_to 'About Us', urban_page_path(Urban::ToplevelPage.in_nav.first.section, Urban::ToplevelPage.in_nav.first.path)
+        %li.top_level
+          = link_to 'Contact', modal_contact_path, :class => 'iframe'
+    %ul.social
+      %li.group= link_to 'Fair Housing', equal_employment_url(:subdomain => false, :anchor => 'fair_housing')
+      %li.fair= link_to 'Equal Opportunity Employer', equal_employment_url(:subdomain => false, :anchor => 'equal_opportunity')
+    %p.copyright 
+      &copy;#{Time.new.year} Gables Residential
+    %p.ds #{link_to 'Design by Digital Scientists, a Conversion Optimization Company.', 'http://digitalscientists.com', :target => '_blank'}

@@ -1,0 +1,9 @@
+- content_for :head do
+  %title Recent Searches
+  = stylesheet_link_tag 'pages'
+
+#inner_page
+  %article.main_content
+    %ul.recent_searches
+      - @searches.each do |search|
+        %li=link_to search.query, find_where_path(:query => search.query)

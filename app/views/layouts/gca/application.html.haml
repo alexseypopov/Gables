@@ -1,0 +1,85 @@
+!!!Strict
+%html{'lang' => "en"}
+  %head
+    %meta{:charset=>"utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "chrome=1; IE=9; IE=8; IE=7; IE=EDGE"}
+    %meta{"name" => "viewport", :content => "width=device-width"}
+    - unless Rails.env == 'production'
+      %meta{:name => "ROBOTS", :content => "NOINDEX, NOFOLLOW"}
+    = stylesheet_link_tag 'gca'
+    /[if IE]
+      = stylesheet_link_tag 'html5'
+    /[if lte IE 7]
+      = stylesheet_link_tag 'ie6bar'
+    = yield :head
+    %link{:rel => 'shortcut icon', :href => '/favicon.ico'}
+    
+  %body{:class => 'gca'}
+    - if notice
+      .flash.notice
+        %p= notice
+    - if alert
+      .flash.alert
+        %p= alert
+    #container
+      = render :partial => '/gca/shared/header'
+      = yield :marquee
+      = yield :section_nav
+      %section#main_content= yield
+      = render :partial => '/shared/gca_footer'
+
+    = javascript_include_tag 'gca'
+    = yield :javascripts
+    :plain
+      <!-- Quantcast Tag -->
+      <script type="text/javascript">
+      var _qevents = _qevents || [];
+
+      (function() {
+      var elem = document.createElement('script');
+      elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem, scpt);
+      })();
+
+      _qevents.push({
+      qacct:"p-3e6nF-wKdMW0g"
+      });
+      </script>
+
+      <noscript>
+      <div style="display:none;">
+      <img src="//pixel.quantserve.com/pixel/p-3e6nF-wKdMW0g.gif" border="0" height="1" width="1" alt="Quantcast"/>
+      </div>
+      </noscript>
+      <!-- End Quantcast tag -->
+      <!-- Google Analytics code for Gables.com and related sites start-->
+      <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8527803-1']);
+      _gaq.push(['_setDomainName', '.gables.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_setAllowHash', false]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
+      <!-- Google Analytics code for Gables.com and related sites end-->
+      <!-- Google Translate start --> 
+      <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'es',
+          autoDisplay: false,
+          floatPosition: google.translate.TranslateElement.FloatPosition.BOTTOM_RIGHT
+        });
+      }
+      </script>
+      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <!-- Google Translate end --> 

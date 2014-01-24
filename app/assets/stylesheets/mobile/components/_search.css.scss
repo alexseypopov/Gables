@@ -1,0 +1,193 @@
+@import "mobile/base/colors.css.scss";
+#search {
+  background-color:$white;
+  border-bottom:1px solid $light-gray;
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.25);
+
+  #mobile-site-nav {
+    border: none;
+    background-color: $white;
+    text-align: center;
+    color: $dark-gray;
+    position: relative;
+    top: 4px;
+    span {
+      margin: 0 0 5px 5px;
+      display: block;
+      width: 28px;
+      height: 4px;
+      background-color: #ccc;
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      border-radius: 1px;
+      -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+  }
+  .row{
+    .cell{
+      vertical-align:middle;
+    }
+    #live_search.home{
+      position:fixed;
+      border-top:1px solid $light-gray;
+      top: 48px;
+      left: 0;
+      bottom:0px;
+      right:0;
+      z-index: 2000;
+      background-color: $white;
+      overflow-y: auto;
+      li{
+        padding-right: 10px;
+      }
+
+    }
+  }
+}
+
+form#advanced_search{
+  background-color:$lightest-gray;
+  padding:10px;
+  hr{
+    background-color: none;
+    border:0;
+    border-top:1px solid $light-gray;
+    margin-bottom: 20px;
+  }
+  .apartment-search-header{
+    margin: 10px 0 10px 0;
+    color: $gray;
+    i{
+      margin-right: 5px;
+      color: $gray;
+    }
+  }
+  .advanced{
+    color: $gray;
+    text-align: right;
+    i{
+      margin-left: 5px;
+    }
+
+  }
+}
+
+#apartment-search-form{
+  display:none;
+  margin: 20px 0 10px 0;
+  .cell.first-item{
+    width: 48%;
+
+  }
+  .cell{
+    span{
+      margin:0;
+      padding:0;
+      display:block;
+      width:33px;
+      text-align:center;
+    }
+  }
+}
+
+#apartment_search{
+  position:relative;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  #query{
+    border-radius: 0;
+  }
+  fieldset{
+    border: none;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    li{
+      padding: 0 10px;
+      margin: 0;
+      width: 100%;
+      line-height: 190%;
+    }
+  }
+  .title{
+    display:none;
+  }
+  #query{
+    height: 38px;
+    width:100%;
+    -webkit-box-shadow: inset 0 0;
+    box-shadow: inset 0 0;
+    -webkit-appearance: none;
+  }
+  fieldset {
+    padding:0;
+    margin:0;
+    .home{display:none;}
+  }
+  .submit button{
+    display:none;
+  }
+
+  .advanced{
+    display:none;
+  }
+  .simple i:after{
+    position:absolute;
+    right: 10px;
+    top: 6px;
+    padding:0;
+    font-family: 'gables-icons';
+    content: attr(data-icon);
+    color:$light-gray;
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    content: "\e026";
+  }
+  .simple i.x-button{
+    content: none;
+    content: "x";
+    padding: 3px;
+  }
+
+  #search-clear-button:after{
+    content: attr(data-icon);
+    position:absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    content: '\e031';
+    font-weight: bold;
+    color: $light-gray;
+  }
+}
+
+#search-clear-button, #cancel-button{
+  display: none;
+}
+
+.search-field-label{
+  position: relative;
+  display: block;
+}
+
+#cancel-button{
+  background: #DDD;
+  padding: 9px;
+  color: #999;
+}

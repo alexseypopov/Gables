@@ -1,0 +1,22 @@
+script type="text/x-handlebars" data-template-name="header"
+  nav#main
+    ul
+      li#nav-logo <a {{action "goHome"}}>Gables</a>
+      li#nav-comm: a = @property.name
+  nav#login
+    ul
+      | <li id="nav-guest" {{action "toggleMenu"}}</li>
+      | <li id="nav-user" {{action "toggleMenu"}}</li>
+      li#nav-res:   a href="https://extra.gables.com/gateway/" Residents
+      li#nav-login <a {{action "toggleLogin"}}">Login</a>
+  = form_for :session, :url => tablet_create_sessions_path, :html => {:id => "login-form", :class => "pop"}, :remote => true do |f|
+    | {{#if App.loginError}}
+    .error 
+      | {{App.loginError}}
+    | {{/if}}
+    = f.hidden_field :property, :value => @property.insite_id
+    label Associate ID
+    = f.text_field :username
+    = f.label "Password"
+    = f.password_field :password
+    = f.submit "Login", :class => "btn green"

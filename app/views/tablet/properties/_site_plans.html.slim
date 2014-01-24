@@ -1,0 +1,19 @@
+script type="text/x-handlebars" data-template-name="site-plans"
+  | {{view App.CommunityNavView}}
+  #siteplan.community
+    .content.group
+      #siteplan-images
+        | <img {{bindAttr src="mainImage"}} {{bindAttr usemap="mapName"}} />
+        | {{#if App.site_plans}}{{#if showInstructions}}
+        #instructions.siteplan-instructions Tap an apartment to view the floor plan 
+        | {{/if}}{{/if}}
+      | {{#if showMenu}}
+      #siteplan-nav
+        .centering-container
+          ul
+            | {{#each App.site_plans}}
+            li 
+              | <a {{action "select"}}><img {{bindAttr src="image.thumb.url"}} {{bindAttr data-src="image.url"}} {{bindAttr data-id="id"}}/></a>
+              | {{{image_map}}}
+            | {{/each}}
+      | {{/if}}

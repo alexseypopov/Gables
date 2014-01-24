@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+  <head> 
+    <title>Style Guide</title>
+    <meta charset='utf-8'> 
+    <meta content='chrome=1' http-equiv='X-UA-Compatible'> 
+  </head> 
+  <body>
+    <h1>Gables style guide for creating pages</h1>
+    
+    <h2>Feature Blocks</h2>
+    
+    <p><img src="images/guide/feature.png" alt=""></p>
+    
+    <p>This block will style a title, description and a box floated left. (Could contain an image, a video, etc.) The floated box will take up as much space as it needs for the content, so size your images accordingly. To float the box right instead of left, just add class 'right.'</p>
+    
+    <h3>Code</h3>
+    
+    <pre><code>
+&lt;div class="feature"&gt;
+  &lt;div class="thumb"&gt;&lt;img alt="" src="http://placedog.com/222/137"&gt;&lt;/div&gt;
+  &lt;p class="title"&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+  &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Phasellus elementum purus nec leo varius malesuada. Aenean commodo ante ac arcu mattis elementum. 
+  Pellentesque felis nulla, sollicitudin id vulputate eget, tristique eget tellus. Fusce vitae nunc risus.&lt;/p&gt;
+&lt;/div&gt;
+    </code></pre>
+    
+    <p>For more prominent content add the class 'large' to the feature block:</p>
+    
+    <p><img src="images/guide/feature_large.png" alt=""></p>
+    
+    <p>For less prominent content add the class 'small' to the feature block:</p>
+    
+    <p><img src="images/guide/feature_small.png" alt=""></p>
+    
+    <h2>Multiple Columns</h2>
+    
+    <p><img src="images/guide/columns.png" alt=""></p>
+    
+    <p>This block will split the content into two columns using the space available. The above image uses the column block and a series of small feature blocks.</p>
+    
+    <h3>Code</h3>
+    
+    <pre><code>
+&lt;div class="columns_2"&gt;
+  &lt;div class="feature small"&gt;
+    &lt;div class="thumb"&gt;&lt;img alt="" src="/images/icons/certificate.gif"&gt;&lt;/div&gt;
+    &lt;p class="title"&gt;30 Days Gables Guarantee&lt;/p&gt;
+    &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum purus nec leo.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="feature small"&gt;
+    &lt;div class="thumb"&gt;&lt;img alt="" src="/images/icons/computer.gif"&gt;&lt;/div&gt;
+    &lt;p class="title"&gt;Pay Rent Online&lt;/p&gt;
+    &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum purus nec leo.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+    
+    <h2>Tabbed Content</h2>
+      
+    <p><img src="images/guide/tabs.png" alt=""></p>
+    
+    <p>If marked up correctly, this will provide a tabbed nav for portions of content that will become visible when their respective nav item is active.</p>
+    
+    <h3>The Code</h3>
+    
+    <h4>The Tab Nav</h4>
+    
+    <pre><code>
+&lt;ul class="tab_nav"&gt;
+  &lt;li class="active"&gt;&lt;a href="#tab_one_id"&gt;Tab One&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=""&gt;&lt;a href="#tab_two_id"&gt;Tab Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=""&gt;&lt;a href="#tab_three_id"&gt;Tab Three&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    </code></pre>
+    
+    <p>The tab you want highlighted should have the class of 'active' as shown above.</p>
+    
+    <h4>The Tab Content</h4>
+    
+    <pre><code>
+&lt;div class="tab" id="tab_one_id"&gt;
+  Tab One Content Goes Here
+&lt;/div&gt;
+&lt;div class="tab" id="tab_two_id"&gt;
+  Tab Two Content Goes Here
+&lt;/div&gt;
+&lt;div class="tab" id="tab_three_id"&gt;
+  Tab Three Content Goes Here
+&lt;/div&gt;
+    </code></pre>
+    
+    <p>As you can see the id of each tab corresponds to an href for the links above.</p>
+    
+    <h2>Testimonials</h2>
+    
+    <p><img src="images/guide/testimonials.png" alt=""></p>
+    
+    <h3>The Code</h3>
+    
+    <pre><code>
+&lt;div class="testimonials"&gt;
+  &lt;blockquote class="testimonial"&gt;
+    &lt;p class="quote"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt, elit et accumsan imperdiet, tellus dolor pulvinar dolor, ac tincidunt mi nunc.&lt;/p&gt;
+    &lt;p class="source"&gt;George Burdell&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;blockquote class="testimonial"&gt;
+    &lt;p class="quote"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt, elit et accumsan imperdiet, tellus dolor pulvinar dolor, ac tincidunt mi nunc.&lt;/p&gt;
+    &lt;p class="source"&gt;George Burdell&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;
+    </code></pre>
+    
+    <h2>Sidebar List</h2>
+    
+    <p><img src="images/guide/sidebar_list.png" alt=""></p>
+      
+    <h3>The Code</h3>
+    
+    <pre><code>
+&lt;div class="sidebar_list"&gt;
+  &lt;h2&gt;New Communities,&lt;br&gt;New Opportunities&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;
+        &lt;img alt="" src="http://placedog.com/85/65"&gt;
+        &lt;strong&gt;Gables 5th Street Commons&lt;/strong&gt;
+        Austin, TX
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;
+        &lt;img alt="" src="http://placedog.com/85/65"&gt;
+        &lt;strong&gt;Gables 820 West&lt;/strong&gt;
+        Atlanta, GA
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;
+        &lt;img alt="" src="http://placedog.com/85/65"&gt;
+        &lt;strong&gt;Gables Park 17&lt;/strong&gt;
+        Dallas, TX
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+    </code></pre>  
+  </body>
+</html>

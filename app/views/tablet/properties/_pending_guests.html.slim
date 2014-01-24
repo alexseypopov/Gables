@@ -1,0 +1,63 @@
+script type="text/x-handlebars" data-template-name="pending-guests"
+  .wrap
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Pending Guest Cards
+      .action-bar.sub-heading
+        fieldset
+          .field.inline
+            label.inline Show 
+            | {{view Ember.Select contentBinding="groups" selectionBinding="selectedGroup"}}
+          .field.inline
+            label.inline Move In Date 
+            | {{view Ember.Select contentBinding="dates" selectionBinding="selectedDates" prompt="Show All"}}
+    .content.group
+      | {{#if showMyGuests}}
+      h2 My Guests
+      .table-wrap
+        table cellspacing="0"
+          thead
+            tr
+              th <b {{action "sort"}} {{bindAttr class="first_name:desc sortable"}} data-group='my_guests' data-sort='first_name'>Name</b>
+              th <b {{action "sort"}} {{bindAttr class="created_at:desc sortable"}} data-group='my_guests' data-sort='created_at'>Visit Date</b>
+              th <b {{action "sort"}} {{bindAttr class="move_in_date:desc sortable"}} data-group='my_guests' data-sort='move_in_date'>Move In Date</b>
+              th InSite
+              th
+          tbody
+            | {{#each filteredMyGuests}}
+            tr
+              td() {{first_name}} {{last_name}}
+              td() {{created_at}}
+              td() {{formattedDate move_in_date}}
+              td() {{#if guest_card_id}}Yes{{else}}No{{/if}}
+              td
+                | <a class="btn grn"    {{bindAttr data-id="id"}} {{action "open"}} data-group="my_guests">Open</a>
+                | <a class="btn remove" {{bindAttr data-id="id"}} {{action "removeUser"}}>Remove</a>
+            | {{/each}}
+      | {{else}}
+      h2 All Guests
+      .table-wrap
+        table.all-guests cellspacing="0"
+          thead
+            tr
+              th <b {{action "sort"}} {{bindAttr class="first_name:desc sortable"}} data-group='all_guests' data-sort='first_name'>Guest Name</b>
+              th <b {{action "sort"}} {{bindAttr class="created_at:desc sortable"}} data-group='all_guests' data-sort='created_at'>Visit Date</b>
+              th <b {{action "sort"}} {{bindAttr class="move_in_date:desc sortable"}} data-group='all_guests' data-sort='move_in_date'>Move In Date</b>
+              th InSite
+              th <b {{action "sort"}} {{bindAttr class="insite_user_name:desc sortable"}} data-group='all_guests' data-sort='insite_user.name'>Leasing Associate</b>
+              th
+          tbody
+            | {{#each filteredAllGuests}}
+            tr
+              td() {{first_name}} {{last_name}}
+              td() {{created_at}}
+              td() {{formattedDate move_in_date}}
+              td() {{#if guest_card_id}}Yes{{else}}No{{/if}}
+              td() {{insite_user.name}}
+              td
+                | <a class="btn grn" {{bindAttr data-id="id"}} {{action "open"}} data-group="all_guests">Open</a>
+                | {{#if App.currentUser.isAdmin}}
+                | <a class="btn remove" {{bindAttr data-id="id"}} {{action "removeUser"}}>Remove</a>
+                | {{/if}}
+            | {{/each}}
+      | {{/if}}

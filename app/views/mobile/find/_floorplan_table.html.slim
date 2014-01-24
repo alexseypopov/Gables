@@ -1,0 +1,27 @@
+- if floorplan.units.length > 0
+  = link_to raw("<h2>#{floorplan.name}</h2> <span>#{rooms(floorplan)}</span>"), floorplan_path(floorplan)
+  - floorplan.units.each do |unit|
+    ul class="#{cycle('rowOne', 'rowTwo')}"
+      -if unit.rent_min != 0
+        li
+          label Building
+          span = unit.building_name
+        li
+          label Floor
+          span = unit.entry_floor
+        li
+          label Apartment Number
+          span = unit.name
+        li
+          label Square Feet
+          span = area(unit)
+        li
+          label Rent
+          - if unit.rent_min == unit.rent_max
+            span $#{unit.rent_max}
+          - else
+            span $#{unit.rent_min} - $#{unit.rent_max}
+        li
+          label Available
+          = link_to (unit.occupied ? (unit.available_on ? unit.available_on.to_formatted_s(:long_ordinal) : 'Unknown') : 'Now'), floorplan_path(floorplan, :unit_id => unit), :class => 'available-units'
+

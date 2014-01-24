@@ -1,0 +1,14 @@
+.associate_slider
+  %ul
+    - if @page && @page.path == 'corporate_jobs'
+      - associates = CorporateAssociate.featured.limit(3)
+    - elsif @page && @page.path == 'community_jobs'
+      - associates = CommunityAssociate.featured.limit(3)
+    - else
+      - associates = Associate.all
+    - associates.each do |associate|
+      %li
+        = image_tag associate.image_url, :alt => ''
+        %p.name= associate.name
+        %p.title= associate.title
+        %p.permalink= link_to 'see their story +', associate_path(associate)

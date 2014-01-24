@@ -1,0 +1,9 @@
+%nav#section_nav
+  %ul
+    %li= link_to 'Overview', '#'
+    %li= link_to 'Corporate Jobs', '#'
+    %li{:class => @page == 'community_jobs' ? 'active' : ''}= link_to 'Community Jobs', careers_community_jobs_path
+    %li= link_to 'Associate Stories', '#'
+    %li= link_to 'Benefits', '#'
+    %li= link_to 'Students & Recent Grands', '#'
+    %li{:class => @page == 'job_search' ? 'active' : ''}= link_to 'Job Search', careers_search_path

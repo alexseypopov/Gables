@@ -1,0 +1,19 @@
+= form_tag(find_where_path, :method => 'get', :id => 'floorplan_search') do
+  %h3 Find floorplans from nearby Gables communities
+  %fieldset
+    = hidden_field_tag :query, query
+    = hidden_field_tag :group, 'floorplan'
+    .input.select
+      = label_tag :beds
+      = select_tag :beds, beds_options
+    .input.select
+      = label_tag :baths
+      = select_tag :baths, baths_options
+    .input.range
+      = label_tag :rent_min, 'Monthly Rent'
+      .range_set
+        = text_field_tag :rent_min, params[:rent_min], :placeholder => 'min'
+        %span to
+        = text_field_tag :rent_max, params[:rent_max], :placeholder => 'max'
+    .submit
+      %button{:type => 'submit'} Search

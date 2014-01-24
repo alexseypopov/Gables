@@ -1,0 +1,35 @@
+- content_for :head do
+  %title= "Properties | Gables offers Apartments for Rent, Luxury Apartments, Furnished Apartments, Unfurnished Apartments and Corporate Housing"
+  %meta{:name => 'description', :content => "Gables features luxury apartments for rent including unfurnished, furnished apartments, and corporate housing. Free apartment finder and rentals search at Gables.com makes it easy."}
+  = stylesheet_link_tag 'urban_properties'
+
+- content_for :marquee do
+  #marquee.inner
+    .wrapper
+      .item
+        =image_tag 'urban_properties_header.jpg', :alt => ''
+        .description_wrapper
+          .description
+            %h1 Our Properties
+            %p Growing Distinctive Urban Neighborhoods
+            
+#urban_properties
+  .limit
+    = label_tag :filter_city, 'Limit to'
+    = select_tag :filter_city, options_for_select(@cities), {:prompt => 'Select City'}
+  - @properties.in_groups_of(3) do |props|
+    .row
+      - props.each_with_index do |property, index|
+        - if property
+          %div{:data => {:city => property.city}, :class => (index == 2 ? 'property last' : 'property')}
+            .thumb= image_tag (property.images.count > 0 ? property.images.first.thumb.url : 'no_image.gif'), :alt => ''
+            .info
+              %h2= property.name
+              %p.address= "#{property.city}, #{property.state}"
+              %p <strong>#{number_with_delimiter(property.square_footage, :delimiter => ',')} s.f.</strong> of Retail Space
+              %p <strong>#{property.apartments_count}</strong> Apartment Homes
+              .more
+                = link_to 'more information', property_path(property)
+                - unless property.site_url.blank?
+                  = " / "
+                  = link_to('property site', property.site_url)

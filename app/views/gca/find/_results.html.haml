@@ -1,0 +1,39 @@
+- @properties.each do |property|
+  .community_result[property]{:itemscope => true, :itemtype => 'http://schema.org/Residence'}
+    .community_info
+      .thumb{:itemprop => 'image'}
+        - if property.images.count > 0
+          = link_to image_tag(property.images.first.thumb.url, :alt => ''), listing_path(property)
+        - else
+          = link_to image_tag('no_image.gif', :alt => ''), listing_path(property)
+      .details
+        %h2{:itemprop => 'name'}= link_to property.name, listing_path(property)
+        - unless property.short_description.blank? && property.long_description.blank?
+          %p= property.short_description != '' ? raw(property.short_description) : raw(property.long_description)
+        - unless !property.allows_dogs? && !property.allows_cats?
+          .pets
+            - if property.allows_dogs? && property.allows_cats?
+              %p
+                = image_tag 'dogs_cats.gif', :alt => ''
+                Allows dogs & cats
+            - elsif property.allows_dogs? && !property.allows_cats?
+              %p
+                = image_tag 'dogs.gif', :alt => ''
+                Allows dogs
+            - elsif !property.allows_dogs? && property.allows_cats?
+              %p
+                = image_tag 'cats.gif', :alt => ''
+                Allows cats
+        %h3 Top Amenities
+        %ul
+          - property.amenities.limit(5).each do |amenity|
+            %li= "- #{amenity.description}"
+    .actions
+      %ul
+        %li.map
+          %a{:href => '#map_canvas', :data => {:id => property.id}} Show on Map
+        - if property.full_brochure.url
+          %li{:class => property.full_brochure.url && property.short_brochure.url ? 'first brochure' : 'brochure'}= link_to 'Floorplans', property.full_brochure.url
+        - if property.short_brochure.url
+          %li{:class => property.full_brochure.url && property.short_brochure.url ? 'last brochure' : 'brochure'}= link_to 'Brochure', property.short_brochure.url
+        %li.community= link_to 'View Community', listing_path(property)

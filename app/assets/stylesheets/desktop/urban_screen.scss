@@ -1,0 +1,34 @@
+// variables
+@import 'variables';
+
+// mixins
+@import 'mixins';
+
+#site_head .wrapper {
+  .logo {
+    a {
+      background-image: url('../images/urban/logo.gif');
+      height: 76px;
+      width: 99px;
+    }
+  }
+  .back {
+    left: 142px;
+  }
+}
+
+#site_info {
+  .social {
+    right: 140px;
+    li.group {
+      a {
+        background-position: -265px 0;
+        width: 34px;
+      }
+    }
+  }
+  .copyright {
+    top: 18px;
+  }
+}
+

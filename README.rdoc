@@ -1,0 +1,47 @@
+= Gables
+
+== Development
+Gables requires the following software:
+
+* Download & Install Vagrant http://www.vagrantup.com
+
+* Setup your Vagrant Box
+ vagrant up
+
+* Setup and run rails in Vagrant
+ vagrant ssh
+ cd gables
+ rake db:setup
+ rails server
+
+* Visit http://192.168.33.10:3000 to ensure everything works
+
+* Populate your local database in Vagrant
+ vagrant ssh
+ cd gables
+ rake gables:sync #this will take some time and will download 500MB+ of images
+
+== Deploying
+
+* Ensure your SSH public key is in /home/rails/.ssh/authorized_keys on the server
+
+* Then run either of the following
+ cap staging deploy
+ cap production deploy
+
+* You can view the staging site at http://ec2-50-17-194-39.compute-1.amazonaws.com and the production site at http://50.17.194.39
+
+== Server Maintenance
+Use the following command to log in to the server
+
+ ssh rails@50.17.194.39 -p 30306
+
+Syncing with vaultware is run via a daily rake task <tt>rake gables:sync</tt>. Backups use Amazon's EBS snapshotting facility, executed via <tt>rake gables:snapshot</tt>. Note that the snapshots are run as an IAM user, snapshotter, with permissions only to manage snapshots. The signing certificate for that user expires in 2021.
+
+To restore a server from a snapshot
+* From your development machine, create an AMI based on a snapshot 
+ ec2reg -s [SNAPSHOT_ID] -a x86_64 -n backup-test -K [KEY_FILE] -C [CERTIFICATE_FILE] --kernel [KERNEL_ID]
+
+* Create an EC2 instance based on the newly-created AMI
+
+You can ssh into the new server the same way you would the current server. Note that you will have to change _Snapshot::Volume_ to point to the EBS volume of the new server.

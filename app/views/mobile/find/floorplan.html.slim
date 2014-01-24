@@ -1,0 +1,57 @@
+.community.floorplan
+
+  .property-name = @floorplan.property.name
+  h2 = "#{@floorplan.name} #{@unit ? "#"+@unit.name : ""}"
+  h3 = "#{rooms(@floorplan)}"
+
+  - if @floorplan.images.count > 0
+    .floorplan_image = image_tag @floorplan.images.first.url
+
+  .rent Rent
+
+  - if @floorplan.rent_min == @floorplan.rent_max
+    .price $#{@floorplan.rent_max}
+  - else
+    .price $#{@floorplan.rent_min} - $#{@floorplan.rent_max}
+
+  a.button href="#RequestInformation"
+    i.icon-mail
+    span Request Information
+
+  hr
+
+  .community_overview
+    - unless @features.empty?
+      h2 Apartment Features
+      .features
+        ul
+          - @features.each do |amenity|
+            li= "- #{amenity.description}"
+
+    .options
+      - if @unit && (@unit.from_vaultware || @unit.from_propertysolutions)
+        .fp_availability
+          p Rent <strong>#{rent_range([@floorplan])}</strong>
+          - if @property.use_propertysolutions_data?
+            = link_to 'Apply Online', apply_online_url(@unit), :class => 'apply_online'
+            = link_to 'Reserve / Pre-Qualify', reserve_prequalify_url(@unit, @floorplan, @property), :class => 'reserve_prequalify'
+          - else
+            = link_to 'Reserve This Unit & Apply Online', @unit.availability_url
+
+      = render :partial => '/find/community_brochures'
+
+  hr
+
+  = render :partial => '/shared/address'
+  = render :partial => '/shared/social_icons'
+
+  .row
+    .cell style="width: 49%"
+      button.button
+        i.icon-phone
+        span Call
+    .cell style="width: 30px;"
+    .cell style="width: 49%"
+      button.button
+        i.icon-comment
+        span Live Chat

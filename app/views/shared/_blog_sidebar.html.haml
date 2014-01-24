@@ -1,0 +1,24 @@
+#tumblr_feed.blog
+  %h2 Blog
+  .social_links
+    %p Follow Us
+    %ul
+      - unless @property.nil?
+        - unless @property.calendar_url.blank?
+          %li.calendar= link_to 'Event Calendar', @property.calendar_url, :rel => 'external'
+        - unless @property.twitter_url.blank?
+          %li.tumblr= link_to 'Twitter', @property.twitter_url, :rel => 'external'
+        - else
+          %li.tumblr= link_to 'Twitter', 'http://twitter.com/gables', :rel => 'external'
+        - unless @property.facebook_url.blank?
+          %li.facebook= link_to 'Facebook', @property.facebook_url, :rel => 'external'
+        - else
+          %li.facebook= link_to 'Facebook', 'http://www.facebook.com/gablesresidential', :rel => 'external'
+      - else
+        %li.tumblr= link_to 'Twitter', 'http://twitter.com/gables', :rel => 'external'
+        %li.facebook= link_to 'Facebook', 'http://www.facebook.com/gablesresidential', :rel => 'external'
+  .hfeed
+  - unless @property.nil? || (!@property.nil? && @property.blog_url.blank?)
+    %p.blog_link= link_to 'More from the blog', @property.blog_url
+  - else
+    %p.blog_link= link_to 'More from the blog', 'http://blog.gables.com/'

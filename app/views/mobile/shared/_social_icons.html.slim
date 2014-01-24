@@ -1,0 +1,16 @@
+-if @property
+  .social-icons
+    - unless @property.google_id.blank?
+      = link_to '', "https://plus.google.com/#{@property.google_id}", :rel => 'external', class: 'icon-social-google'
+    - unless @property.twitter_url.blank?
+      = link_to '', @property.twitter_url, :rel => 'external', class: 'icon-social-twitter'
+    - else
+      = link_to '', 'http://twitter.com/gables', :rel => 'external', class: 'icon-social-twitter'
+    - unless @property.facebook_url.blank?
+      = link_to '', @property.facebook_url, :rel => 'external', class: 'icon-social-facebook'
+    - else
+      = link_to '', 'http://www.facebook.com/gablesresidential', :rel => 'external', class: 'icon-social-facebook'
+    - unless @property.pinterest_url.blank?
+      = link_to '', @property.pinterest_url, :rel => 'external', class: 'icon-social-pinterest'
+    - else
+      = link_to '', 'http://pinterest.com/GablesLiving', :rel => 'external', class: 'icon-social-pinterest'

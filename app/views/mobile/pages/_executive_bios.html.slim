@@ -1,0 +1,25 @@
+.executives
+  h2 Company Officers
+  .business-card
+    - Executive.where(:category => 'Company Officer').order('position ASC').in_groups_of(3) do |executives|
+      - executives.each do |executive|
+        - if executive
+          .name
+            a href="#{modal_executive_path(:id => executive.id)}" id="#{executive.id}"
+              = "#{executive.name}"
+          .title= raw(executive.title)
+          hr
+
+
+  - cats = ['Corporate', 'Development & Construction', 'Operations']
+  - cats.each do |cat|
+    h2= cat
+    .business-card
+      - Executive.where(:category => cat).order('position ASC').in_groups_of(3) do |executives|
+        - executives.each do |executive|
+          - if executive
+            .name
+              a href="#{modal_executive_path(:id => executive.id)}" id="#{executive.id}"
+                = "#{executive.name}"
+            .title= raw(executive.title)
+            hr

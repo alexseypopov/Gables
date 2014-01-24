@@ -1,0 +1,42 @@
+script type="text/x-handlebars" data-template-name="vaultware-units"
+  .page-heading
+    .nav-back <a {{action "goBack"}}>&lt; Back</a>
+    h1 Available Units
+    .action-bar
+      fieldset
+        .field.inline
+          label.inline Show
+          | {{view Ember.Select contentBinding="App.showOptions"
+              selectionBinding="App.floorplansController.showOption"}}
+  ul.content
+    | {{#each App.floorplansController.filteredContent}}
+    li
+      .meta
+        h2
+          | {{name}}
+          span.bed-bath() {{bedrooms_count}} Beds / {{bathrooms_count}} Baths - {{area_min}} Sqft.
+      .view 
+        | <a class="btn sm" {{bindAttr data-id="id"}} {{action viewFloorplan}}>View</a>
+          <a class="btn sm" {{bindAttr data-id="id"}} {{action "print"}}>Print</a>
+      .table-wrap
+        table cellspacing="0"
+          thead
+            tr
+              th Available
+              th Unit
+              th Bldg - Flr
+              th Current Status
+              th Mkt. Rent
+              th Options / Features
+          tbody
+            | {{#each units}}
+            tr
+              td() {{available_on}}
+              td() {{name}}
+              td() {{building_name}} - {{entry_floor}}
+              td() {{#if occupied}}Occupied{{else}}Available{{/if}}
+              td ${{rent_min}} - ${{rent_max}}
+              td() {{descriptionsOf amenities}}
+
+            | {{/each}}
+    | {{/each}}

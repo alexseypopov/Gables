@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# <%= @property.updated_at %> <%= Rails.root %>
+/packages/tablet.js
+/packages/tablet.css
+/images/tablet/icons-sprite.png
+/images/tablet/page-bg.jpg
+
+<%- @property.images.each do |image| %>
+<%= image.url %>
+<%- end %>
+
+<%- @property.floorplans.each do |floorplan| %>
+<%- floorplan.images.each do |image| %>
+<%= image.url %>
+<%- end %>
+<%- end %>
+
+NETWORK:
+*
+

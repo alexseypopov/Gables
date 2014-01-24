@@ -1,0 +1,51 @@
+.executives{
+  h2{
+    font-family: CenturyGothicBold, Arial;
+    font-weight: bold;
+  }
+  hr{
+    margin:0 0 10px 0;
+  }
+
+  .thumb img{
+    width:100%;
+    margin-bottom: 20px;
+  }
+
+  .business-card{
+    h2{
+      margin: 0;
+    }
+    .name a, .name a:visited{
+      font-family: CenturyGothicBold, Arial;
+      font-weight: bold;
+      color: $header-green;
+    }
+    .title{
+      color: $dark-gray;
+    }
+
+    hr:last-of-type{
+      border:none;
+      border-top: 1px solid $link-green;
+      margin: 20px 0 0 0;
+    }
+
+  }
+  &.detail{
+    padding:10px;
+    h2.detail{
+      font-size: 1.5em;
+    }
+    hr.detail{
+
+      border-top: 1px solid $light-gray;
+    }
+    hr:last-of-type{
+      margin: 10px 0 10px 0;
+    }
+    h2{
+      margin: 0;
+    }
+  }
+}

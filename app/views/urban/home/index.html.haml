@@ -1,0 +1,33 @@
+- content_for :head do
+  %title= "Gables offers Apartments for Rent, Luxury Apartments, Furnished Apartments, Unfurnished Apartments and Corporate Housing"
+  %meta{:name => 'description', :content => "Gables features luxury apartments for rent including unfurnished, furnished apartments, and corporate housing. Free apartment finder and rentals search at Gables.com makes it easy."}
+
+- content_for :marquee do
+  #marquee
+    .wrapper
+      - @sliders.each do |slide|
+        .item
+          =image_tag slide.image.url
+          .description
+            %p= slide.subtitle
+            %p.emph= slide.title
+            %p= slide.description
+      #slide_controls
+        .prev Previous
+        .next Next
+        
+#home
+  .sister_sites
+    %ul
+      - @promos.each do |promo|
+        %li
+          - if promo.video_id
+            = link_to image_tag("http://img.youtube.com/vi/#{promo.video_id}/0.jpg", :alt => 'Watch video', :height => '173', :width => '293'), modal_video_path(:video_id => promo.video_id), :class => 'video_iframe', "data-video-id" => promo.video_id
+            .description
+              = link_to promo.heading, '#'
+              %p= promo.text
+          - else
+            = link_to image_tag(promo.image.url, :alt => ''), promo.link
+            .description
+              =link_to promo.heading, promo.link
+              %p= promo.text

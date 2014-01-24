@@ -1,0 +1,1953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PhysicalProperty xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Management Id="55495">
+    <PropertyContacts>
+      <CompanyInfo xmlns="http://my-company.com/namespace" Type="manager">
+        <ContactName>Gables Residential Services</ContactName>
+      </CompanyInfo>
+    </PropertyContacts>
+  </Management>
+	<Property ManagementID="55495">
+		<PropertyID>
+			<Identification xmlns="http://my-company.com/namespace" Type="market rate apt">
+				<PrimaryID>13504</PrimaryID>
+				<SecondaryID>13504</SecondaryID>
+				<MarketingName>Arbors Of Harbor Town</MarketingName>
+				<WebSite>www.gables.com/arborsofharbortown</WebSite>
+			</Identification>
+			<Address xmlns="http://my-company.com/namespace" Type="property">
+				<Address1>671 Harbor Edge Drive</Address1>
+				<City>Memphis</City>
+				<State>TN</State>
+				<PostalCode>38103</PostalCode>
+				<CountyName>Shelby</CountyName>
+				<Email>manager.arborsharbortown@gables.com</Email>
+			</Address>
+			<Phone xmlns="http://my-company.com/namespace" Type="office">
+				<PhoneNumber>(901) 526-0322</PhoneNumber>
+			</Phone>
+			<Phone xmlns="http://my-company.com/namespace" Type="fax">
+				<PhoneNumber>(901) 526-0354</PhoneNumber>
+			</Phone>
+		</PropertyID>
+		<ILS_Identification Type="Unspecified" RentalType="Unspecified"/>
+		<Information>
+			<StructureType>Standard</StructureType>
+			<UnitCount>346</UnitCount>
+      <OfficeHour>
+        <OpenTime>10:00 AM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Monday</Day>
+      </OfficeHour>
+      <OfficeHour>
+        <OpenTime>10:00 AM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Tuesday</Day>
+      </OfficeHour>
+      <OfficeHour>
+        <OpenTime>10:00 AM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Wednesday</Day>
+      </OfficeHour>
+      <OfficeHour>
+        <OpenTime>10:00 AM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Thursday</Day>
+      </OfficeHour>
+      <OfficeHour>
+        <OpenTime>10:00 AM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Friday</Day>
+      </OfficeHour>
+      <OfficeHour>
+        <OpenTime>10:00 AM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Saturday</Day>
+      </OfficeHour>
+      <OfficeHour>
+        <OpenTime>01:00 PM</OpenTime>
+        <CloseTime>06:00 PM</CloseTime>
+        <Day>Sunday</Day>
+      </OfficeHour>
+			<LongDescription>There is no other apartment community in Memphis like Arbors Harbor Town. It combines the convenience and cachet of Mud Island and the thoughtful planning that is Harbor Town in one unsurpassed address.Here you can live in the shadow of the Pyramid, adjacent to all the excitement of downtown Memphis and yet set apart by the tranquil Wolf river and the mighty Mississippi.Interior features rival those of the best single-family residences: large, wood-burning fireplaces, tiled entry foyers, open kitchens with pass-throughs, an abundance of natural light, and much more. You can choose from one and two bedroom garden homes and three bedroom/den townhomes.Rich wood exteriors, with cupolas, sweeping porches and balconies evoke the grace and charm of the city's heritage. Large windows catch the river breeze and abundant landscaping reflects the seasons.The amenities of The Arbors are those of the finest resorts: Three pools with areas for lap swimming and water volleyball, generous sunning dec</LongDescription>
+			<PropertyAvailabilityURL>http://units.realtydatatrust.com/unittype.aspx?ils=524&amp;propid=13504</PropertyAvailabilityURL>
+		</Information>
+    <Concession Active="true">
+      <DescriptionHeader>Reserve your apartment and find out instantly if you qualify.</DescriptionHeader>
+      <DescriptionBody>InternetSpecial</DescriptionBody>
+    </Concession>
+		<Amenity Type="Other">
+			<Description>24 Hour Fitness Center</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Car Wash/Vacuum Area</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Easy Access To I-55 And I-40</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Grilling And Picnic Area</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Laundry Centers</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Lighted Tennis Court</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Lush Landscaping</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>MAA Beautification Award Winner,Hot Tub</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Planned Social Activities</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Amenity Type="Other">
+			<Description>Sand Volleyball</Description>
+			<Rank>0</Rank>
+		</Amenity>
+		<Building Id="133852">
+			<Name>24   </Name>
+			<Description>24                            </Description>
+			<UnitCount>8</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133853">
+			<Name>25   </Name>
+			<Description>25                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133854">
+			<Name>26   </Name>
+			<Description>26                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133855">
+			<Name>27   </Name>
+			<Description>27                            </Description>
+			<UnitCount>8</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133856">
+			<Name>28   </Name>
+			<Description>28                            </Description>
+			<UnitCount>8</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133857">
+			<Name>29   </Name>
+			<Description>29                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133858">
+			<Name>30   </Name>
+			<Description>30                            </Description>
+			<UnitCount>4</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133851">
+			<Name>23   </Name>
+			<Description>23                            </Description>
+			<UnitCount>18</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133850">
+			<Name>22   </Name>
+			<Description>22                            </Description>
+			<UnitCount>8</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133849">
+			<Name>21   </Name>
+			<Description>21                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133848">
+			<Name>20   </Name>
+			<Description>20                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133644">
+			<Name>COM  </Name>
+			<Description>COMMON                        </Description>
+			<UnitCount>1</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133847">
+			<Name>19   </Name>
+			<Description>19                            </Description>
+			<UnitCount>6</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133846">
+			<Name>18   </Name>
+			<Description>18                            </Description>
+			<UnitCount>7</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133845">
+			<Name>17   </Name>
+			<Description>17                            </Description>
+			<UnitCount>18</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133844">
+			<Name>16   </Name>
+			<Description>16                            </Description>
+			<UnitCount>8</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133843">
+			<Name>15   </Name>
+			<Description>15                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133842">
+			<Name>14   </Name>
+			<Description>14                            </Description>
+			<UnitCount>4</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133841">
+			<Name>13   </Name>
+			<Description>13                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133840">
+			<Name>12   </Name>
+			<Description>12                            </Description>
+			<UnitCount>8</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133839">
+			<Name>11   </Name>
+			<Description>11                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133838">
+			<Name>10   </Name>
+			<Description>10                            </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133837">
+			<Name>09   </Name>
+			<Description>9                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133836">
+			<Name>08   </Name>
+			<Description>8                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133835">
+			<Name>07   </Name>
+			<Description>7                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133834">
+			<Name>06   </Name>
+			<Description>6                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133833">
+			<Name>05   </Name>
+			<Description>5                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133832">
+			<Name>04   </Name>
+			<Description>4                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133831">
+			<Name>03   </Name>
+			<Description>3                             </Description>
+			<UnitCount>12</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133830">
+			<Name>02   </Name>
+			<Description>2                             </Description>
+			<UnitCount>18</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Building Id="133829">
+			<Name>01   </Name>
+			<Description>1                             </Description>
+			<UnitCount>30</UnitCount>
+			<SquareFeet>0</SquareFeet>
+		</Building>
+		<Floorplan Id="12041">
+			<Name>Hibiscus</Name>
+			<Comment>A1                            </Comment>
+			<UnitCount>48</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12041</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>0</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>1</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>1</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="630" Max="630"/>
+			<MarketRent Min="739" Max="819"/>
+			<EffectiveRent Min="739" Max="819"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>200.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+		</Floorplan>
+		<Floorplan Id="12042">
+			<Name>Birch</Name>
+			<Comment>A2                            </Comment>
+			<UnitCount>60</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12042</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>4</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>1</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>1</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="791" Max="791"/>
+			<MarketRent Min="861" Max="885"/>
+			<EffectiveRent Min="861" Max="885"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>200.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<File Id="8427" Active="true">
+				<Type>Floorplan</Type>
+				<Description/>
+				<Name/>
+				<Caption/>
+				<Format>image/gif</Format>
+				<Src>http://my.vaultware.com/ControlPanel3.0/GetImage.aspx?id=8427</Src>
+				<Rank>1</Rank>
+			</File>
+		</Floorplan>
+		<Floorplan Id="12043">
+			<Name>Cedar</Name>
+			<Comment>A3                            </Comment>
+			<UnitCount>31</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12043</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>6</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>1</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>1</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="812" Max="812"/>
+			<MarketRent Min="870" Max="940"/>
+			<EffectiveRent Min="870" Max="940"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>200.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+		</Floorplan>
+		<Floorplan Id="12044">
+			<Name>Cypress</Name>
+			<Comment>B1                            </Comment>
+			<UnitCount>36</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12044</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>9</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>2</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>1</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="937" Max="937"/>
+			<MarketRent Min="959" Max="1030"/>
+			<EffectiveRent Min="959" Max="1030"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>250.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+		</Floorplan>
+		<Floorplan Id="12045">
+			<Name>Magnolia</Name>
+			<Comment>B6                            </Comment>
+			<UnitCount>66</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12045</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>5</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>2</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>2</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="1020" Max="1020"/>
+			<MarketRent Min="1005" Max="1021"/>
+			<EffectiveRent Min="1005" Max="1021"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>250.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+		</Floorplan>
+		<Floorplan Id="12046">
+			<Name>Dogwood</Name>
+			<Comment>B2                            </Comment>
+			<UnitCount>72</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12046</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>4</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>2</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>2</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="1131" Max="1131"/>
+			<MarketRent Min="1097" Max="1157"/>
+			<EffectiveRent Min="1097" Max="1157"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>250.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+		</Floorplan>
+		<Floorplan Id="12047">
+			<Name>Beech</Name>
+			<Comment>CT                            </Comment>
+			<UnitCount>32</UnitCount>
+			<FloorplanAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?ils=524&amp;fid=12047</FloorplanAvailabilityURL>
+			<DisplayedUnitsAvailable>7</DisplayedUnitsAvailable>
+			<Room Type="Bedroom">
+				<Count>3</Count>
+				<Comment>Bedrooms</Comment>
+			</Room>
+			<Room Type="Bathroom">
+				<Count>2.5</Count>
+				<Comment>Bathrooms</Comment>
+			</Room>
+			<SquareFeet Min="1554" Max="1554"/>
+			<MarketRent Min="1432" Max="1460"/>
+			<EffectiveRent Min="1432" Max="1460"/>
+			<Deposit type="Security Deposit">
+				<Amount Type="Actual">
+					<Value>300.0000</Value>
+				</Amount>
+				<Description>Security Deposit</Description>
+			</Deposit>
+			<Amenity Type="Other">
+				<Description>* In select units</Description>
+				<Rank>100</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Additional insulation in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Dead bolt and door viewers on entry door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Double pain windows &amp; sliding glass door</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Frost-free refrigerators with ice maker</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Insulated entrance doors </Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Living areas equipped for ceiling fans*</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Pantries, linen closets &amp; storage areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Professionally designed interiors</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Soffit vents &amp; roof vents in attic areas</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Vaulted ceilings (in top floor units)</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Washer/Dryer connections</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving commodes</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Water-saving faucets &amp; showerheads</Description>
+				<Rank>0</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>Wood burning fireplaces w/tile hearths* </Description>
+				<Rank>0</Rank>
+			</Amenity>
+		</Floorplan>
+		<ILS_Unit Id="954606" FloorplanID="12042" BuildingID="133843">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>954606</UnitID>
+					<UnitType>A2</UnitType>
+					<MinSquareFeet>791</MinSquareFeet>
+					<MaxSquareFeet>791</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">15-112301 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">15-112301 </Comment>
+			<EffectiveRent Avg="885.0000" Min="885.0000" Max="885.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12042&amp;uid=954606</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="980279" FloorplanID="12042" BuildingID="133841">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>980279</UnitID>
+					<UnitType>A2</UnitType>
+					<MinSquareFeet>791</MinSquareFeet>
+					<MaxSquareFeet>791</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">13-987101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">13-987101 </Comment>
+			<EffectiveRent Avg="861.0000" Min="861.0000" Max="861.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12042&amp;uid=980279</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>HANDICAP ACCESS                         </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="972088" FloorplanID="12042" BuildingID="133849">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>972088</UnitID>
+					<UnitType>A2</UnitType>
+					<MinSquareFeet>791</MinSquareFeet>
+					<MaxSquareFeet>791</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">21-143202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">21-143202 </Comment>
+			<EffectiveRent Avg="870.0000" Min="870.0000" Max="870.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="09" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12042&amp;uid=972088</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="949040" FloorplanID="12042" BuildingID="133841">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>949040</UnitID>
+					<UnitType>A2</UnitType>
+					<MinSquareFeet>791</MinSquareFeet>
+					<MaxSquareFeet>791</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">13-981302 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">13-981302 </Comment>
+			<EffectiveRent Avg="876.0000" Min="876.0000" Max="876.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="19" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12042&amp;uid=949040</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="969152" FloorplanID="12043" BuildingID="133850">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>969152</UnitID>
+					<UnitType>A3</UnitType>
+					<MinSquareFeet>812</MinSquareFeet>
+					<MaxSquareFeet>812</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">22-993101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">22-993101 </Comment>
+			<EffectiveRent Avg="940.0000" Min="940.0000" Max="940.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Unoccupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12043&amp;uid=969152</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="940814" FloorplanID="12043" BuildingID="133840">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>940814</UnitID>
+					<UnitType>A3</UnitType>
+					<MinSquareFeet>812</MinSquareFeet>
+					<MaxSquareFeet>812</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">12-001102 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">12-001102 </Comment>
+			<EffectiveRent Avg="870.0000" Min="870.0000" Max="870.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12043&amp;uid=940814</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="977189" FloorplanID="12043" BuildingID="133855">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>977189</UnitID>
+					<UnitType>A3</UnitType>
+					<MinSquareFeet>812</MinSquareFeet>
+					<MaxSquareFeet>812</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">27-137101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">27-137101 </Comment>
+			<EffectiveRent Avg="925.0000" Min="925.0000" Max="925.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="07" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12043&amp;uid=977189</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="974438" FloorplanID="12043" BuildingID="133844">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>974438</UnitID>
+					<UnitType>A3</UnitType>
+					<MinSquareFeet>812</MinSquareFeet>
+					<MaxSquareFeet>812</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">16-122101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">16-122101 </Comment>
+			<EffectiveRent Avg="870.0000" Min="870.0000" Max="870.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="26" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12043&amp;uid=974438</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="942554" FloorplanID="12043" BuildingID="133850">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>942554</UnitID>
+					<UnitType>A3</UnitType>
+					<MinSquareFeet>812</MinSquareFeet>
+					<MaxSquareFeet>812</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">22-993102 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">22-993102 </Comment>
+			<EffectiveRent Avg="905.0000" Min="905.0000" Max="905.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="04" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12043&amp;uid=942554</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="945582" FloorplanID="12043" BuildingID="133855">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>945582</UnitID>
+					<UnitType>A3</UnitType>
+					<MinSquareFeet>812</MinSquareFeet>
+					<MaxSquareFeet>812</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">27-952101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">27-952101 </Comment>
+			<EffectiveRent Avg="870.0000" Min="870.0000" Max="870.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="07" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12043&amp;uid=945582</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="983171" FloorplanID="12044" BuildingID="133845">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>983171</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">17-122201 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">17-122201 </Comment>
+			<EffectiveRent Avg="1010.0000" Min="1010.0000" Max="1010.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Unoccupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=983171</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>APPLIANCE UPGRADE             </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="941017" FloorplanID="12044" BuildingID="133830">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>941017</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">02-705302 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">02-705302 </Comment>
+			<EffectiveRent Avg="985.0000" Min="985.0000" Max="985.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Unoccupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=941017</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="949389" FloorplanID="12044" BuildingID="133848">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>949389</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">20-133302 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">20-133302 </Comment>
+			<EffectiveRent Avg="1005.0000" Min="1005.0000" Max="1005.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Unoccupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=949389</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="983998" FloorplanID="12044" BuildingID="133851">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>983998</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">23-142102 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">23-142102 </Comment>
+			<EffectiveRent Avg="959.0000" Min="959.0000" Max="959.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="15" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=983998</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="959772" FloorplanID="12044" BuildingID="133845">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>959772</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">17-116302 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">17-116302 </Comment>
+			<EffectiveRent Avg="985.0000" Min="985.0000" Max="985.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="28" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=959772</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="964054" FloorplanID="12044" BuildingID="133845">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>964054</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">17-122101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">17-122101 </Comment>
+			<EffectiveRent Avg="1025.0000" Min="1025.0000" Max="1025.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="07" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=964054</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="967642" FloorplanID="12044" BuildingID="133848">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>967642</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">20-133202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">20-133202 </Comment>
+			<EffectiveRent Avg="1030.0000" Min="1030.0000" Max="1030.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="19" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=967642</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>APPLIANCE UPGRADE             </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="959722" FloorplanID="12044" BuildingID="133848">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>959722</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">20-133102 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">20-133102 </Comment>
+			<EffectiveRent Avg="975.0000" Min="975.0000" Max="975.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="19" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=959722</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="971239" FloorplanID="12044" BuildingID="133848">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>971239</UnitID>
+					<UnitType>B1</UnitType>
+					<MinSquareFeet>937</MinSquareFeet>
+					<MaxSquareFeet>937</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">20-137201 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">20-137201 </Comment>
+			<EffectiveRent Avg="990.0000" Min="990.0000" Max="990.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="30" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12044&amp;uid=971239</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="976613" FloorplanID="12045" BuildingID="133853">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>976613</UnitID>
+					<UnitType>B6</UnitType>
+					<MinSquareFeet>1020</MinSquareFeet>
+					<MaxSquareFeet>1020</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">25-146201 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">25-146201 </Comment>
+			<EffectiveRent Avg="1021.0000" Min="1021.0000" Max="1021.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Unoccupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12045&amp;uid=976613</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="965823" FloorplanID="12045" BuildingID="133851">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>965823</UnitID>
+					<UnitType>B6</UnitType>
+					<MinSquareFeet>1020</MinSquareFeet>
+					<MaxSquareFeet>1020</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">23-136302 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">23-136302 </Comment>
+			<EffectiveRent Avg="1020.0000" Min="1020.0000" Max="1020.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12045&amp;uid=965823</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="983798" FloorplanID="12045" BuildingID="133851">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>983798</UnitID>
+					<UnitType>B6</UnitType>
+					<MinSquareFeet>1020</MinSquareFeet>
+					<MaxSquareFeet>1020</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">23-136101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">23-136101 </Comment>
+			<EffectiveRent Avg="1005.0000" Min="1005.0000" Max="1005.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="16" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12045&amp;uid=983798</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="978393" FloorplanID="12045" BuildingID="133831">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>978393</UnitID>
+					<UnitType>B6</UnitType>
+					<MinSquareFeet>1020</MinSquareFeet>
+					<MaxSquareFeet>1020</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">03-680201 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">03-680201 </Comment>
+			<EffectiveRent Avg="1010.0000" Min="1010.0000" Max="1010.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="20" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12045&amp;uid=978393</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="955667" FloorplanID="12045" BuildingID="133854">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>955667</UnitID>
+					<UnitType>B6</UnitType>
+					<MinSquareFeet>1020</MinSquareFeet>
+					<MaxSquareFeet>1020</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">26-153202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">26-153202 </Comment>
+			<EffectiveRent Avg="1020.0000" Min="1020.0000" Max="1020.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="22" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12045&amp;uid=955667</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="972909" FloorplanID="12046" BuildingID="133845">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>972909</UnitID>
+					<UnitType>B2</UnitType>
+					<MinSquareFeet>1131</MinSquareFeet>
+					<MaxSquareFeet>1131</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">17-116101 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">17-116101 </Comment>
+			<EffectiveRent Avg="1097.0000" Min="1097.0000" Max="1097.0000"/>
+			<EntryFloor>1</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="06" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12046&amp;uid=972909</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIRST FLOOR                   </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>WRAP PATIO                    </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="981253" FloorplanID="12046" BuildingID="133833">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>981253</UnitID>
+					<UnitType>B2</UnitType>
+					<MinSquareFeet>1131</MinSquareFeet>
+					<MaxSquareFeet>1131</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">05-691301 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">05-691301 </Comment>
+			<EffectiveRent Avg="1157.0000" Min="1157.0000" Max="1157.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="08" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12046&amp;uid=981253</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>RIVER VIEW                    </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="956007" FloorplanID="12046" BuildingID="133845">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>956007</UnitID>
+					<UnitType>B2</UnitType>
+					<MinSquareFeet>1131</MinSquareFeet>
+					<MaxSquareFeet>1131</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">17-122202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">17-122202 </Comment>
+			<EffectiveRent Avg="1122.0000" Min="1122.0000" Max="1122.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="21" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12046&amp;uid=956007</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>POOL VIEW                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="945846" FloorplanID="12046" BuildingID="133845">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>945846</UnitID>
+					<UnitType>B2</UnitType>
+					<MinSquareFeet>1131</MinSquareFeet>
+					<MaxSquareFeet>1131</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">17-122302 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">17-122302 </Comment>
+			<EffectiveRent Avg="1117.0000" Min="1117.0000" Max="1117.0000"/>
+			<EntryFloor>3</EntryFloor>
+			<Availability>
+				<VacateDate Month="07" Day="01" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12046&amp;uid=945846</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>VAULTED CEILING               </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="977580" FloorplanID="12047" BuildingID="133846">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>977580</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">18-998202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">18-998202 </Comment>
+			<EffectiveRent Avg="2432.0000" Min="1432.0000" Max="2432.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Unoccupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=977580</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>APPLIANCE UPGRADE             </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="944389" FloorplanID="12047" BuildingID="133856">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>944389</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">28-119202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">28-119202 </Comment>
+			<EffectiveRent Avg="1450.0000" Min="1450.0000" Max="1450.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="02" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=944389</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="972941" FloorplanID="12047" BuildingID="133858">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>972941</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">30-097202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">30-097202 </Comment>
+			<EffectiveRent Avg="1450.0000" Min="1450.0000" Max="1450.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="04" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=972941</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>APPLIANCE UPGRADE             </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="953911" FloorplanID="12047" BuildingID="133855">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>953911</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">27-137202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">27-137202 </Comment>
+			<EffectiveRent Avg="1460.0000" Min="1460.0000" Max="1460.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="16" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=953911</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="983302" FloorplanID="12047" BuildingID="133856">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>983302</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">28-953202 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">28-953202 </Comment>
+			<EffectiveRent Avg="1460.0000" Min="1460.0000" Max="1460.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="25" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=983302</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="944049" FloorplanID="12047" BuildingID="133858">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>944049</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">30-097201 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">30-097201 </Comment>
+			<EffectiveRent Avg="1460.0000" Min="1460.0000" Max="1460.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="05" Day="30" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=944049</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<ILS_Unit Id="968520" FloorplanID="12047" BuildingID="133856">
+			<Unit>
+				<Information xmlns="http://my-company.com/namespace">
+					<UnitID>968520</UnitID>
+					<UnitType>CT</UnitType>
+					<MinSquareFeet>1554</MinSquareFeet>
+					<MaxSquareFeet>1554</MaxSquareFeet>
+					<UnitLeasedStatus>available</UnitLeasedStatus>
+				</Information>
+				<PropertyPrimaryID xmlns="http://my-company.com/namespace">13504</PropertyPrimaryID>
+				<MarketingName xmlns="http://my-company.com/namespace">28-953201 </MarketingName>
+			</Unit>
+			<Comment xsi:type="xsd:string">28-953201 </Comment>
+			<EffectiveRent Avg="1437.0000" Min="1437.0000" Max="1437.0000"/>
+			<EntryFloor>2</EntryFloor>
+			<Availability>
+				<VacateDate Month="06" Day="19" Year="2011"/>
+				<VacancyClass>Occupied</VacancyClass>
+				<UnitAvailabilityURL>http://units.realtydatatrust.com/unitavailability.aspx?&amp;ils=524&amp;propid=13504&amp;fid=12047&amp;uid=968520</UnitAvailabilityURL>
+			</Availability>
+			<Amenity Type="Other">
+				<Description>FIREPLACE                     </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+			<Amenity Type="Other">
+				<Description>APPLIANCE UPGRADE             </Description>
+				<Rank>9999</Rank>
+			</Amenity>
+		</ILS_Unit>
+		<File Id="7045" Active="true">
+			<Type>Photo</Type>
+			<Description/>
+			<Name/>
+			<Caption/>
+			<Format>image/jpeg</Format>
+			<Src>http://my.vaultware.com/ControlPanel3.0/GetImage.aspx?id=7045</Src>
+			<Rank/>
+		</File>
+	</Property>
+	<Property ManagementID="11111">
+		<PropertyID>
+			<Identification xmlns="http://my-company.com/namespace" Type="market rate apt">
+				<PrimaryID>11111</PrimaryID>
+				<SecondaryID>11111</SecondaryID>
+				<MarketingName>Propety</MarketingName>
+				<WebSite>www.gables.com/property</WebSite>
+			</Identification>
+			<Address xmlns="http://my-company.com/namespace" Type="property">
+				<Address1>1750 P Street</Address1>
+				<City>Washington</City>
+				<State>DC</State>
+				<PostalCode>20036</PostalCode>
+				<CountyName>Shelby</CountyName>
+				<Email>manager.arborsharbortown@gables.com</Email>
+			</Address>
+			<Phone xmlns="http://my-company.com/namespace" Type="office">
+				<PhoneNumber>(901) 526-0322</PhoneNumber>
+			</Phone>
+			<Phone xmlns="http://my-company.com/namespace" Type="fax">
+				<PhoneNumber>(901) 526-0354</PhoneNumber>
+			</Phone>
+		</PropertyID>
+		<ILS_Identification Type="Unspecified" RentalType="Unspecified"/>
+		<Information>
+			<StructureType>Standard</StructureType>
+			<UnitCount>346</UnitCount>
+			<LongDescription>Property</LongDescription>
+		</Information>
+	</Property>
+</PhysicalProperty>

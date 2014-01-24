@@ -1,0 +1,13 @@
+' The following guests were not able to be submitted to Insite.
+br
+table
+  tr
+    td First Name
+    td Last Name
+    td Error
+  - for guest, resp in @guests
+    tr
+      td = guest.first_name
+      td = guest.last_name
+      td = resp["PROC_Error"] if resp
+

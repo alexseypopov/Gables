@@ -1,0 +1,29 @@
+- cache('apartment_search_form') do
+  = form_tag(find_where_path, :method => 'get', :id => 'apartment_search', :target => context == 'iframe' ? '_top' : nil) do
+    %fieldset.simple.focus
+      = hidden_field_tag :floorplans, 'any'
+      = hidden_field_tag :group, ''
+      %p.title Find an Apartment
+      = text_field_tag :query, params[:query], :placeholder => 'Enter City, Zip, Landmark, or Community Name', :autocomplete => 'off'
+      #live_search.home
+        %ul
+          - @live_search_options.each do |option|
+            %li= option
+      .submit
+        %button{:type => 'submit'} Search
+    %fieldset.advanced
+      .input.select
+        = label_tag :beds
+        = select_tag :beds, beds_options, {:prompt => 'Select'}
+      .input.select
+        = label_tag :baths
+        = select_tag :baths, baths_options , {:prompt => 'Select'}
+      .input.range
+        = label_tag :rent_min, 'Monthly Rent'
+        .range_set
+          = text_field_tag :rent_min, params[:rent_min], :placeholder => 'min'
+          %span to
+          = text_field_tag :rent_max, params[:rent_max], :placeholder => 'max'
+      .input.select
+        = label_tag :pet_friendly
+        = select_tag :pet_friendly, options_for_select([['Any', 'any'], ['Dogs OK', 'dogs'], ['Cats OK', 'cats']], params[:pet_friendly]), {:prompt => 'Select'}

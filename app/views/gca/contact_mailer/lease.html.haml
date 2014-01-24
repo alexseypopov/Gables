@@ -1,0 +1,13 @@
+%h2 A new GCA extend lease / vacate request form has been submitted. Details follow:
+%p <strong>Name:</strong> #{@info.name}
+%p <strong>Company:</strong> #{@info.company}
+%p <strong>Community:</strong> #{@info.community}
+%p <strong>Apt Number:</strong> #{@info.aptnumber}
+%p <strong>Phone:</strong> #{@info.phone}
+%p <strong>Email:</strong> #{@info.email}
+- if @info.vacate == 'true'
+  %p I would like to vacate on #{@info.vacate_date}
+- if @info.extend == 'true'
+  %p I would like to extend my lease to #{@info.extend_date}
+- if @info.questions == 'true'
+  %p I have questions about my lease and would like to be contacted

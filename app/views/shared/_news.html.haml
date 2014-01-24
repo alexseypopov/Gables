@@ -1,0 +1,24 @@
+- cache('news') do
+  %section#news_feed
+    = link_to 'Back to Top', '#', :id => 'back_to_top'
+    %ul.tab_nav
+      %li.active= link_to 'News', '#news_tab'
+      %li= link_to 'Locations', '#locations_tab'
+    #news_tab.tab
+      %ul
+        - @footer_news.each do |post|
+          %li= link_to post.title, post_path(post, :subdomain => false)
+      %p.more= link_to 'read more news', posts_path(:subdomain => false)
+    #locations_tab.tab
+      %ul
+        - @states.each do |state|
+          %li
+            = link_to Carmen::state_name(state), find_where_path(:query => Carmen::state_name(state), :subdomain => false), :class => state == 'GA' ? 'active' : ''
+            %ul
+              - cities_for(state).each do |city|
+                %li
+                  = link_to city, find_where_path(:query => city, :subdomain => false), :class => city == 'Atlanta' ? 'active' : ''
+                  .regions
+                    %ul
+                      - @property_links.select{|p|p.city == city && p.state == state}.sort{|a,b| a.name <=> b.name}.each do |property|
+                        %li= link_to property.name, property_path(property, :subdomain => false)

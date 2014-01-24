@@ -1,0 +1,22 @@
+@import 'mobile/base/colors';
+// The .testimonial reference is from what's saved in rails admin
+.callout, .testimonial{
+  font-family: Trebuchet MS, Arial;
+  background-color: $turquoise;
+  padding: 10px;
+  margin-bottom: 20px;
+  p{
+    color: $white;
+    font-size: .9em;
+    font-style: italic;
+    line-height: 150%;
+  }
+  .source{
+    text-align: right;
+    font-style: normal;
+  }
+
+  .quote {
+
+  }
+}

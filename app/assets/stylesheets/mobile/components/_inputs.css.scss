@@ -1,0 +1,24 @@
+@import 'bourbon';
+@import 'mobile/base/colors';
+
+#{$all-text-inputs} {
+  height: 40px;
+  width: 100%;
+  border: 1px solid $field-border;
+  background-color: $white;
+  margin: 5px 0 10px 0;
+  padding-left:10px;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea{
+  border-radius: 0;
+  -webkit-appearance: none;
+  border: 1px solid $field-border;
+}
+
+#query{
+  background-color: $field-background;
+  margin: 0;
+}

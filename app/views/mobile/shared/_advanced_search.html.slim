@@ -1,0 +1,41 @@
+.row
+  .cell
+    span#find-near-me
+      i.icon-map-pin
+      span Find Near Me
+  .cell
+    #advanced-search
+      span
+        = 'Advanced'
+      i.icon-chevron-down
+#apartment-search-form
+  .row
+    .cell.first-item
+      = label_tag :beds
+      .styled-select
+        i.icon-chevron-down
+        = select_tag :beds, beds_options, {:prompt => 'any'}
+    .cell style="width: 30px;"
+      span &nbsp;
+    .cell
+      = label_tag :baths
+      .styled-select
+        i.icon-chevron-down
+        = select_tag :baths, baths_options , {:prompt => 'any'}
+  = label_tag :rent_min, 'Monthly Rent'
+  .row
+    .cell.first-item
+      = text_field_tag :rent_min, params[:rent_min], :placeholder => 'min'
+    .cell style="width: 30px;vertical-align:middle"
+      span to
+    .cell
+      = text_field_tag :rent_max, params[:rent_max], :placeholder => 'max'
+  = label_tag :pet_friendly
+  .row
+    .cell
+      .styled-select
+        i.icon-chevron-down
+        = select_tag :pet_friendly, options_for_select([['Any', 'any'], ['Dogs OK', 'dogs'], ['Cats OK', 'cats']], params[:pet_friendly]), {:prompt => 'Search'}
+
+  button#submit-advanced-search.button type='submit'
+    span Search

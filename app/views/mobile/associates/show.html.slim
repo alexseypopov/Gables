@@ -1,0 +1,26 @@
+- content_for :marquee do
+  #marquee.inner
+    .wrapper
+      .item
+        =image_tag 'assoccollage.jpg', :alt => ''
+        .description_wrapper
+          .description
+            h1 Associate Stories
+            p How Our Associates Create the Gables Difference.
+
+#inner_page
+  article.main_content.full_width
+    .associate
+      .photo= image_tag @associate.image_url, :alt => ''
+      .information
+        .feature.large
+          h1.title= @associate.name
+          p.description= @associate.description
+        ul.tab_nav
+          li.active= link_to 'My Story', '#story_tab'
+          li= link_to 'My Work', '#work_tab'
+          li= link_to 'Career Path', '#career_tab'
+        #story_tab.tab= raw(@associate.story)
+        #work_tab.tab= raw(@associate.work)
+        #career_tab.tab= raw(@associate.career_path)
+    /= render :partial => '/pages/associates'

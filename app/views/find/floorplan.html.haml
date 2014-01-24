@@ -1,0 +1,52 @@
+- content_for :head do
+  %title= "#{@floorplan.property.name} Floorplans for Rent with photos and pricing - Luxury #{@floorplan.property.city} #{@floorplan.property.state}. Apartments by Gables Residential"
+  %meta{:name => 'description', :content => "Rent a beautiful #{@floorplan.name} #{@property.name} unit in #{@floorplan.property.city}, #{@floorplan.property.state}. Furnished, Unfurnished, and Corporate options available. Free apartment finder and rentals search at Gables.com makes it easy."}
+  = stylesheet_link_tag 'property'
+
+#property.floorplan
+  %div{:class => 'main_content', :itemscope => true, :itemtype => 'http://schema.org/Residence'}
+    = link_to 'Back to community', property_path(@floorplan.property), :class => 'back'
+    %p.community_name{:itemprop => 'name'}= link_to @floorplan.property.name, property_path(@floorplan.property)
+    %h1= "#{@floorplan.name} #{@unit ? "#"+@unit.name : ""} - #{rooms(@floorplan)}"
+    - if @floorplan.images.count > 0
+      .images
+        .main_image.floorplan_image{:itemprop => 'image'}= image_tag @floorplan.images.first.url
+    #community_overview
+      - unless @features.empty?
+        %h2 Apartment Features
+        .features{:itemprop => 'description'}
+          %ul
+            - @features.each do |amenity|
+              %li= "- #{amenity.description}"
+      .amenities
+        %h3 Community Amenities
+        %ul
+          - @floorplan.property.amenities.each do |amenity|
+            %li= "- #{amenity.description}"
+      .options
+        - if @unit && (@unit.from_vaultware || @unit.from_propertysolutions)
+          .fp_availability
+            %p Rent <strong>#{rent_range([@floorplan])}</strong>
+            - if @property.use_propertysolutions_data?
+              = link_to 'Apply Online', apply_online_url(@unit), :class => 'apply_online'
+              = link_to 'Reserve / Pre-Qualify', reserve_prequalify_url(@unit, @floorplan, @property), :class => 'reserve_prequalify'
+            - else
+              = link_to 'Reserve This Unit & Apply Online', @unit.availability_url
+        - elsif !@unit
+          .fp_availability
+            = link_to 'Notify Me When Available', ( @floorplan.use_propertysolutions_data? ? notify_me_when_available_url(@floorplan, @property) : @floorplan.availability_url )
+        = render :partial => 'community_brochures'
+    = render :partial => 'schedule', :locals => {:schedule => @schedule, :property => @floorplan.property, :type => 'unit'}
+    #community_floorplans
+      %h2 Recently Viewed
+      .floorplans
+        - @recently_viewed.each do |floorplan|
+          - if floorplan.units.length > 0
+            .floorplan
+              .thumb
+                - if floorplan.images.count > 0
+                  = image_tag floorplan.images.first.thumb.url, :alt => ''
+                - else
+                  = image_tag 'no_image.gif', :alt => ''
+              = render :partial => 'floorplan_table', :locals => {:floorplan => floorplan, :include_compare => false}
+  = render :partial => 'community_sidebar', :locals => {:property => @floorplan.property, :type => 'unit'}

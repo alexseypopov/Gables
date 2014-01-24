@@ -1,0 +1,47 @@
+- unless context == 'iframe'
+  = render :partial => '/shared/news', :locals => {:context => context}
+
+%footer#site_info
+  .wrapper
+    %nav#footer_nav
+      %ul
+        %li.top_level
+          = 'Life at Gables'
+          %ul
+            - LifePage.in_nav.each do |page|
+              %li= link_to page.name, context == 'external' ? page_url(page.section, page.path) : page_path(page.section, page.path), :target => context == 'iframe' ? '_top' : nil
+        %li.top_level.double
+          = 'Our Company'
+          .rows
+            %ul
+              - CompanyPage.in_nav.each do |page|
+                %li= link_to page.name, context == 'external' ? page_url(page.section, page.path) : page_path(page.section, page.path), :target => context == 'iframe' ? '_top' : nil
+              %li= link_to 'News & Awards', context == 'external' ? posts_url : posts_path
+              %li= link_to 'Privacy Policy', context == 'external' ? privacy_url : privacy_path
+              - if @property
+                %li= link_to 'Mobile Site', "http://mobile.realtydatatrust.com/Home/#{@property.gables_id}", :id => 'mobile_site', :rel => 'external'
+              - else
+                %li= link_to 'Mobile Site', 'http://mobile.realtydatatrust.com/management/55495', :id => 'mobile_site', :rel => 'external'
+        %li.top_level
+          = 'Careers'
+          %ul
+            - CareerPage.in_nav.each do |page|
+              %li= link_to page.name, context == 'external' ? page_url(page.section, page.path) : page_path(page.section, page.path), :target => context == 'iframe' ? '_top' : nil
+            %li= link_to 'Associate Stories', context == 'external' ? associate_url(Associate.first) : associate_path(Associate.first)
+        %li.top_level
+          = 'Residents'
+          %ul
+            %li= link_to 'Pay Rent Online', 'https://extra.gables.com/gateway/', :rel => 'external'
+            %li= link_to 'Maintenance Request', 'https://extra.gables.com/gateway/', :rel => 'external'
+            %li= link_to 'Resident Login', 'https://extra.gables.com/gateway/', :rel => 'external'
+    %ul.social
+      %li.tumblr= link_to 'Tumblr', 'http://blog.gables.com', :rel => 'external'
+      %li.twitter= link_to 'Twitter', 'http://twitter.com/gables', :rel => 'external'
+      %li.facebook= link_to 'Facebook', 'http://www.facebook.com/gablesresidential', :rel => 'external'
+      %li.pinterest= link_to 'Pinterest', 'http://www.pinterest.com/gablesliving', :rel => 'external'
+      %li.group= link_to 'Fair Housing', context == 'external' ? equal_employment_url(:anchor => 'fair_housing') : equal_employment_path(:anchor => 'fair_housing'), :target => context == 'iframe' ? '_top' : nil
+      %li.fair= link_to 'Equal Opportunity Employer', context == 'external' ? equal_employment_url(:anchor => 'equal_opportunity') : equal_employment_path(:anchor => 'equal_opportunity'), :target => context == 'iframe' ? '_top' : nil
+    %p.copyright 
+      &copy;#{Time.new.year} Gables Residential
+    %p.ds #{link_to 'Design by Digital Scientists, Digital Marketing and Strategy Firm -- Web, Mobile, iPad App Design and Development.', 'http://digitalscientists.com', :target => '_blank'}
+    %p.recent_searches= link_to 'Recent searches', recent_searches_path

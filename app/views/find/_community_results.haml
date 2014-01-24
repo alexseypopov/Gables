@@ -1,0 +1,42 @@
+- @properties.each do |property|
+  .community_result[property]{:itemscope => true, :itemtype => 'http://schema.org/Residence'}
+    .community_info
+      .thumb{:itemprop => 'image'}
+        - if property.images.count > 0
+          = link_to image_tag(property.images.first.thumb.url, :alt => ''), property_path(property)
+        - else
+          = link_to image_tag('no_image.gif', :alt => ''), property_path(property)
+      .details
+        %h2{:itemprop => 'name'}= link_to property.name, property_path(property)
+        - unless property.short_description.blank? && property.long_description.blank?
+          %p= property.short_description != '' ? raw(property.short_description) : raw(property.long_description)
+        - unless !property.allows_dogs? && !property.allows_cats?
+          .pets
+            - if property.allows_dogs? && property.allows_cats?
+              %p
+                = image_tag 'dogs_cats.gif', :alt => ''
+                Allows dogs & cats
+            - elsif property.allows_dogs? && !property.allows_cats?
+              %p
+                = image_tag 'dogs.gif', :alt => ''
+                Allows dogs
+            - elsif !property.allows_dogs? && property.allows_cats?
+              %p
+                = image_tag 'cats.gif', :alt => ''
+                Allows cats
+        %h3 Top Amenities
+        %ul
+          - property.amenities.limit(5).each do |amenity|
+            %li= "- #{amenity.description}"
+    .actions
+      %ul
+        %li.compare
+          = check_box_tag :compare_options, property.id, false, :title => property.name, :class => 'community'
+          = label_tag :compare_options, 'Compare'
+        %li.map
+          %a{:href => '#map_canvas', :data => {:id => property.id}} 'Show on Map'
+        %li.visit= link_to 'Schedule a Visit', property_path(property, :anchor => 'drop_schedule_visit')
+        %li.community= link_to 'View Community', property_path(property)
+    .floorplans
+    .summary
+      %p #{pluralize(@s.floorplans_for(property).length, 'Floorplan')} available

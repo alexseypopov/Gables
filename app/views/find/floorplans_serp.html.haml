@@ -1,0 +1,24 @@
+- @property.available_floorplans(@s).each do |available_floorplan|
+  - if available_floorplan.units.length > 0
+    .floorplan
+      .thumb
+        - if available_floorplan.images.count > 0
+          = link_to image_tag(available_floorplan.images.first.thumb.url, :alt => ''), floorplan_path(available_floorplan)
+        - else
+          = link_to image_tag('no_image.gif', :alt => ''), floorplan_path(available_floorplan)
+      = render :partial => 'floorplan_table', :locals => {:floorplan => available_floorplan, :include_compare => true}
+- unless params[:floorplans] && params[:floorplans] == 'now'
+  .empty_floorplans
+    - @property.unavailable_floorplans(@s).each do |unavailable_floorplan|
+      .floorplan
+        .thumb
+          - if unavailable_floorplan.images.count > 0
+            = link_to image_tag(unavailable_floorplan.images.first.thumb.url, :alt => ''), floorplan_path(unavailable_floorplan)
+          - else
+            = link_to image_tag('no_image.gif', :alt => ''), floorplan_path(unavailable_floorplan)
+        %p <strong>#{unavailable_floorplan.name}</strong>
+        %p= rooms(unavailable_floorplan)
+        - if @property.from_vaultware?
+          %p= link_to 'notify me when available', unavailable_floorplan.availability_url
+        - else
+          %p= link_to 'notify me when available', modal_contact_path(:@property => @property.id), :class => 'iframe'

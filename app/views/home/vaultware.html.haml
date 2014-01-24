@@ -1,0 +1,15 @@
+- content_for :head do
+  %title= "Gables offers Apartments for Rent, Luxury Apartments, Furnished Apartments, Unfurnished Apartments and Corporate Housing"
+  %meta{:name => 'description', :content => "Gables features luxury apartments for rent including unfurnished, furnished apartments, and corporate housing. Free apartment finder and rentals search at Gables.com makes it easy."}
+  = stylesheet_link_tag 'pages'
+
+= render :partial => '/shared/header', :locals => {:context => 'external'}
+%section#main_content
+  #inner_page
+    %article.main_content
+      %a{:href => '#', :class => 'vaultware_back', :onclick => 'javascript: window.history.back(); return false;'} &laquo; Back
+      VAULTWARE-GOES-HERE
+  
+    %aside.sub_content
+      = render :partial => '/shared/blog_sidebar'
+= render :partial => '/shared/footer', :locals => {:context => 'external'}

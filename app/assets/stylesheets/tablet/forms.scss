@@ -1,0 +1,395 @@
+/* Form styles - Guest Card
+----------------------------------- */
+
+form h2 {
+  padding-bottom: 6px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 28px;
+  background: -webkit-linear-gradient(top, #939393 0%, #939393 50%, white 50%, white 100%) no-repeat bottom; 
+  background-size: 100% 2px;
+}
+
+fieldset {
+  padding: 12px 0 40px 0;
+  &.border:last-of-type,
+  &:last-of-type {
+    padding-bottom: 0;
+    background: none;
+  }
+  &.border {
+    background-size: 100% 2px;
+  }
+  &.benchmarks th {
+    font-size: 21px;
+    line-height: 28px;
+    color: #333;
+    text-transform: none;
+  }
+  &.benchmarks td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  &.referrer-disabled{ display: none; }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 4px;
+  font-size: 17px;
+  color: #666;
+  &.inline {
+    float: left;
+    line-height: 35px;
+    margin-right: 25px;
+  }
+  &.large, .large & {
+    font-size: 21px;
+    color: #333;
+  }
+  &.error{
+    color: red;
+    clear: both;
+  }
+  &[generated]{
+    display: none;
+  }
+}
+
+input, textarea, select, .select {
+  padding: 5px 10px;
+  font-family: "trebuchet ms", sans-serif;
+  font-size: 21px;
+  color: #333;
+  background: transparent;
+  border: 1px solid #7b7b7b;
+  border-radius: 5px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
+}
+
+input {
+  &[type="checkbox"], &[type="radio"] {
+    float: left;
+    -webkit-appearance: none;
+  }
+  &#first_name,
+  &#last_name {
+    width: 275px;
+  }
+  &#middle_initial {
+    width: 44px;
+  }
+  &#email {
+    width: 361px;
+  }
+  &.area,
+  &.exch,
+  &.day,
+  &.month {
+    margin-right: 15px;
+    width: 62px;
+    &.exch,
+    &.day,
+    &.month {
+      margin-right: 5px;
+    }
+  }
+  &.sln,
+  &.day,
+  &.year {
+    margin-left: 5px;
+    width: 89px;
+  }
+  &.day {
+    width: 62px;
+  }
+  &#referral_name,
+  &#referral_fee,
+  &#employer_name,
+  &.guest_name {
+    width: 298px;
+  }
+  &.guest_name {
+    display: block;
+    margin-top: 5px;
+  }
+  &#resident {
+    margin-left: 40px;
+  }
+  &#furnished {
+    margin-left: 292px;
+  }
+  &#address_line1,
+  &#address_line2,
+  &#employer_address_line1,
+  &#employer_address_line2 {
+    width: 678px;
+  }
+  &#address_line1,
+  &#employer_address_line1 {
+    margin-bottom: 14px;
+  }
+  &#zip,
+  &#employer_zip {
+    width: 173px;
+  }
+}
+
+input {
+  &:focus {
+    background: #fff;
+    border-color: #0267ff;
+    box-shadow: none;
+  }
+  &[type="checkbox"] {
+    position: relative;
+    margin: 0 5px 0 0;
+    padding: 0;
+    height: 21px;
+    width: 21px;
+    vertical-align: baseline;
+    background: -webkit-linear-gradient(top, white 0%, #f4f4f4 50%, #ececec 50%, #f3f3f3 100%);
+    box-shadow: none;
+    #gables-difference table & {
+      margin-top: 2px;
+    }
+  }
+  &[type="checkbox"]:checked {
+    background: -webkit-linear-gradient(top, #D1E7F6 0%, #B1D9FA 50%, #8EC7F9 50%, #B9E1F7 100%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    &:after {
+      position: absolute;
+      top: -8px;
+      left: 2px;
+      content: "\2713";
+      font-family: arial;
+      font-size: 26px;
+    }
+  }
+  &[type='range'] {
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+    height: 4px;
+    width: 349px;
+    background: -webkit-linear-gradient(top, #b2b2b2 0%, #d8d8d8 100%);
+    border: 1px solid #9c9c9c;
+    border-top-color: #7f7f7f;
+    border-bottom-color: #bebebe;
+    border-radius: 4px;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 19px;
+      height: 17px;
+    }
+    &#rent_range_low {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      &::-webkit-slider-thumb {
+        background: url(/images/tablet/icon-slider-thumb-low.png) no-repeat;
+      }
+    }
+    &#rent_range_high {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+      &::-webkit-slider-thumb {
+        background: url(/images/tablet/icon-slider-thumb-high.png) no-repeat;
+      }
+    }
+  }  
+}
+
+select, 
+.select {
+  position: relative;
+  float: left;
+  -webkit-appearance: none;
+  font-size: 17px;
+  font-weight: normal;
+  background: -webkit-linear-gradient(top, white 0%, #f4f4f4 50%, #ececec 50%, #f3f3f3 100%);
+  box-shadow: none;
+  &#reason_leasing,
+  &#referral_source {
+    width: 320px;
+  }
+}  
+
+select {
+  padding-right: 30px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAMAAADepFZYAAAAA3NCSVQICAjb4U/gAAAAUVBMVEX////////////////////n5+fv7+/////v7+/n5+f////v7+/n5+fv7+/e3t7X19fv7+/e3t7X19fMzMyqqqqnp6eUlJSGhoZ8fHxycnJmZmb1fmxlAAAAG3RSTlMAESIzVVVmd3eZqszM7u7u//////////////8eWG0dAAAACXBIWXMAABRMAAAUTAFGjW/LAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M0BrLToAAAABR0RVh0Q3JlYXRpb24gVGltZQA0LzMvMTKobxzGAAAASklEQVQImU3M3RZAIBBG0S8VMhJDSe//oFrjd9+dmwPTfQYQbw8mqDGWSyQFND5JJF8D0NNeIwcNYUMux2xx6zmvLV5ucfgxcsAJbMEElZYAh7wAAAAASUVORK5CYII=) no-repeat 90% 50%, -webkit-linear-gradient(top, white 0%, #f4f4f4 50%, #ececec 50%, #f3f3f3 100%);
+}
+
+.select {
+  &::before {
+    position: absolute;
+    z-index: 5000;
+    right: 4%;
+    top: 23%;
+    content: "\25BE";
+    display: inline-block;
+    font-family: "trebuchet ms";
+    font-size: 19px;
+    display: inline-block;
+    color: #000;
+  }
+  &[type="date"] {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+textarea {
+  width: 678px;
+  min-height: 54px;
+  &:focus {
+    background: #fff;
+    border-color: #0267ff;
+    box-shadow: none;
+  }
+  #notes-form & {
+    min-height: 120px;
+  }
+}
+
+.row { margin-top: 28px; }
+
+.row.controls{
+  left: 50%;
+  position: relative;
+  float: left;
+  margin: 0;
+  .center{
+    margin-left: -50%;
+    float: left;
+  }
+}
+
+.field {
+  &.rent-range {
+    padding-bottom: 32px;
+    background: url(/images/tablet/bg-rent-range.png) no-repeat 0 100%;
+    .outputs { position:relative; }
+    label { margin-bottom: 70px; }
+    #rent-range{ top: 7px; }
+    output {
+      position: absolute;
+      top: -50px;
+      padding: 10px 15px;
+      width: 52px;
+      font-size: 17px;
+      color: #fff;
+      background: #242424;
+      &:after {
+        content: " ";
+        left: -8px;
+        bottom: -8px;
+        z-index: 1;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 16px 16px;
+        border-color: transparent transparent #242424 transparent;
+        -moz-transform: rotate(315deg);
+        -webkit-transform: rotate(315deg);
+        transform: rotate(315deg);
+      }
+      &.low{ left: 50%;}
+      &.high {
+        right: 50%;
+        &:after {
+          left: auto;
+          right: -8px;
+          -moz-transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+  &.indent {
+    margin-left: 16px;
+  }
+  &.inline {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    &.wide {
+      margin-right: 150px;
+    }
+    &.right {
+      float: right;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.option {
+      padding-top: 10px;
+    }
+  }  
+  &.option {
+    label {
+      display: inline;
+    }
+  } 
+}
+
+#email-form {
+  input {
+    width: 260px;
+  }
+  button {
+    margin-top: 21px;
+    width: 100%;
+  }
+}
+
+/* buttons at the bottom of forms */
+.actions {
+  margin-top: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background: -webkit-linear-gradient(top, #939393 0%, #939393 50%, white 50%, white 100%) no-repeat top;
+  background-size: 100% 2px;
+  .btn {
+    min-width: 180px;
+    &:first-child {
+      margin-right: 25px;
+    }
+  }
+  &.center {
+    text-align: center;
+  }
+}
+
+#thank-you{
+  .select{
+    width: 200px;
+    padding: 10px;
+    margin: 3px;
+   }
+   #personal_note{
+     height: 400px;
+   }
+}
+
+@media all and (min-device-width : 768px)
+          and (max-device-width : 1024px){
+  input {
+    &[type="checkbox"]:checked {
+      &:after {
+        position: absolute;
+        top: -16px;
+        left: 0px;
+        content: "\2714";
+        font-size: 32px;
+      }
+    }  
+  }
+}

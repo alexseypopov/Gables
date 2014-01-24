@@ -1,0 +1,111 @@
+- content_for :head do
+  %title Compare Properties
+  = stylesheet_link_tag 'compare'
+
+- content_for :javascripts do
+  = render :partial => 'maps', :locals => {:properties => @properties, :regions => nil, :units => @units, :subdomain => nil}
+    
+- content_for :marquee do
+  #marquee
+    .wrapper
+      #map_canvas
+      = link_to 'toggle map', '#', :class => 'toggle_map'
+
+#comparison_results
+  %hgroup.summary
+    %h1 You are comparing #{@units.count} apartments and #{@properties.count} communities
+    %a{:href => '#'} &laquo; back
+  .comparison_header
+    .options
+      %p Compare
+      %ul
+        %li.active= link_to 'All Aspects', '#', :rel => 'all'
+        %li= link_to 'Apartment Details', '#', :rel => 'details'
+        %li= link_to 'Apartment Features', '#', :rel => 'features'
+        %li= link_to 'Community Amenities', '#', :rel => 'amenities'
+    .items
+      - @units.each do |unit|
+        .item[unit]
+          .thumb
+            - if unit.floorplan.property.images.count > 0
+              = link_to image_tag(unit.floorplan.property.images.first.thumb.url, :alt => ''), property_path(unit.floorplan.property)
+            - else
+              = link_to image_tag('no_image.gif', :alt => ''), property_path(unit.floorplan.property)
+          %h2 #{unit.floorplan.name} ##{unit.name}
+          %p= link_to unit.floorplan.property.name, property_path(unit.floorplan.property)
+          %a{:class => 'remove', :data => {:id => "unit_#{unit.id}"}, :href => '#'} remove
+      - @properties.each do |property|
+        .item[property]
+          .thumb
+            - if property.images.count > 0
+              = link_to image_tag(property.images.first.thumb.url, :alt => ''), property_path(property)
+            - else
+              = link_to image_tag('no_image.gif', :alt => ''), property_path(property)
+          %p= link_to property.name, property_path(property)
+          %a{:class => 'remove', :data => {:id => "property_#{property.id}"}, :href => '#'} remove
+          
+  %table
+    %tbody
+      %tr.details
+        %th Bedrooms
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}= unit.floorplan.bedrooms_count
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}} &nbsp;
+      %tr.details
+        %th Bathrooms
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}= unit.floorplan.bathrooms_count
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}} &nbsp;
+      %tr.details
+        %th Rent
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}= unit.rent_min == unit.rent_max ? "$#{unit.rent_min}" : "$#{unit.rent_min}-$#{unit.rent_max}"
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}} &nbsp;
+      %tr.details
+        %th Square Footage
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}= area(unit)
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}} &nbsp;
+      %tr.details
+        %th Pet Friendly
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}= pet_friendly(unit.floorplan.property)
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}}= pet_friendly(property)
+      %tr.details
+        %th Availability
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}= unit.occupied == true ? 'No' : 'Yes'
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}} &nbsp;
+      - @features.each do |feature|
+        %tr.features
+          %th= feature
+          - @units.each do |unit|
+            %td{:data => {:id => "unit_#{unit.id}"}}= unit.has_amenity?(feature) ? 'Yes' : 'No'
+          - @properties.each do |property|
+            %td{:data => {:id => "property_#{property.id}"}} &nbsp;
+      - @amenities.each do |amenity|
+        %tr.amenities
+          %th= amenity
+          - @units.each do |unit|
+            %td{:data => {:id => "unit_#{unit.id}"}}= unit.floorplan.property.has_amenity?(amenity) ? 'Yes' : 'No'
+          - @properties.each do |property|
+            %td{:data => {:id => "property_#{property.id}"}}= property.has_amenity?(amenity) ? 'Yes' : 'No'
+      %tr.links
+        %th &nbsp;
+        - @units.each do |unit|
+          %td{:data => {:id => "unit_#{unit.id}"}}
+            = link_to 'Schedule a Visit', property_path(unit.floorplan.property, :unit_id => unit.id, :anchor => 'drop_schedule_visit'), :class => 'button'
+            - if unit.from_vaultware
+              = link_to 'Reserve this Unit', unit.availability_url, :class => 'button'
+            = link_to 'view apartment', floorplan_path(unit.floorplan, :unit_id => unit.id)
+        - @properties.each do |property|
+          %td{:data => {:id => "property_#{property.id}"}}
+            = link_to 'Schedule a Visit', property_path(property, :anchor => 'drop_schedule_visit'), :class => 'button'
+            = link_to 'view community', property_path(property)
+            

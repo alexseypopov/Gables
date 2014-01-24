@@ -1,0 +1,30 @@
+- if floorplan.units.length > 0
+  %table
+    %caption= link_to raw("#{floorplan.name} <span>#{rooms(floorplan)}</span>"), floorplan_path(floorplan)
+    %thead
+      %tr
+        - if include_compare === true
+          %th Compare
+        %th Bldg
+        %th Floor
+        %th Apt #
+        %th Sqft
+        %th Rent
+        %th Available
+    %tbody
+      - floorplan.units.each do |unit|
+        - if unit.rent_min != 0
+          %tr
+            - if include_compare === true
+              %td= check_box_tag :compare_options, unit.id, false, :title => "#{floorplan.name} ##{unit.name}", :class => 'unit'
+            %td= unit.building_name
+            %td= unit.entry_floor
+            %td= unit.name
+            %td
+              %strong= area(unit)
+
+            - if unit.rent_min == unit.rent_max
+              %td <strong>$#{unit.rent_max}</strong>
+            - else
+              %td <strong>$#{unit.rent_min} - $#{unit.rent_max}</strong>
+            %td= link_to (unit.occupied ? (unit.available_on ? unit.available_on.to_formatted_s(:long_ordinal) : 'Unknown') : 'Now'), floorplan_path(floorplan, :unit_id => unit)

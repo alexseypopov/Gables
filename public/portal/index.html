@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+  <head> 
+    <title>Resident Portal</title>
+    <meta charset='utf-8'> 
+    <meta content='chrome=1' http-equiv='X-UA-Compatible'> 
+    <link href="/packages/portal.css" media="screen" rel="stylesheet" type="text/css" />
+  </head> 
+  <body>
+    <div id="container">
+      <iframe src="/sectionals/header" height="105" width="100%" frameborder="0"></iframe>
+      <section id="main_content">
+        <div class="main_content">
+          <h1>Log in to Gables Gateway</h1>
+          <a href="/" class="back">Return to Gables &raquo;</a>
+          <form method="post" id="login">
+            <fieldset>
+              <div class="input text">
+                <label for="user_id">User ID</label>
+                <input name="ctl00$ContentPlaceHolder1$TextBoxUserID" type="text" maxlength="15" id="user_id" />
+              </div>
+              <div class="input text">
+                <label for="password">Password</label>
+                <input name="ctl00$ContentPlaceHolder1$TextBoxPassword" type="text" maxlength="10" id="password" />
+              </div>
+              <div class="submit">
+                <p><a href="#">Forget your user ID or password?</a></p>
+                <button type="submit">Login</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <aside class="sub_content">
+          <h2>Gables Gateway</h2>
+          <ul>
+            <li><a href="#">Check availability of Gables Gateway for my community</a></li>
+            <li><a href="#">Set up an account</a></li>
+          </ul>
+        </aside>
+      </section>
+      <iframe src="/sectionals/footer" height="197" width="100%" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>

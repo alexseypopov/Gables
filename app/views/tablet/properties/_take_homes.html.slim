@@ -1,0 +1,43 @@
+script type="text/x-handlebars" data-template-name="take-homes"
+  #takehomes.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Take Homes
+    .content.group
+      form#take-homes
+        fieldset.border.benchmarks.group
+          - if @property.short_brochure.url or @property.full_brochure.url or @property.building_specifications_file.url
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th PDFs to Send
+                tbody
+                  - if @property.short_brochure.url
+                    tr: td: .field.option
+                      | {{view Ember.Checkbox title="Community Brochure" valueBinding="App.currentGuest.community_brochure"}}
+                  - if @property.full_brochure.url
+                    tr: td: .field.option
+                      | {{view Ember.Checkbox title="Floorplans" valueBinding="App.currentGuest.floorplan_brochure"}}
+                  - if @property.building_specifications_file.url
+                    tr: td: .field.option
+                      | {{view Ember.Checkbox title="Building Specifications" valueBinding="App.currentGuest.building_specifications"}}
+          .row.group
+            .field.option.indent.large
+              | {{view Ember.Checkbox title="Also receive emails with community updates" valueBinding="App.currentGuest.email_optin"}}
+        fieldset.benchmarks
+          .row.group
+            label Benchmarks
+            .table-wrap.no-header
+              table cellspacing="0"
+                tbody
+                  tr
+                    td
+                      .reminder = raw @take_home_benchmarks.content if @take_home_benchmarks
+                  tr
+                    td
+                      .field.option
+                        label.large
+                          input id='leave-deposit' name="leave-deposit" type="checkbox"
+                          | Asked &ldquo;Would you like to leave a deposit today&rdquo;
+    .page-footer <button class="btn grn" {{bindAttr disabled="isDisabled"}} {{action "complete"}}>Mark Complete</button>

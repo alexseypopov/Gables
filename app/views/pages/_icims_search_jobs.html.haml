@@ -1,0 +1,2 @@
+- subdomain = params[:refer] == "students_grads" ? "universityhub-gables" : "careers-gables"
+%iframe{:src => "https://#{subdomain}.icims.com/jobs/search?searchKeyword=#{!params[:keywords].blank? ? params[:keywords] : ''}&searchCategory=#{!params[:department].blank? ? params[:department] : ''}&searchLocation=#{!params[:team_state].blank? ? params[:team_state] : ''}&hashed=0&ss=1", :width => "100%", :height => "1200", :frameborder => "0"}

@@ -1,0 +1,8 @@
+- if @property.images.count > 0
+  - video = @property.has_attribute?(:testimonial_video) && @property.testimonial_video.present? && @property.testimonial_video
+  .images
+    .main_image{:itemprop => 'image'}= image_tag @property.images(:order => 'position ASC').first.url(:large), :alt => ''
+    .image_thumbs
+      %ul
+        - @property.images(:order => 'position ASC').each do |image|
+          %li{:data => {:image => image.url(:large)}}= image_tag image.thumb.url, :alt => ''

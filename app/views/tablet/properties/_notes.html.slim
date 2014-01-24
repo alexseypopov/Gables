@@ -1,0 +1,25 @@
+script type="text/x-handlebars" data-template-name="notes"
+  #notes.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Notes
+    .content.group
+      form#notes-form action=""
+        fieldset
+          .row.group
+            .field
+              label Likes
+              | {{view Ember.TextArea valueBinding="App.currentGuest.notes_likes" attributeBindings="spellcheck" spellcheck="true"}}
+          .row.group
+            .field
+              label Dislikes
+              | {{view Ember.TextArea valueBinding="App.currentGuest.notes_dislikes" attributeBindings="spellcheck" spellcheck="true"}}
+          .row.group
+            .field
+              label Remarks
+              | {{view Ember.TextArea valueBinding="App.currentGuest.notes_remarks" attributeBindings="spellcheck" spellcheck="true"}}
+          .row.group
+            .field
+              label Hot Buttons
+              | {{view Ember.TextArea valueBinding="App.currentGuest.notes_hotbuttons" attributeBindings="spellcheck" spellcheck="true"}}
+    .page-footer <button class="btn grn" {{action "complete"}}>Mark Complete</button>

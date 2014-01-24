@@ -1,0 +1,150 @@
+#footer
+  .accordion
+    dl
+      dt
+        a = t :life_at_gables
+        i.icon-chevron-down
+      dd
+        a href='/life/p/why_gables'
+          = 'Why Gables'
+      dd
+        a href='/life/p/green_initiatives'
+          = t :green_initiatives
+      dd
+        a href='/life/p/community_service'
+          = t :community_service
+      dd
+        a href="#"
+          = t :pay_rent_online
+      dd
+        a href="#"
+          = t :maintenance_requests
+
+      dt
+        a = t :our_company
+        i.icon-chevron-down
+      dd
+        a href='/company/p/corporate_overview'
+          = 'Overview'
+      dd
+        a href='/company/p/values'
+          = 'Values'
+      dd
+        a href='/company/p/real_estate'
+          = 'Client Services'
+      dd
+        a href='/company/p/diversity_inclusion'
+          = 'Inclusiveness'
+      dd
+        a href='/company/p/corporate_executives'
+          = 'Leadership'
+      dd
+        a href='/company/news'
+          = 'News & Awards'
+      dd
+        a href='/company/p/corporate_contacts'
+          = 'Contact us'
+
+      dt
+        a = t :careers
+        i.icon-chevron-down
+      dd
+        a href="/careers/p/careers_overview"
+          = 'Overview'
+      dd
+        a href="/careers/p/community_jobs"
+          = 'Community Jobs'
+      dd
+        a href="/careers/p/corporate_jobs"
+          = 'Corporate Jobs'
+      dd
+        a href='/careers/p/career_benefits'
+          = 'Benefits'
+      dd
+        a href='/careers/p/students_grads'
+          = 'Students & Recent Grads'
+      dd
+        a href='/careers/p/search'
+          = 'Job Search'
+      dd
+        a href='/associates/show/41'
+          = 'Associates Stories'
+
+.footer-links
+
+  a href="https://extra.gables.com/gateway/"
+    span
+      = t :resident_login
+    i.icon-login
+
+
+  a style="position:relative;"
+    span Translate
+    i.icon-translate
+    #google_translate_element
+
+  script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  javascript:
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,es,en,fr,it,ja,ko,nl,pt,ru,th,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-8527803-1'}, 'google_translate_element');
+    }
+
+  css:
+    .goog-te-gadget {
+      font-family: "century gothic", arial, sans-serif;
+      color: #000;
+      border: none;
+      height:100%;
+    }
+
+    .goog-te-menu-value span {
+      color: transparent;
+      font-size: 14px;
+    }
+
+    .goog-te-gadget-simple {
+      background-color: transparent;
+      width: 100%;
+      border: none;
+      height: 100%;
+    }
+
+    .goog-te-gadget-simple a.goog-te-menu-value
+    .goog-te-gadget img {
+      display: none;
+    }
+
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+
+    .goog-te-banner-frame {
+      top: auto;
+      bottom: 0px;
+    }
+
+    .goog-te-menu-value {
+      display: none !important;
+    }
+
+    #google_translate_element{
+      position:absolute;
+      left:0;
+      width:100%;
+      height: 30px;
+    }
+
+
+  #site-search
+    = render partial: '/shared/site_search', locals: {:context => 'site'}
+    i.icon-search
+
+.social-icons.footer
+  a.icon-social-tumblr.dark href="http://blog.gables.com/"
+  a.icon-social-twitter.dark href="http://twitter.com/gables"
+  a.icon-social-facebook.dark href="http://www.facebook.com/gablesresidential"
+  a.icon-social-pinterest.dark href="http://www.pinterest.com/gablesliving"
+  div style="display:inline"
+  a.icon-equal-housing.secondary href="http://gables.com/equal_employment#fair_housing"
+  a.icon-accessibility.secondary href="http://gables.com/equal_employment#fair_housing"
+.legal &copy; #{t :copyright}

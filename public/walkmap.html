@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type='text/css'>
+  #ws-walkscore-tile{position:relative;text-align:left}#ws-walkscore-tile 
+  *{float:none;}#ws-footer 
+  a,#ws-footer 
+  a:link{font:11px/14px Verdana,Arial,Helvetica,sans-serif;
+  margin-right:6px;
+  white-space:nowrap;padding:0;color:#000;font-weight:bold;text-decoration:none}#ws-footer 
+  a:hover{color:#777;text-decoration:none}#ws-footer 
+  a:active{color:#b14900}
+</style>
+</head>
+<body>
+  <FORM NAME="Form1">
+    <INPUT TYPE="hidden" NAME="Field1" SIZE="100">
+  </FORM>
+  <SCRIPT LANGUAGE="javascript">
+   var locate = window.location
+   document.Form1.Field1.value = locate
+   var strURL = document.Form1.Field1.value
+   function parse(str){
+      theleft = str.lastIndexOf("=") + 1;
+      theright = str.length;
+      return(str.substring(theleft, theright));
+   }
+  </SCRIPT>
+  <script type='text/javascript'>  
+    var ws_wsid = "fa7bbaf7196843fb90979fb913048f6a";
+    var ws_address = parse(strURL);
+    var ws_width = window.innerWidth - 20;  
+    var ws_height = window.innerHeight - 20;
+    var ws_layout = 'horizontal';  
+    var ws_hide_footer = 'true';
+    var ws_map_icon_type = "building";
+    var ws_commute = 'true';  
+    var ws_transit_score = 'true';
+    var ws_map_modules = 'default';  
+    var ws_no_link_info_bubbles = 'true';
+    var ws_no_link_score_description = 'true';
+    var ws_hide_bigger_map = 'true';
+    var ws_hide_scores_below = '70';
+  </script>
+  <div id='ws-walkscore-tile'></div>
+  <script type='text/javascript' src='http://www.walkscore.com/tile/show-walkscore-tile.php'></script>
+</body>
+</html>

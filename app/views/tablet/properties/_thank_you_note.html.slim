@@ -1,0 +1,59 @@
+script type="text/x-handlebars" data-template-name="thank-you-note"
+  #thank-you.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Thank You Card
+    .content.group
+      form#thankyou-form action=""
+        fieldset.border
+          .row.group
+            .field
+              label Reason for not leasing today
+              | {{ view Ember.Select contentBinding="App.NotLeasingReasons"
+                    optionLabelPath="content.name" prompt="Select"
+                    selectionBinding="App.NotLeasingReasons.reason"}}
+          .row.group
+            .field
+              | {{view Ember.TextArea valueBinding="App.currentGuest.not_leasing_reason_detail" attributeBindings="spellcheck" spellcheck="true" placeholder="Additional Details"}}
+          .row.group
+            .field.option.inline
+              | {{view Ember.Checkbox title="Follow up required" valueBinding="App.currentGuest.follow_up_required"}}
+            .field.inline.right
+              | <label {{bindAttr class="followUpDate inline"}}>Date*</label>
+              | {{view Ember.TextField valueBinding="App.currentGuest.follow_up_date" type="date"}}
+        fieldset
+          .row.group
+            .field
+              | <label {{bindAttr class="email"}}>Email*</label>
+              | {{view Ember.TextField valueBinding="App.currentGuest.email" type="email"}}
+          .row.group
+            .field
+              label for="personal_note" Personal Note
+              textarea id="personal_note" name="personal_note" type="text" spellcheck="true"
+                | I wanted to take a moment to say thank you for taking the time to visit #{@property.name}.  I really enjoyed showing you around our beautiful community and I hope that you will decide to make your new home here with us.  Please don't hesitate to let me know if you have any questions or if I can provide any additional information.  I am looking forward to showing you how #{@property.name} is "Taking Care of the Way People Live!"
+
+                  Please remember that our pricing and availability is constantly changing so be sure to visit us online at Gables.com to view availability and the latest pricing.
+
+                  Kindest Regards,
+
+                  {{unbound App.currentUser.name}}
+                  {{unbound App.property_phone}}
+                  {{unbound App.currentUser.email}}
+          .row.group
+            .field.inline.wide
+              | <label {{bindAttr class="preferredUnitTypeOne"}}>1st Unit Type Preference*</label>
+              | <a class="select" data-choice="1st" {{action "preference"}}>{{App.currentGuest.preferredUnitTypeOne}}</a>
+            .field.inline
+              | <label {{bindAttr class="preferredUnitTypeTwo"}}>2nd Unit Type Preference*</label>
+              | <a class="select" data-choice="2nd" {{action "preference"}}>{{App.currentGuest.preferredUnitTypeTwo}}</a>
+          .row.group <button class="btn" {{action "sendCard"}}>Send Card</button> (* Required)
+
+
+script type="text/x-handlebars" data-template-name="thank-you-note-complete"
+  | {{#if App.sendingThankYou}} <div class="spinner"><p>Sending Thank You Card</p></div>
+  | {{else}}
+  .content.group
+    ul.completed
+      li Submitted to Insite
+      li Thank You Note Sent
+  | {{/if}}

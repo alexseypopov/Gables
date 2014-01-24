@@ -1,0 +1,24 @@
+h2.big_header Jump to a state
+
+- properties = Tablet::Property.order("state").group_by(&:state)
+
+.states_list.columns_2.border
+  ul
+    - properties.keys.each do |state|
+      li= link_to Carmen.state_name(state), "#state-#{state}"
+
+- properties.each do |state, props|
+  a name="state-#{state}"
+  h3.big_header.jump id="#state#{state}" = Carmen.state_name state
+
+  .property_managers.border
+    .row
+      - props.each do |property|
+        .property
+          h4= property.name
+          .manager
+            p.title Community Manager
+            p.email= mail_to property.community_manager_email, property.community_manager
+          .manager
+            p.title Regional Manager
+            p.email= mail_to property.regional_manager_email, property.regional_manager

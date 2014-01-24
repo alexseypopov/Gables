@@ -1,0 +1,29 @@
+- content_for :marquee do
+  - unless @slides.nil?
+    #life_marquee
+      .slider
+        ul
+          - @slides.each do |slide|
+            li
+              a href=slide.image_url class='zoom_image'
+                =image_tag(slide.image_url)
+      .wrapper
+        .description
+          p= @page.subtitle
+          h1= @page.title
+          p= @page.description
+
+#inner_page
+  article.main_content
+    - @page.main_blocks.each do |main_block|
+      - if main_block.editable
+        = raw(main_block.content)
+      - else
+        = render :partial => main_block.partial
+
+  aside.sub_content
+    - @page.side_blocks.each do |side_block|
+      - if side_block.editable
+        = raw(side_block.content)
+      - else
+        = render :partial => side_block.partial

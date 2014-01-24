@@ -1,0 +1,224 @@
+script type="text/x-handlebars" data-template-name="gables-difference"
+  div#gables-difference.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Gables Difference
+    .content.group
+      form#benchmarks
+        fieldset.benchmarks
+          .row.group
+            .field.option
+              label.large
+                input name="checkbox-name" type="checkbox"
+                | Be Friendly and Sincere and Focus on the Customer
+          .row.group
+            .field.option
+              label.large
+                input name="checkbox-name" type="checkbox"
+                | Toured only clean & Move-in ready apartments
+          .row.group
+            .field.option
+              label.large
+                input name="checkbox-name" type="checkbox"
+                | Discuss Apartment Features
+        fieldset.benchmarks
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Community Features
+              tbody
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | Community Overview
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Community Overview
+                          .btn.close Close
+                        p = @property.long_description
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        |Community Amenities
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Community Amenities
+                          .btn.close Close
+                        ul
+                          - @property.amenities.each do |amenity|
+                            li= amenity.description
+        fieldset.benchmarks
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Commitment to Service
+              tbody
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        |Green Initiatives
+                      a.info more information
+                      .modal-wrapper.hidden: .modal.green-initiatives
+                        h3
+                          | Green Initiatives
+                          .btn.close Close
+                        #green-initiatives
+                          .multicol
+                            - @green_categories.each do |category, initiatives|
+                              .category-wrap
+                                h4.icon class=category.name.parameterize = category.name
+                                ul
+                                  - initiatives.each do |initiative|
+                                    li== initiative.name
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        |Our Mission
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Our Mission
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Our Mission").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        |Ten Pledges
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Ten Pledges
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Ten Pledges").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | Gables.com
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Gables.com
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Gables.com").first
+                        = raw block.content if block
+        fieldset.benchmarks
+          .table-wrap
+            table cellspacing="0"
+              thead
+                tr
+                  th Resident Benefits
+              tbody
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | 24-hour Maintenance Response
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | 24-hour Maintenance Response
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference 24-hour Maintenance Response").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | Great Rewards
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Great Rewards
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Great Rewards").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | Smooth Move
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Smooth Move
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Smooth Move").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | Gables Gateway
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Gables Gateway
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Gables Gateway").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        | 30-Day Guarantee
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | 30-Day Guarantee
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference 30-Day Guarantee").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        |Connection Services
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          | Connection Services
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Connection Services").first
+                        = raw block.content if block
+                tr
+                  td
+                    .field.option
+                      label
+                        input name="checkbox-name" type="checkbox"
+                        |Appreciation Day
+                      a.info more information
+                      .modal-wrapper.hidden: .modal
+                        h3
+                          |Appreciation Day
+                          .btn.close Close
+                        - block = Block.where(:title => "Gables Difference Appreciation Day").first
+                        .scroller = raw block.content if block
+        fieldset
+          .field
+              label for="guest_objections" Guest Objections
+              textarea id="guest_objections" name="guest_objections" type="text" spellcheck="true"
+    .page-footer <button class="btn grn" {{action "complete"}}>Mark Complete</button>

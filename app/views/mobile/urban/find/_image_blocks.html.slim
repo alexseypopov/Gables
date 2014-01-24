@@ -1,0 +1,18 @@
+#home
+  ul
+    - @promos.each do |promo|
+      li.block
+        - if promo.video_id
+          = link_to image_tag("http://img.youtube.com/vi/#{promo.video_id}/0.jpg", :alt => 'Watch video', :height => '173', :width => '293'), modal_video_path(:video_id => promo.video_id), :class => 'video_iframe', "data-video-id" => promo.video_id
+          .description
+            h2 = link_to promo.heading, '#'
+            p= promo.text
+            hr
+        - else
+          = link_to image_tag(promo.image.url, :alt => ''), promo.link
+          .description
+            h2
+              =link_to promo.heading, promo.link
+              /i.icon-chevron-down
+            p= promo.text
+            hr

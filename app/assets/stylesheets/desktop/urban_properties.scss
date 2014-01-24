@@ -1,0 +1,99 @@
+// variables
+@import 'variables';
+
+// mixins
+@import 'mixins';
+
+#urban_properties {
+  @include clearfix;
+  width: 970px;
+  .limit {
+    @include clearfix;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 30px;
+    padding: 20px 0 8px;
+    width: 945px;
+    label, .selector {
+      float: left;
+    }
+    label {
+      color: $header_color;
+      display: block;
+      font-weight: bold;
+      position: relative;
+      top: 5px;
+      width: 66px;
+    }
+    .selector {
+      width: 185px;
+    }
+  }
+  .property {
+    border: 1px solid #fff;
+    float: left;
+    height: 370px;
+    left: -10px;
+    margin: 0 40px 65px 0;
+    padding: 10px 9px;
+    position: relative;
+    width: 275px;
+    .thumb {
+      height: 222px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      text-align: center;
+      width: 275px;
+    }
+    h2 {
+      color: $header_color;
+      font: {
+        family: $header_font;
+        size: 1.4em;
+        weight: bold;
+      };
+      margin-bottom: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 275px;
+    }
+    p {
+      color: #666;
+      font-size: 1.1em;
+      strong {
+        color: $header_color;
+      }
+      &.address {
+        color: #818181;
+        margin-bottom: 10px;
+      }
+    }
+    .more {
+      color: #333;
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+      padding: 5px 0;
+      a {
+        color: $brand_color;
+        text-decoration: underline;
+      }
+    }
+    &.last {
+      margin-right: 0;
+    };
+    &:hover {
+      @include box_shadow(0px 2px 10px rgba(0, 0, 0, 0.33));
+      border-color: #ddd;
+      .more {
+        background-color: $brand_color;
+        color: #fff;
+        padding-left: 5px;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

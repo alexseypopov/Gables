@@ -1,0 +1,7 @@
+script type="text/x-handlebars" data-template-name="photos"
+  nav.arrows <a {{action "prev"}} class="prev"></a><a {{action "next"}} class="next"></a>
+  #community-photos
+    #photos-wrapper
+    #photo-nav-wrap.dot-nav-wrap
+      #photo-nav.dot-nav
+  | {{view App.CommunityNavView class="fixed"}}

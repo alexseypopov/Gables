@@ -1,0 +1,4 @@
+script type="text/x-handlebars" data-template-name="area-map"
+  | {{view App.CommunityNavView}}
+  - address = "#{@property.street} #{@property.city} #{@property.state} #{@property.zip}".parameterize
+  iframe src="/walkmap.html?Addr=#{address}"

@@ -1,0 +1,337 @@
+.map_info_window {
+  .info_window_content {
+    .info_window_data {
+      display: none;
+      font-size: 0.9em;
+      height: auto;
+      left: 5px;
+      position: absolute;
+      top: 148px;
+      width: 170px;
+      z-index: 9;
+      p {
+        line-height: 1.35em;
+        width: 155px;
+        &.title {
+          color: #333;
+          font-weight: bold;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 160px;
+        }
+        &.desc {
+          display: none;
+        }
+        &.rent {
+          display: none;
+        }
+      }
+      a.view {
+        background-color: #fff;
+        color: $brand_color;
+        display: block;
+        font-weight: normal;
+        position: static;
+        text-align: left;
+        text-decoration: underline;
+      }
+    }
+  }
+  &.open {
+    background: url('../images/gca/marker_large.png') no-repeat left top;
+    height: 204px;
+    width: 214px;
+    .expand {
+      background-position: -323px -26px;
+      right: 35px;
+    }
+    .info_window_content {
+      .thumb {
+        height: 137px;
+        width: 170px;
+        img {
+          clip: rect(0px, 170px, 137px, 0px);
+          max-height: 137px;
+        }
+      }
+    }
+  }
+}
+
+#serp {
+  @include clearfix;
+  background-color: #fff;
+  margin-top: 20px;
+  padding-top: 12px;
+  width: 100%;
+  #serp_results {
+    float: right;
+    margin-right: 12px;
+    width: 670px;
+    .region_desc {
+      margin-bottom: 30px;
+      h1 {
+        color: $header_color;
+        font: {
+          family: $header_font;
+          size: 2.3em;
+          weight: bold;
+        };
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1.2em;
+        margin: 0 0 20px 0;
+        a {
+          color: $brand_color;
+          text-decoration: underline;
+        }
+      }
+    }
+    .pagination_wrapper {
+      @include pagination;
+    }
+  }
+  #serp_side {
+    float: left;
+    margin-left: 12px;
+    width: 222px;
+    h2 {
+      color: $header_color;
+      font: {
+        family: $header_font;
+        weight: bold;
+      };
+    }
+    .video {
+      margin-bottom: 35px;
+      .video_container {
+        margin-bottom: 5px;
+        position: relative;
+        &:after {
+          background: url('../images/video_overlay.png') no-repeat left top;
+          content: '.';
+          display: block;
+          height: 78px;
+          left: 75px;
+          pointer-events: none;
+          position: absolute;
+          text-indent: -9999em;
+          top: 52px;
+          width: 77px;
+        };
+      }
+      p.title {
+        color: $header_color;
+        font: {
+          size: 1.2em;
+          weight: bold;
+        };
+      }
+      p.more {
+        a {
+          color: $brand_color;
+          font-size: 1.1em;
+          text-decoration: underline;
+          &:after {
+            content: ' »';
+            text-decoration: none;
+          };
+        }
+      }
+    }
+    form {
+      background-color: #404040;
+      color: #fff;
+      margin-bottom: 37px;
+      padding: 8px 12px;
+      h2 {
+        color: #fff;
+        font: {
+          size: 1.35em;
+        }
+        margin-bottom: 25px;
+        width: 200px;
+      }
+      .input {
+        margin-bottom: 22px;
+        label {
+          @include label;
+        }
+        input {
+          @include input;
+          padding: 6px 10px;
+          width: 178px;
+        }
+      }
+      .row {
+        @include clearfix;
+        width: 100%;
+        .input {
+          float: left;
+          input {
+            width: 70px;
+          }
+          &.lname {
+            float: right;
+            label {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+      .submit {
+        height: 35px;
+        button {
+          @include button;
+          float: right;
+          width: 137px;
+        }
+      }
+    }
+    .partners {
+      border-bottom: 2px solid $brand_color;
+      margin-bottom: 20px;
+      h2 {
+        background-color: $brand_color;
+        color: #fff;
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        padding: 6px 8px 8px;
+      }
+      p {
+        font-size: 1.1em;
+        line-height: 1.4em;
+        padding: 0 8px;
+        &.more {
+          margin-bottom: 10px;
+          a {
+            color: $brand_color;
+            text-decoration: underline;
+            &:after {
+              content: ' »';
+              text-decoration: none;
+            };
+          }
+        }
+      }
+    }
+  }
+}
+
+.community_result {
+  .community_info {
+    @include clearfix;
+    margin-bottom: 25px;
+    width: 100%;
+    .thumb {
+      float: left;
+      text-align: center;
+      width: 275px;
+      img {
+        max-width: 275px;
+      }
+    }
+    .details {
+      float: right;
+      width: 363px;
+      p {
+        margin-bottom: 20px;
+      }
+      h3 {
+        color: $header_color;
+        font: {
+          size: 0.9em;
+          weight: bold;
+        };
+        margin-bottom: 5px;
+      }
+      ul {
+        font-size: 0.9em;
+      }
+      .pets {
+        height: 30px;
+        line-height: 30px;
+        margin: 0 0 20px 8px;
+        p {
+          color: $header_color;
+          font: {
+            size: 0.9em;
+            weight: bold;
+          }
+        }
+        img {
+          margin-right: 5px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+.community_result {
+  .community_info {
+    h2 {
+      color: $header_color;
+      font: {
+        family: $header_font;
+        size: 1.45em;
+        weight: bold;
+      };
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.4em;
+    }
+  }
+  .actions {
+    background-color: #ddd;
+    height: 32px;
+    margin-bottom: 45px;
+    ul {
+      padding: 0 34px 0 11px;
+      li {
+        float: left;
+        a {
+          background: {
+            position: left center;
+            repeat: no-repeat;
+          }
+          display: block;
+          float: left;
+          font: {
+            size: 0.9em;
+            weight: bold;
+          };
+          padding: 8px 0 8px 22px;
+        }
+        &.map {
+          a {
+            background-image: url('../images/gca/marker.gif');
+          }
+        }
+        &.brochure {
+          margin-left: 30%;
+          width: 95px;
+          a {
+            background-image: url('../images/gca/brochure.gif');
+            padding-left: 24px;
+          }
+          &.first {
+            margin-left: 12%;
+          }
+          &.last {
+            margin-left: 12%;
+          }
+        }
+        &.community {
+          float: right;
+          a {
+            background-image: url('../images/gca/community.gif');
+          }
+        }
+      }
+    }
+  }
+}

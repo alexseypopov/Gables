@@ -1,0 +1,80 @@
+- content_for :head do
+  %title= "Apartments for rent in #{@query} | Gables offers Apartments for Rent, including Luxury, Furnished, Unfurnished Apartments and Corporate Housing"
+  %meta{:name => 'description', :content => "Apartment rentals in #{@query} | Gables features luxury apartments for rent including; unfurnished, furnished apartments, and corporate housing. Free apartment finder, rentals search, credit approvals and online applications at Gables.com makes it easy."}
+  = stylesheet_link_tag 'serp'
+
+- content_for :javascripts do
+  = render :partial => 'maps', :locals => {:properties => @s && @s.properties.length > 0 ? @s.properties : nil, :regions => @regions || nil, :units => nil, :subdomain => nil}
+
+- content_for :marquee do
+  #marquee
+    .wrapper
+      #map_canvas
+      - if @s && @s.properties.length > 0
+        = link_to 'toggle map', '#', :class => 'toggle_map'
+
+- if @properties && @properties.length > 0
+  #serp
+    %article{:class => !params[:group].blank? ? params[:group] : 'community', :id => 'serp_results'}
+      - if @region
+        .region_desc
+          %h1= "Apartments near #{@region.name}"
+          - unless @region.description.blank?
+            %p= raw(@region.description)
+      .filters
+        .option.grouping
+          = label_tag :group, 'Results grouped by'
+          = select_tag :group, options_for_select([['Community', 'community'], ['Floor Plan', 'floorplan']], params[:group])
+        .option.ordering
+          = label_tag :order, 'and ordered by'
+          = select_tag :order, options_for_select([['Distance', 'distance'], ['Rent', 'rent']], params[:order])
+
+      - if params[:group] && params[:group] == 'floorplan'
+        = render :partial => 'floorplan_results'
+      - else
+        = render :partial => 'community_results'
+      .pagination_wrapper
+        = will_paginate @properties, :previous_label => 'prev', :next_label => 'next'
+      .comparisons
+        .list
+          %p You've selected:
+          %ul
+        .submit
+          %button Compare Selected
+        
+    %aside#serp_form
+      = form_tag(find_where_path, :method => 'get', :id => 'serp_form') do
+        %fieldset
+          %h2 Update Results
+          = hidden_field_tag :query, params[:query]
+          = hidden_field_tag :city, params[:city]
+          = hidden_field_tag :state, params[:state]
+          = hidden_field_tag :group, params[:group]
+          .row
+            .input.select
+              = label_tag :beds
+              = select_tag 'beds', beds_options
+            .input.select.last
+              = label_tag :baths
+              = select_tag 'baths', baths_options
+          .input.range
+            = label_tag :rent_min, 'Monthly Rent'
+            .range_set
+              = text_field_tag :rent_min, params[:rent_min], :placeholder => 'min'
+              %span to
+              = text_field_tag :rent_max, params[:rent_max], :placeholder => 'max'
+          .input.select.pets
+            = label_tag :pet_friendly
+            = select_tag :pet_friendly, options_for_select([['any', 'any'], ['Dogs OK', 'dogs'], ['Cats OK', 'cats']], params[:pet_friendly])
+          .input.select
+            = label_tag 'amenities[]', 'Community Amenities'
+            = select_tag 'amenities[]', options_for_select(@p_search_amenities, params[:amenities]), :multiple => 'multiple', :class => 'multiselect'
+          .input.select
+            = label_tag 'features[]', 'Apartment Features'
+            = select_tag 'features[]', options_for_select(@u_search_amenities, params[:features]), :multiple => 'multiple', :class => 'multiselect'
+
+          .input.select
+            = label_tag :floorplans, 'Availability'
+            = select_tag :floorplans, options_for_select([['Any', 'any'], ['Available', 'now']], params[:floorplans]), {:prompt => 'Select'}
+          .submit
+            %button{:type => 'submit'} Update Search

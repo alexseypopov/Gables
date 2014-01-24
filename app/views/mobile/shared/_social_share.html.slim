@@ -1,0 +1,13 @@
+-if @property
+  .styled-select
+    i.icon-chevron-down
+    select
+      option selected='selected' Share with
+      - if @property.images.any?
+        option.icon-social-pinterest value="#{'http://pinterest.com/pin/create/button/?url=#{request.url}&media=http://#{request.host}#{@property.images.first.url(:large)}&description=#{@property.name}'.html_safe}" Pinterest
+      option
+        a value="https://www.facebook.com/sharer/sharer.php?u=#{request.url}" target='st_facebook' Facebook
+      option
+        a value="https://twitter.com/intent/tweet?original_referer=#{request.url}&url=#{request.url}" Twitter
+      option
+        a value="https://plusone.google.com/_/+1/confirm?&hl=en-US&wwc=1&url=#{request.url}" target='st_plus' Google+

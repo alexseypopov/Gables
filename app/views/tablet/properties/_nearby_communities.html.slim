@@ -1,0 +1,38 @@
+script type="text/x-handlebars" data-template-name="nearby-communities"
+  | {{#unless App.nearbyCommunities}} <div class="spinner"><p>Searching for Nearby Communities</p></div> {{/unless}}
+  div#nearby-communities.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Nearby Communities
+    .content.sidebar.group
+      aside#sidebar
+        .pop-nav <a class="toggle" {{action "toggleMenu"}}></a>
+        nav.side
+          ul
+            |{{#each App.nearbyCommunities}}
+            li <a {{bindAttr data-id="this.community"}} {{action "scrollTo"}}>{{this.community}}</a>
+            |{{/each}}
+      article#primary
+        ul.communities
+          |{{#each App.nearbyCommunities}}
+          li
+            |<h2 {{bindAttr data-id="this.community"}}>{{this.community}}</h2>
+            .table-wrap
+              table cellspacing="0"
+                thead
+                  tr
+                    th Unit Type
+                    th Description
+                    th Available
+                    th Rent Range
+                    th Available Date
+                tbody
+                  |{{#each this.units}}
+                  tr
+                    td() {{Unit_x0020_Type}}
+                    td() {{Description}}
+                    td() {{Available}}
+                    td() {{Rent_x0020_Range}}
+                    td() {{Available_x0020_Date}}
+                  |{{/each}}
+          |{{/each}}

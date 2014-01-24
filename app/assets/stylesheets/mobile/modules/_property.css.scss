@@ -1,0 +1,143 @@
+@import 'mobile/base/colors';
+
+.community {
+  padding: 10px 10px 0 10px;
+  dl {
+    color: $dark-gray;
+    padding-top: 0;
+    margin: 0;
+    dt, dd {
+      padding: 0 0 0 10px;
+      margin: 0;
+    }
+    dd {
+      margin-bottom: 10px;
+    }
+  }
+  h2.toggle {
+    padding: 0;
+    font-style: normal;
+    color: $dark-gray;
+    font-size: 1.2em;
+    margin: 10px 0 5px 0;
+    &:after {
+      position: relative;
+      margin-left: 10px;
+    }
+  }
+  hr{
+    margin: 30px auto 30px auto;
+  }
+  a {
+    &.button {
+      margin-top: 20px !important;
+      margin-bottom: -4px !important;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0
+  }
+
+  .brochures-walk-score {
+    margin: 10px 0 10px 0;
+  }
+  .floorplan_image{
+    img{
+      width: 100%;
+    }
+  }
+  &.floorplan{
+    .rent{
+      display:block;
+      color: $gray;
+      font-size: 1.2em;
+    }
+    .price{
+      font-size: 1.5em;
+    }
+    .property-name{
+      color: $gray;
+
+    }
+    h2{
+      font-size: 1.3em;
+      margin: 0;
+      font-family: CenturyGothicBold;
+    }
+    h3{
+      margin: 0 0 20px 0;
+      font-size: 1.1em;
+    }
+  }
+}
+
+.community-overview {
+  .hidden {
+    display: none;
+  }
+  .see-more {
+    display: block;
+    color: $link-green;
+    text-align: right;
+    padding-right: 35px;
+  }
+  ul{
+
+    li{
+      padding-left: 1em;
+      text-indent: -.7em;
+      &:before {
+        content: '\2022';
+        color: $header-green;
+      }
+    }
+  }
+}
+
+.floorplans-details {
+  h2{
+    font-family: CenturyGothicBold;
+    margin: 0;
+    color: $black;
+  }
+  ul {
+    margin: 0;
+    padding: 5px 0 5px 0;
+    border-top: 1px solid $light-gray;
+    &:first-of-type{
+      margin-top: 10px;
+    }
+  }
+  li {
+    display: inline-table;
+    white-space: nowrap;
+    width: 100%;
+    padding: 3px 0 5px 10px;
+
+    label, span, a {
+      display: table-cell;
+    }
+    label {
+      width: 200px;
+    }
+
+  }
+  .rowOne {
+    background-color: $white;
+  }
+  .rowTwo {
+    background-color: $lightest-gray;
+  }
+  .floorplan-unit {
+    display: none;
+    hr{
+    	margin: 5px auto;
+    }
+  }
+  .available-units{
+    color: $link-green;
+    text-decoration: underline;
+  }
+
+}

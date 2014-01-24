@@ -1,0 +1,64 @@
+script type="text/x-handlebars" data-template-name="invite-to-apply"
+  #invite-select.associate.border-box
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Invite to Apply
+    | {{#if App.unitsController.preferred}}
+    ul.content.units
+      | {{#each App.unitsController.preferred}}
+      li
+        .meta
+          h2
+            | {{name}}
+            span.bed-bath() {{bedrooms_count}} Beds / {{bathrooms_count}} Baths - {{area_min}} Sqft.
+        .table-wrap
+          table cellspacing="0"
+            thead
+              tr
+                th Moveout
+                th Unit
+                th Bldg - Flr
+                th Status
+                th Mkt. Rent
+                th Options / Features
+                th.apply Apply
+            tbody
+              | {{#each units}}
+              tr
+                td() {{Available_x0020_Date}}
+                td() {{PUNIT_No}}
+                td() {{PUNIT_Floor}}
+                td() {{Status}}
+                td() {{Rent}}
+                td() {{Features}}
+                td.apply <a class="btn grn open" {{bindAttr data-id="PUNIT_Recordkey"}} {{action "select"}}><span>Select</span></a>
+              | {{/each}}
+      | {{/each}}
+    | {{else}}
+    .content.centered
+      br
+      br
+      br
+      ' Select a unit to generate an invite code and send an application invite.
+    | {{/if}}
+
+
+script type="text/x-handlebars" data-template-name="invite-to-apply-complete"
+  div#invite-apply.guestcard.associate
+    .page-heading
+      .nav-back <a {{action "goBack"}}>&lt; Back</a>
+      h1 Invite to Apply
+    | {{#if App.submittingApplication}} <div class="spinner"><p>Submitting Application</p></div>
+    | {{else}}
+    .content.group
+      ul.completed
+        li Submitted to Insite
+        li Invitation email sent to {{App.currentGuest.email}}
+      .invitation
+        label Invitation Code
+        p.code() {{App.currentGuest.invitationCode}}
+    | {{/if}}
+
+script type="text/x-handlebars" data-template-name="submitting-application"
+  .spinner
+    p Submitting Application

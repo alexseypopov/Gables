@@ -1,0 +1,91 @@
+.accordion
+  dl
+    dt
+      a = t :life_at_gables
+      i.icon-chevron-down
+    dd
+      a href='/life/p/why_gables'
+        = 'Why Gables'
+    dd
+      a href='/life/p/green_initiatives'
+        = t :green_initiatives
+    dd
+      a href='/life/p/community_service'
+        = t :community_service
+    dd
+      a href="https://extra.gables.com/gateway/"
+        = t :pay_rent_online
+    dd
+      a href="https://extra.gables.com/gateway/"
+        = t :maintenance_requests
+    /dd
+    /  #life-at-gables.swiper-container.swiper-partial
+    /    .swiper-wrapper
+    /      .why-gables.swiper-slide
+    /        a href='/life/p/why_gables'
+    /          =image_tag 'nav/why_gables.jpg', :alt => '', :width => '100%'
+    /          h2 = t :why_gables
+    /      .green-initiatives.swiper-slide
+    /        a href='/life/p/green_initiatives'
+    /          =image_tag 'nav/green.jpg', :alt => '', :width => '100%'
+    /          h2 = t :green_initiatives
+    /      .community-service.swiper-slide
+    /        a href='/life/p/community_service'
+    /          =image_tag 'nav/community_service.jpg', :alt => '', :width => '100%'
+    /          h2 = t :community_service
+
+    dt
+      a = t :our_company
+      i.icon-chevron-down
+    dd
+      a href='/company/p/corporate_overview'
+        = 'Overview'
+    dd
+      a href='/company/p/values'
+        = 'Values'
+    dd
+      a href='/company/p/real_estate'
+        = 'Client Services'
+    dd
+      a href='/company/p/diversity_inclusion'
+        = 'Inclusiveness'
+    dd
+      a href='/company/p/corporate_executives'
+        = 'Leadership'
+    dd
+      a href='/company/news'
+        = 'News & Awards'
+    dd
+      a href='/company/p/corporate_contacts'
+        = 'Contact us'
+
+    dt
+      a = t :careers
+      i.icon-chevron-down
+    dd
+      a href="/careers/p/careers_overview"
+        = 'Overview'
+    dd
+      a href="/careers/p/community_jobs"
+        = 'Community Jobs'
+    dd
+      a href="/careers/p/corporate_jobs"
+        = 'Corporate Jobs'
+    dd
+      a href='/careers/p/career_benefits'
+        = 'Benefits'
+    dd
+      a href='/careers/p/students_grads'
+        = 'Students & Recent Grads'
+    /dd
+    /  a href='/careers/p/search'
+    /    = 'Job Search'
+    dd
+      a href='/associates/show/41'
+        = 'Associates Stories'
+    dd
+      a target="_blank" href="https://app.work4labs.com/list/gables/34635269968?career_site_mobile_redirection"
+        = 'Search Careers'
+
+    /dd.form-container
+      = render partial: 'mobile/shared/form_join_team'

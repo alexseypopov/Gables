@@ -1,0 +1,8 @@
+= form_tag("http://#{request.host_with_port}/home/site_search", :method => 'get', :id => 'site_search', :target => context == 'iframe' ? '_top' : nil) do
+  %fieldset
+    = hidden_field_tag :cx, '016131787977964295618:awlfmov_v3s'
+    = hidden_field_tag :cof, 'FORID:10;&lt;&gt;;NB:1'
+    = hidden_field_tag :ie, 'UTF-8'
+    = text_field_tag :q, params[:q], :placeholder => 'Site Search'
+    .submit
+      %button{:type => 'submit'} Go

@@ -1,0 +1,156 @@
+package_assets: on
+compress_assets: off
+compressor_options:
+  munge:  true
+package_path: packages
+
+stylesheets:
+  application:
+    - public/stylesheets/screen.css
+    - public/stylesheets/plugins.css
+  gca:
+    - public/stylesheets/screen.css
+    - public/stylesheets/gca_screen.css
+    - public/stylesheets/plugins.css
+  urban:
+    - public/stylesheets/screen.css
+    - public/stylesheets/urban_screen.css
+    - public/stylesheets/plugins.css
+  modal:
+    - public/stylesheets/screen.css
+    - public/stylesheets/plugins.css
+  tablet:
+    - public/stylesheets/tablet/reset.css
+    - public/stylesheets/tablet/tablet.css
+    - public/stylesheets/tablet/ios.css
+    - public/stylesheets/tablet/forms.css
+    - public/stylesheets/tablet/floorplans.css
+    - public/stylesheets/tablet/units.css
+    - public/stylesheets/tablet/pending.css
+    - public/stylesheets/tablet/licenses.css
+    - public/stylesheets/tablet/sprite.css
+    - public/stylesheets/jquery-ui-1.8.18.custom.css
+    - public/stylesheets/tablet/add2home.css
+  home:
+    - public/stylesheets/home.css
+  serp:
+    - public/stylesheets/serp.css
+  compare:
+    - public/stylesheets/compare.css
+  property:
+    - public/stylesheets/property.css
+  pages:
+    - public/stylesheets/pages.css
+  external:
+    - public/stylesheets/screen.css
+    - public/stylesheets/plugins.css
+    - public/stylesheets/external.css
+  error:
+    - public/stylesheets/error.css
+  portal:
+    - public/stylesheets/portal.css
+  gca_gallery:
+    - public/stylesheets/gca_gallery.css
+  gca_find:
+    - public/stylesheets/gca_find.css
+  gca_property:
+    - public/stylesheets/gca_property.css
+  gca_contact:
+    - public/stylesheets/gca_contact.css
+  urban_properties:
+    - public/stylesheets/urban_properties.css
+  urban_property:
+    - public/stylesheets/urban_property.css
+  ie:
+    - public/stylesheets/ie.css
+  ie7:
+    - public/stylesheets/ie7.css
+  ie6bar:
+    - public/stylesheets/ie6bar.css
+
+
+javascripts:
+  application:
+    - public/javascripts/jquery.js
+    - "public/javascripts/jquery-ui.min.js"
+    - public/javascripts/modernizr.js
+    - public/javascripts/jquery.hint.js
+    - public/javascripts/jquery.cookie.js
+    - public/javascripts/jquery.json.js
+    - public/javascripts/jquery.carousel.js
+    - public/javascripts/jquery.cycle.js
+    - public/javascripts/jquery.paginate.js
+    - public/javascripts/jquery.uniform.js
+    - public/javascripts/jquery.fancybox.pack.js
+    - public/javascripts/liquidmetal.js
+    - public/javascripts/common.js
+    - public/javascripts/application.js
+
+  gca:
+    - public/javascripts/jquery.js
+    - "public/javascripts/jquery-ui.min.js"
+    - public/javascripts/modernizr.js
+    - public/javascripts/jquery.hint.js
+    - public/javascripts/jquery.cookie.js
+    - public/javascripts/jquery.carousel.js
+    - public/javascripts/jquery.cycle.js
+    - public/javascripts/jquery.paginate.js
+    - public/javascripts/jquery.uniform.js
+    - public/javascripts/jquery.fancybox.pack.js
+    - public/javascripts/common.js
+    - public/javascripts/gca.js
+
+  urban:
+    - public/javascripts/jquery.js
+    - "public/javascripts/jquery-ui.min.js"
+    - public/javascripts/modernizr.js
+    - public/javascripts/jquery.hint.js
+    - public/javascripts/jquery.cookie.js
+    - public/javascripts/jquery.carousel.js
+    - public/javascripts/jquery.cycle.js
+    - public/javascripts/jquery.paginate.js
+    - public/javascripts/jquery.uniform.js
+    - public/javascripts/jquery.fancybox.pack.js
+    - public/javascripts/common.js
+    - public/javascripts/urban.js
+
+  html5:
+    - public/javascripts/html5.js
+
+  tablet:
+    - public/javascripts/jquery.min.js
+    - public/javascripts/jquery_ujs.js
+    - public/javascripts/jquery-ui-1.8.18.custom.min.js
+    - public/javascripts/jquery.ui.touch-punch.min.js
+    - public/javascripts/jquery.validate.min.js
+    - public/javascripts/validator-methods.js
+    - public/javascripts/ember-0.9.5.min.js
+    - public/javascripts/tablet/app.js
+    - public/javascripts/tablet/models.js
+    - public/javascripts/tablet/controllers.js
+    - public/javascripts/tablet/views.js
+    - public/javascripts/tablet/state-manager.js
+    - public/javascripts/tablet/swipeview.js
+    - public/javascripts/tablet/session.js
+    - public/javascripts/tablet/events.js
+    - public/javascripts/tablet/properties/show.js
+    - public/javascripts/tablet/properties/floorplans.js
+    - public/javascripts/tablet/add2home.js
+    - public/javascripts/tablet/iscroll.js
+    - public/javascripts/tablet/jquery.imagemapster.js
+
+  modal:
+    - public/javascripts/modernizr.js
+    - public/javascripts/jquery.js
+    - public/javascripts/liquidmetal.js
+    - public/javascripts/jquery.flexselect.js
+    - public/javascripts/jquery.hint.js
+    - public/javascripts/modal.js
+
+  external:
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery.uniform.js
+    - public/javascripts/external.js
+
+  ie6bar:
+    - public/javascripts/ie6bar.js

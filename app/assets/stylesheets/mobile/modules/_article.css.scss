@@ -1,0 +1,51 @@
+@import "mobile/base/colors";
+
+article.main_content {
+  padding: 10px;
+  h2.title {
+  }
+  .border .feature{
+    .thumb{
+      width: 100%;
+    }
+  }
+  .border .columns_2{
+    .feature{
+      display: inline-table;
+      >div{
+        vertical-align: top;
+        display:table-cell;
+        &:last-child{
+          float: none !important;
+          width: 100% !important;
+          padding-left: 10px;
+        }
+      }
+      h2{
+        margin-bottom: 5px;
+      }
+      .thumb, .thumb img{
+        width: 42px !important;
+
+      }
+    }
+  }
+}
+
+
+.description p {
+  padding: 0 10px 0 10px;
+}
+
+.title {
+  color: $black;
+}
+
+.title, .description {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.feature {
+  margin-top: 20px;
+}

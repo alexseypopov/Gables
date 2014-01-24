@@ -1,0 +1,6 @@
+%a#chat84152841{:href => "http://server.iad.liveperson.net/hc/84152841/?cmd=file&file=visitorWantsToChat&site=84152841&byhref=1&SESSIONVAR!skill=Gables&SESSIONVAR!Management%20Company=Gables%20Residential&SESSIONVAR!Community=#{URI.encode property.name}&SESSIONVAR!Ad%20Source=Gables.com&imageUrl=http://gables.com/images/", :target => "chat84152841", "data-property" => URI.encode(property.name) }
+  - if text
+    = text
+  - else
+    %img{:src=>"http://server.iad.liveperson.net/hc/84152841/?cmd=repstate&site=84152841&channel=web&&ver=1&imageUrl=http://gables.com/images/&skill=gables", :name=>'hcicon', :alt=>'chat button', :border=>0}
+

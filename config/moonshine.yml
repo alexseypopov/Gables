@@ -1,0 +1,56 @@
+:ruby: src192
+
+:application: gables
+
+:user: rails
+
+:time_zone: UTC
+
+:repository: git@github.com:digitalscientists/gables.git
+
+:shared_children:
+- system
+- log
+- pids
+- config
+
+# Use :app_symlinks to setup directories under public/ that you want to persist
+# across deployments. They'll be symlinked to the shared directory.
+:app_symlinks:
+- assets
+- find
+
+:apt_gems:
+  :nokogiri:
+    - libxml2
+    - libxml2-dev 
+    - libxslt1-dev
+  :rmagick:
+    - imagemagick
+    - libmagick9-dev
+
+:passenger:
+  :max_pool_size: 3
+  :use_global_queue: true
+  :version: 3.0.7
+
+:mysql:
+  :innodb_buffer_pool_size: 128M
+
+:redis:
+  :version: 2.4.7
+
+:default_run_options:
+  :pty: true
+:ssh_options:
+  :forward_agent: true
+
+:use_sudo: false
+
+:scm_verbose: true
+
+:scm: :git
+
+:keep_releases: 5
+
+:deploy_via: remote_cache

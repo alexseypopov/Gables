@@ -1,0 +1,156 @@
+- content_for :head do
+  %title Accommodations Gallery
+  
+#inner_page.gallery
+  %article.main_content
+    #main_image= image_tag 'gca/gallery/Gallery1.jpg', :alt => ''
+    .overview
+      %h1 Experts in creating the perfect apartment home.
+      %p Every Gables apartment is furnished with our Express Luxury package - thoughtfully created to bring you the comforts of home. We create a lifestyle you’ll wish wasn’t temporary.
+    .features
+      %h2 Every Apartment Includes
+      .columns
+        %ul
+          %li Express Luxury furniture and housewares package
+          %li Utilities, cable, and local phone service
+          %li High-speed internet access
+          %li Wi-Fi (in some locations)
+        %ul
+          %li Complimentary welcome amenities
+          %li Dedicated customer service teams
+          %li Housekeeping services (optional)
+          %li Directory of area amenities
+    .furnishings
+      %h2 Standard Furnishings
+      %h3 Living and Dining Area
+      .columns
+        %ul
+          %li Sofa
+          %li Loveseat or Chair
+          %li Coffee Table
+          %li End Table
+          %li Lamp
+          %li 32” LCD Television with Stand
+        %ul
+          %li DVD Player
+          %li Framed Art
+          %li Dining Table
+          %li Dining Chairs
+          %li Placemats & Napkins
+      %h3 Fully equipped kitchen
+      .columns
+        %ul
+          %li Countertop appliances including toaster, coffee maker, electric can opener and microwave
+          %li Dinnerware & flatware – plates, bowls, mugs, glassware and wine glassesFood prep and storage - mixing bowl set, baking dish, pitcher, colander, cutting board, knife set, measuring cups & spoons, set of pots & pans, cookie sheet, storage containers, serving utensils, cheese grater, corkscrew, vegetable peeler, and salt & pepper shakers
+        %ul
+          %li Kitchen conveniences - trash can, hot pads, kitchen towels, and sponge
+          %li Kitchen starter kit including coffee packets, filters, creamers, sugar, sweetener, tea bags, paper towels, dish soap, dishwasher detergent, and trash bags
+      %h3 Bedroom (each)
+      .columns
+        %ul
+          %li Queen-size bed with headboard
+          %li Comforter Set
+          %li Mattress Pad
+          %li Blanket
+          %li Pillows
+        %ul
+          %li Sheet sets
+          %li Clock Radio
+          %li Telephone
+          %li Framed Art
+          %li Hangers
+      %h3 Bathroom(s)
+      .columns
+        %ul
+          %li Shower Curtain, liner, and hook Set
+          %li Complete towel package including bath towels, hand towels, wash-cloths, bath mat, and bath rug
+        %ul
+          %li Trash can with liner
+          %li Bathroom Starter Set including shampoo, conditioner, lotion, bath soap, toilet paper, and tissue
+      %h3 Cleaning and Accessories
+      .columns
+        %ul
+          %li Broom and dust pan
+          %li Mop
+          %li Toilet brush and caddy
+          %li Laundry basket
+        %ul
+          %li Iron and ironing board
+          %li Telephone with voice mail or answering machine
+          %li Vacuum
+          %li Starter supply laundry detergent
+      %h3 Utilities and Services
+      .columns
+        %ul
+          %li High speed Internet
+          %li Wi-Fi (in some locations)
+          %li Cable TV
+        %ul
+          %li Utilities - electric, gas, water - activated before your arrival
+          %li Washer/Dryer – in-unit or on premises.
+          %li Housekeeping services
+    .services
+      %h2 Why a furnished apartment?
+      %p There is no comparing a hotel stay to the luxury apartment living and amenities we offer. Gables Corporate Accommodations offers spacious, fully-furnished, apartments for less than the typical hotel room. Consider these points when selecting your temporary housing
+      .columns_2
+        .feature
+          .thumb= image_tag 'icons/couch.gif', :alt => ''
+          .desc
+            %h3 Living Space
+            %p Our average one-bedroom apartment offers up to five times the amount of living space of a typical hotel room.
+        .feature
+          .thumb= image_tag 'icons/silverware.gif', :alt => ''
+          .desc
+            %h3 Kitchen/Dining
+            %p Our apartment kitchens are fully-equipped for in-home meal preparation, offering healthier and cost effective eating options.
+        .feature
+          .thumb= image_tag 'icons/location.gif', :alt => ''
+          .desc
+            %h3 Location
+            %p Gables communities are located in both suburban and urban residential areas to make living and commuting easier.
+        .feature
+          .thumb= image_tag 'icons/swimmer.gif', :alt => ''
+          .desc
+            %h3 Amenities
+            %p Our communities offer a host of services including full-size fitness centers, swimming pools and spas, business centers, in-room washers and dryers, and resident activities and programs.
+
+  %aside.sub_content
+    .slideshow_thumbs
+      %ul
+        %li.active
+          %a{:data => {:source => '/images/gca/gallery/Gallery1.jpg', :type => 'image'}, :href => '#'}
+            =image_tag('gca/gallery/Gallery1t.jpg', :alt => '')
+        %li
+          %a{:data => {:source => '/images/gca/gallery/Gallery2.jpg', :type => 'image'}, :href => '#'}
+            =image_tag('gca/gallery/Gallery2t.jpg', :alt => '')
+        %li
+          %a{:data => {:source => '/images/gca/gallery/Gallery3.jpg', :type => 'image'}, :href => '#'}
+            =image_tag('gca/gallery/Gallery3t.jpg', :alt => '')
+        %li
+          %a{:data => {:source => '/images/gca/gallery/Gallery4.jpg', :type => 'image'}, :href => '#'}
+            =image_tag('gca/gallery/Gallery4t.jpg', :alt => '')
+        %li
+          %a{:data => {:source => '/images/gca/gallery/Gallery5.jpg', :type => 'image'}, :href => '#'}
+            =image_tag('gca/gallery/Gallery5t.jpg', :alt => '')
+        %li
+          %a{:data => {:source => '/images/gca/gallery/Gallery6.jpg', :type => 'image'}, :href => '#'}
+            =image_tag('gca/gallery/Gallery6t.jpg', :alt => '')
+    .request_form
+      = render :partial => '/gca/pages/request_form'
+    .packages
+      %h2 Available Packages
+      .item
+        .thumb= image_tag 'gca/gallery/epicurian.jpg', :alt => ''
+        .desc
+          %h3 Epicurean
+          %p Enjoy preparing your favorite dishes with this premier kitchen package that includes Calphalon cookware, a blender, rice cooker, and professional utensils.
+      .item
+        .thumb= image_tag 'gca/gallery/zen.jpg', :alt => ''
+        .desc
+          %h3 Zen
+          %p You deserve a relaxing apartment sanctuary. Give yourself a treat with our Zen Package that includes aromatherapy candles, luxury bath products, and a yoga mat.
+      .item
+        .thumb= image_tag 'gca/gallery/entertainment.jpg', :alt => ''
+        .desc
+          %h3 Entertainment
+          %p What better way to relax than to enjoy your favorite shows and sports with an upgraded 42" flat screen television, Blu-Ray DVD player, DVR, and premium cable channel.

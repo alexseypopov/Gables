@@ -1,0 +1,39 @@
+%header#site_head
+  .wrapper
+    %p.logo= link_to 'Gables Corporate Accomodations', url_for(:controller => 'gca/home', :action => 'index', :subdomain => 'gca')
+    %nav#gca_nav
+      %ul
+        %li{:class => @section && @section == 'properties' ? 'top_level find open' : 'top_level find'}
+          = link_to 'Find an Apartment', '#'
+          .sub_nav
+            = form_tag(find_where_path, :method => 'get', :id => 'apartment_search_results_form') do
+              %fieldset
+                .input.select.state
+                  = label_tag :state
+                  = select_tag :state, options_for_select(Carmen::states('US').map {|state| [state.first, state.last]}, params[:state]), {:prompt => 'Select'}
+                .input.select.city
+                  = label_tag :city
+                  = select_tag :city, options_for_select([], params[:city]), {:prompt => 'Select'}                        
+                  %ul.states_list
+                    - Carmen::state_codes('US').each do |state|
+                      %li{:data => {:state => state}}
+                        %ul
+                          - gca_cities_for(state).each do |city|
+                            %li= city
+                .submit
+                  %button{:type => 'submit'} Search
+        %li{:class => @section && @section == 'services' ? 'top_level services open' : 'top_level services'}
+          = link_to 'Our Services', '#'
+          .sub_nav
+            %ul
+              %li= link_to 'Apartment Gallery', url_for(:controller => 'gca/home', :action => 'gallery', :subdomain => 'gca')
+              - Gca::ServicesPage.in_nav.each do |page|
+                %li= link_to page.name, gca_page_path(page.section, page.path)
+        %li{:class => @section && @section == 'toplevel' ? 'top_level company open' : 'top_level company'}
+          = link_to 'Our Company', '/toplevel/p/our_company'
+    = render :partial => '/shared/site_search', :locals => {:context => 'site'}
+    .contact_buttons
+      .community_phone (866) 422-7368
+      .chat= link_to 'Chat with an associate', '#'
+    %p.contact= link_to 'Contact', modal_contact_path, :class => 'iframe'
+    %p.back= link_to 'Back to Gables Residential', root_url(:subdomain => false)

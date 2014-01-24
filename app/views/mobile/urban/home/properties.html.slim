@@ -1,0 +1,38 @@
+
+- if @s && @s.properties.length > 0
+  a.toggle-map 
+    span.map-is-visible.icon-list-after Show List&nbsp;
+    span.list-is-visible.icon-pin-after Show Map&nbsp;
+
+
+- if @properties && @properties.length > 0
+  #serp
+    article id='serp_results' class="#{!params[:group].blank? ? params[:group] : 'community'} swiper-container swiper-partial"
+      .swiper-wrapper
+        - for property in @properties
+          /TODO: Fix the item scope
+          /.community_result[property]{:itemscope => true, :itemtype => 'http://schema.org/Residence'}
+          .swiper-slide.community_result property="property"
+            .community-info
+              .thumb itemprop='image'
+                - if property.images.count > 0
+                  = link_to image_tag(property.images.first.thumb.url, :alt => ''), property_path(property)
+                - else
+                  = link_to image_tag('no_image.gif', :alt => ''), property_path(property)
+              .details
+                h2 itemprop='name'
+                  = link_to property.name, property_path(property)
+                p.address #{property.city}, #{property.state}
+              .community-result__list-view-details
+              	p <strong>#{number_with_delimiter(property.square_footage, :delimiter => ',')} s.f.</strong> of Retail Space
+                p <strong>#{property.apartments_count}</strong> Apartment Homes
+                p = property.phone
+                .community-result__list-view-actions
+                  .row
+                    .cell style="width:48%;"
+                      a.button href="#{property_path(property)}#RequestInformation" Request Info
+                    .cell &nbsp;
+                    .cell style="width:48%;"
+                      a.button href=property_path(property) Learn More
+
+    

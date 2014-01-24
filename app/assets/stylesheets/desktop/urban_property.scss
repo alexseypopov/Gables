@@ -1,0 +1,108 @@
+// variables
+@import 'variables';
+
+// mixins
+@import 'mixins';
+
+#property {
+  .main_content #community_overview {
+    border: none;
+    .columns {
+      @include clearfix;
+      width: 100%;
+      h2 {
+        font-size: 1.2em;
+      }
+      .details, .nearby {
+        float: left;
+      }
+      .details {
+        width: 270px;
+      }
+      .nearby {
+        width: 365px;
+      }
+      a {
+        color: $brand_color;
+        text-decoration: underline;
+      }
+      ul {
+        li {
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+  .sub_content {
+    h1 {
+      font-size: 2.2em;
+      line-height: 1.1em;
+      margin-bottom: 10px;
+    }
+    .vcard {
+      color: $header_color;
+      font: {
+        family: $header_font;
+        size: 1.2em;
+      }
+      margin-bottom: 30px;
+      .type {
+        display: none;
+      }
+    }
+    .contact {
+      border-bottom: 2px solid $brand_color;
+      margin-bottom: 4px;
+      h2 {
+        background-color: $brand_color;
+        color: #fff;
+        font: {
+          family: $header_font;
+          size: 1.35em; 
+        }
+        padding: 7px 7px 9px;
+      }
+      ul {
+        padding: 15px 10px;
+        li {
+          background: url('../images/sprite2.png') no-repeat 0 0;
+          color: $header_color;
+          font: {
+            size: 1.2em;
+            weight: bold;
+          };
+          padding: 4px 0 4px 45px;
+          a {
+            color: inherit;
+          }
+          &.phone {
+            background-position: 0 -1321px;
+            margin-bottom: 14px;
+          }
+          &.email {
+            background-position: 0 -1529px;
+          }
+        }
+      }
+    }
+    .sections {
+      border-top: 0;
+      margin-top: 0;
+      li.brochure a {
+        background-position: 0 -614px;
+      }
+      li.prop_website a {
+        background-position: 8px -1384px;
+        &:hover {
+          background-position: 8px -1595px; 
+        }
+      }
+      li.prop_map a {
+        background-position: 8px -1454px;
+        &:hover {
+          background-position: 8px -1665px; 
+        }
+      }
+    }
+  }
+}

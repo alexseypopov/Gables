@@ -1,0 +1,12 @@
+#marquee.swipe
+  .swipe-wrap
+    - HomeSlide.by_position_asc.each do |slide|
+      .item style='background-size: cover;background:url("#{slide.image.url}") center center;height:340px;width:100%'
+        .tag
+          h1= slide.subtitle
+          h1.emph= slide.title
+          h2= slide.description
+
+
+
+
